@@ -21,3 +21,11 @@ export const HEADER_DATA = {
     ],
   },
 };
+
+export const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/aboutus', label: 'About Us' },
+  { href: '/programsandevents', label: 'Programs & Events' },
+  { href: '/ourstaff', label: 'Our Staff' },
+  { href: '/contact', label: 'Contact' },
+];
