@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700&display=swap");
 
 * {
   margin: 0;
@@ -10,18 +10,34 @@
   scroll-behavior: smooth;
   box-sizing: border-box;
 }
+
+body,
+html {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 .curved {
   --size: 20px;
-  --R: calc(var(--size)*1.28);
+  --R: calc(var(--size) * 1.28);
   --position: bottom;
 
-  -webkit-mask:
-    radial-gradient(var(--R) at left 50% var(--position) calc(1.8*var(--size)),#000 99%,#0000 101%) 
-      left calc(50% - 2*var(--size)) var(--position) 0/calc(4*var(--size)) 100%,
-    radial-gradient(var(--R) at left 50% var(--position) calc(-.8*var(--size)),#0000 99%,#000 101%) 
-      left 50% var(--position) var(--size)/calc(4*var(--size)) 100% repeat-x;
-      
-  background: #C9DDE2;  
+  -webkit-mask: radial-gradient(
+        var(--R) at left 50% var(--position) calc(1.8 * var(--size)),
+        #000 99%,
+        #0000 101%
+      )
+      left calc(50% - 2 * var(--size)) var(--position) 0 / calc(4 * var(--size))
+      100%,
+    radial-gradient(
+        var(--R) at left 50% var(--position) calc(-0.8 * var(--size)),
+        #0000 99%,
+        #000 101%
+      )
+      left 50% var(--position) var(--size) / calc(4 * var(--size)) 100% repeat-x;
+
+  background: #c9dde2;
   height: calc(var(--size) + 75px);
 }
 
@@ -29,4 +45,3 @@
   font-family: "Quick-Sand-Bold";
   src: url("../public/fonts/Quicksand/Quicksand-Bold.ttf");
 }
-

@@ -40,10 +40,20 @@ export const navLinks = [
 ];
 
 export const HomeSection = {
-  HomeCarousel:
-    {
-      title: "Preschool & Day Care",
-      heading: "Inspiring Young Minds Kids",
-      subtitle: "Discover and Nurture the ability",
-    },
+  HomeCarousel: {
+    title: "Preschool & Day Care",
+    heading: "Inspiring Young Minds Kids",
+    subtitle: "Discover and Nurture the ability",
+  },
+};
+
+export const LandingAboutUs = {
+  AboutUsSection: {
+    title: "About Us",
+    heading: "Top Choice For Children",
+    description:
+      "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse gravida vitae nisi in tincidunt.",
+    contactInfo: "Call Us Now",
+    contactNumber: "918369596061",
+  },
 };

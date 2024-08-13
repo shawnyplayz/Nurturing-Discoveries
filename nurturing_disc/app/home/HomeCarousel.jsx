@@ -9,7 +9,7 @@ import { TypeAnimation } from "react-type-animation";
 
 const HomeCarousel = () => {
   return (
-    <div className="bg-[#ECF8FF] py-8 px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#ECF8FF] py-36 px-4 sm:px-6 lg:px-8">
       <section className="container mx-auto flex flex-col lg:flex-row items-center lg:justify-between">
         <div className="text-center lg:text-left lg:w-1/2 lg:pl-8">
           <header className="flex flex-row items-center lg:items-center gap-2 mb-4">

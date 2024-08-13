@@ -10,7 +10,7 @@ const Navbar = () => {
       <div className="">
         <Image src="/logo.svg" height={70} width={282} />
       </div>
-      <div className="flex items-center">
+      <div className="sm:flex items-center hidden">
         <ul className="flex flex-row gap-8 text-base">
           {navLinks.map((link) => (
             <li key={link.href}>
