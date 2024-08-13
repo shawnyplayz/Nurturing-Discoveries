@@ -1,5 +1,8 @@
 import Header from "@/components/Header";
+import Home from "./home/page";
 
-export default function Home() {
-  return <div></div>;
+export default function start() {
+  return(
+    <Home/>
+  )  
 }

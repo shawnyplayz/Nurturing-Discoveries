@@ -8,16 +8,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        fiord: "#3f2c37",
+        fiord: "#385469",
       },
       fontFamily: {
-        sans: ['Source Sans 3', 'sans-serif'],
+        sans: ["Source Sans 3", "sans-serif"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+    },
+    fontFamily: {
+      quicksand: ["Quick-Sand-Bold", "sans-serif"],
     },
   },
   plugins: [],

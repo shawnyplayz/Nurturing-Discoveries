@@ -25,3 +25,8 @@
   height: calc(var(--size) + 75px);
 }
 
+@font-face {
+  font-family: "Quick-Sand-Bold";
+  src: url("../public/fonts/Quicksand/Quicksand-Bold.ttf");
+}
+

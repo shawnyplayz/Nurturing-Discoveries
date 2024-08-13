@@ -1,0 +1,61 @@
+"use client";
+
+import Button from "@/components/buttons/Button";
+import PlayButton from "@/components/buttons/PlayButton";
+import Image from "next/image";
+import React from "react";
+import { HomeSection } from "../constants";
+import { TypeAnimation } from "react-type-animation";
+
+const HomeCarousel = () => {
+  return (
+    <div className="bg-[#ECF8FF] py-8 px-4 sm:px-6 lg:px-8">
+      <section className="container mx-auto flex flex-col lg:flex-row items-center lg:justify-between">
+        <div className="text-center lg:text-left lg:w-1/2 lg:pl-8">
+          <header className="flex flex-col lg:flex-row items-center lg:items-start gap-2 mb-4">
+            <h2 className="text-[#F39F5F] font-semibold text-xl sm:text-2xl lg:text-lg">
+              {HomeSection.HomeCarousel.title}
+            </h2>
+            <Image src="/star.svg" width={20} height={20} alt="star icon" />
+          </header>
+          <div className="mb-5">
+            <div className="font-quicksand font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-fiord">
+              <TypeAnimation
+                sequence={["Inspiring", 1000]}
+                wrapper="div"
+                cursor={true}
+                repeat={Infinity}
+                className="inline-block"
+              />
+              <div>
+                <span className="text-[#F39F5F]">Young </span>
+                Minds Kids
+              </div>
+            </div>
+          </div>
+          <p className="mb-8 font-sans font-normal text-base sm:text-lg lg:text-lg xl:text-xl text-fiord">
+            {HomeSection.HomeCarousel.subtitle}
+          </p>
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-center lg:items-start">
+            <Button>Apply Today</Button>
+            <div className="flex flex-row items-center gap-4 font-sans font-bold text-base text-fiord">
+              <PlayButton />
+              <p>Play Video</p>
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-center lg:w-1/2 mt-8 lg:mt-0">
+          <Image
+            src="/home-image.svg"
+            height={500}
+            width={500}
+            alt="Home Image"
+            className="max-w-full h-auto"
+          />
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default HomeCarousel;

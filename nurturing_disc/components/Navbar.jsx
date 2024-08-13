@@ -20,7 +20,7 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <div>
+        <div className="ml-8">
           <Button>Enroll Now</Button>
         </div>
       </div>
