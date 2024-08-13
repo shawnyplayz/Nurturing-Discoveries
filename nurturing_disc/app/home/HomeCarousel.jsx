@@ -12,7 +12,7 @@ const HomeCarousel = () => {
     <div className="bg-[#ECF8FF] py-8 px-4 sm:px-6 lg:px-8">
       <section className="container mx-auto flex flex-col lg:flex-row items-center lg:justify-between">
         <div className="text-center lg:text-left lg:w-1/2 lg:pl-8">
-          <header className="flex flex-col lg:flex-row items-center lg:items-start gap-2 mb-4">
+          <header className="flex flex-row items-center lg:items-center gap-2 mb-4">
             <h2 className="text-[#F39F5F] font-semibold text-xl sm:text-2xl lg:text-lg">
               {HomeSection.HomeCarousel.title}
             </h2>
