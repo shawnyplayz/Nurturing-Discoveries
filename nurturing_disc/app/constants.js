@@ -57,3 +57,32 @@ export const LandingAboutUs = {
     contactNumber: "918369596061",
   },
 };
+
+export const programSectionCardData = [
+  {
+    title: "Infant Program (0-1 year)",
+    description:
+      "Infants: Programs for infants focus on providing a safe and nurturing environment where babies can explore and grow. Activities include sensory play, tummy time, and basic motor skill development.",
+    backgroundColor: "#70A6B1",
+    src: "/program-images/image1.svg",
+  },
+  {
+    title: "Toddler Program (1-3 years)",
+    description:
+      "Toddlers: This program is designed for young children who are beginning to walk and talk. It focuses on language development, basic social skills, and motor skills through play and structured activities.",
+    backgroundColor: "#F39F5F",
+    src: "/program-images/image2.svg",
+  },
+  {
+    title: "Preschool Program (3-4 years)",
+    description:
+      "Preschoolers: Programs for 3-year-olds typically include more structured activities to prepare children for kindergarten. These might include early literacy, basic math concepts, and cooperative play.",
+    backgroundColor: "#5866EB",
+    src: "/program-images/image3.svg",
+  },
+];
+
+export const programSectionData = {
+  title: "Our Programs",
+  subHeading: "We Meet Kids At Their Level Regardless Of Their Age",
+};

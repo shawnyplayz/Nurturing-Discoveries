@@ -13,6 +13,7 @@ module.exports = {
       },
       colors: {
         fiord: "#385469",
+        peach: "#F39F5F"
       },
       fontFamily: {
         sans: ["Source Sans 3", "sans-serif"],

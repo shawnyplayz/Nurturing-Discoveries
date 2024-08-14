@@ -13,7 +13,7 @@ const HomeCarousel = () => {
       <section className="container mx-auto flex flex-col lg:flex-row items-center lg:justify-between">
         <div className="text-center lg:text-left lg:w-1/2 lg:pl-8">
           <header className="flex flex-row items-center lg:items-center gap-2 mb-4">
-            <h2 className="text-[#F39F5F] font-semibold text-xl sm:text-2xl lg:text-lg">
+            <h2 className="text-peach font-semibold text-xl sm:text-2xl lg:text-lg">
               {HomeSection.HomeCarousel.title}
             </h2>
             <Image src="/star.svg" width={20} height={20} alt="star icon" />
@@ -28,7 +28,7 @@ const HomeCarousel = () => {
                 className="inline-block"
               />
               <div>
-                <span className="text-[#F39F5F]">Young </span>
+                <span className="text-peach">Young </span>
                 Minds Kids
               </div>
             </div>
