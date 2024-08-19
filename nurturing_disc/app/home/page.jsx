@@ -2,13 +2,23 @@ import React from "react";
 import HomeCarousel from "./HomeCarousel";
 import AboutUsSection from "./AboutUsSection";
 import ProgramSection from "./ProgramSection";
+import ActivitiesSection from "./ActivitiesSection";
+import InstructionsSection from "./InstructionsSection";
+import TestimonialsSection from "./TestimonialsSection";
+import ChildrenGallery from "./ChildrenGallery";
+import Footer from "@/components/Footer";
 
 const Home = () => {
   return (
     <>
       <HomeCarousel />
       <AboutUsSection />
-      <ProgramSection/>
+      <ProgramSection />
+      <ActivitiesSection />
+      <InstructionsSection />
+      {/* <TestimonialsSection/> */}
+      <ChildrenGallery />
+      <Footer />
     </>
   );
 };

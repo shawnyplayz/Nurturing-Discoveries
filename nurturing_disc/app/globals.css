@@ -41,6 +41,29 @@ html {
   height: calc(var(--size) + 75px);
 }
 
+.reverse-curved {
+  --size: 20px;
+  --R: calc(var(--size) * 1.28);
+  --position: top;
+
+  -webkit-mask: radial-gradient(
+        var(--R) at left 50% var(--position) calc(1.8 * var(--size)),
+        #000 99%,
+        #0000 101%
+      )
+      left calc(50% - 2 * var(--size)) var(--position) 0 / calc(4 * var(--size))
+      100%,
+    radial-gradient(
+        var(--R) at left 50% var(--position) calc(-0.8 * var(--size)),
+        #0000 99%,
+        #000 101%
+      )
+      left 50% var(--position) var(--size) / calc(4 * var(--size)) 100% repeat-x;
+
+  background: #c9dde2;
+  height: calc(var(--size) + 75px);
+}
+
 @font-face {
   font-family: "Quick-Sand-Bold";
   src: url("../public/fonts/Quicksand/Quicksand-Bold.ttf");

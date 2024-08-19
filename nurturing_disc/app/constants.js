@@ -86,3 +86,109 @@ export const programSectionData = {
   title: "Our Programs",
   subHeading: "We Meet Kids At Their Level Regardless Of Their Age",
 };
+
+export const ActivitiesSectionData = {
+  title: "Our Best Activities",
+  subHeading: "Let Us Know About Our Reading And Cultural",
+  description:
+    "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse gravida vitae nisi in tincidunt.",
+  activities: [
+    {
+      id: 1,
+      title: "Early Learning",
+      description: "Elit Aenean scelerisque vitae consequat.",
+      backgroundColor: "#FEF5DE",
+      src: "EarlyLearning.svg",
+    },
+    {
+      id: 2,
+      title: "Art and Craft",
+      description: "Elit Aenean scelerisque vitae consequat.",
+      backgroundColor: "#E2F6FE",
+      src: "ArtAndCraft.svg",
+    },
+    {
+      id: 3,
+      title: "Brain Train",
+      description: "Elit Aenean scelerisque vitae consequat.",
+      backgroundColor: "#E6E8FC",
+      src: "BrainAndTrain.svg",
+    },
+    {
+      id: 4,
+      title: "Music Area",
+      description: "Elit Aenean scelerisque vitae consequat.",
+      backgroundColor: "#FEDFEF",
+      src: "MusicArea.svg",
+    },
+  ],
+};
+
+export const InstructionsSectionData = {
+  title: "Our Experts",
+  subHeading: " Our Expert Instructors",
+  teamMembers: [
+    {
+      id: 1,
+      name: "Natalie Paisley",
+      position: "CEO",
+      imageUrl: "/team/dhriti.svg",
+    },
+    {
+      id: 2,
+      name: "Daisy",
+      position: "CSRO",
+      imageUrl: "/team/daisy.svg",
+    },
+  ],
+};
+
+export const ChildrenGalleryData = {
+  title: "Children's Gallery",
+  gallery: [
+    {
+      id: 1,
+      imageUrl: "/gallery/child1.svg",
+    },
+    {
+      id: 2,
+      imageUrl: "/gallery/child2.svg",
+    },
+    {
+      id: 3,
+      imageUrl: "/gallery/child3.svg",
+    },
+    {
+      id: 4,
+      imageUrl: "/gallery/child4.svg",
+    },
+    {
+      id: 5,
+      imageUrl: "/gallery/child5.svg",
+    },
+    {
+      id: 6,
+      imageUrl: "/gallery/child6.svg",
+    },
+  ],
+};
+
+export const footerData = {
+  ContactInfoData: [
+    {
+      iconSrc: "footerAssets/phoneIcon.svg",
+      text: "+91 83695 96061",
+      subtext: "Call us 24/7",
+    },
+    {
+      iconSrc: "footerAssets/emailIcon.svg",
+      text: "support@example.com",
+      subtext: "Email us",
+    },
+    {
+      iconSrc: "footerAssets/phoneIcon.svg",
+      text: "1234 Street Name, City, Country",
+      subtext: "Visit us",
+    },
+  ],
+};
