@@ -7,6 +7,7 @@ import InstructionsSection from "./InstructionsSection";
 import TestimonialsSection from "./TestimonialsSection";
 import ChildrenGallery from "./ChildrenGallery";
 import Footer from "@/components/Footer";
+import ReversedWavedSeparator from "@/components/ReversedWaveSeparator";
 
 const Home = () => {
   return (
@@ -16,9 +17,10 @@ const Home = () => {
       <ProgramSection />
       <ActivitiesSection />
       <InstructionsSection />
-      {/* <TestimonialsSection/> */}
+      <TestimonialsSection/>
       <ChildrenGallery />
       <Footer />
+      <ReversedWavedSeparator/>
     </>
   );
 };
