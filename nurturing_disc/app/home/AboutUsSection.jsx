@@ -1,9 +1,14 @@
+"use client";
+
 import AboutUsInfo from "@/components/AboutUsInfo";
 import Button from "@/components/buttons/Button";
 import PhoneIcon from "@/components/Icons/PhoneIcon";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { LandingAboutUs } from "../constants";
+import endpoints from "@/config/endpoints";
+import { fetchDataGet } from "@/utils/fetchData";
+import { showToastError, showToastSuccess } from "@/config/toast";
 
 const AboutUsSection = () => {
   const data = [
@@ -12,6 +17,33 @@ const AboutUsSection = () => {
     { id: 3, title: "Creativity" },
     { id: 4, title: "Play Based Learning" },
   ];
+
+  const { username, setUserName } = useState("");
+  const { password, setPassword } = useState("");
+
+  const handleRegister = async () => {
+    if (!username || !password) {
+      console.log("");
+    }
+    try {
+      let urlUsername = `username=${username}`;
+
+      let url = `${endpoints.register}&${urlUsername}`;
+      let response = await fetchDataGet(url);
+
+      if (response.status === "1") {
+        showToastSuccess();
+      } else {
+        showToastError();
+      }
+    } finally {
+      console.log();
+    }
+  };
+
+  useEffect(() => {
+    handleRegister();
+  }, []);
 
   return (
     <div className="flex flex-col md:flex-row justify-around relative p-4 md:p-8 bg-[#EFF5F6]">
