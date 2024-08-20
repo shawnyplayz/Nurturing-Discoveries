@@ -2,9 +2,15 @@
 import Image from "next/image";
 import BlogFormator from "./BlogFormator";
 
-const BlogCard = ({ title, content, lastImage }) => {
+const formatDate = (dateStr) => {
+  const dateObj = new Date(dateStr);
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  return new Intl.DateTimeFormat('en-US', options).format(dateObj);
+};
+
+const BlogCard = ({ title, content, lastImage, date }) => {
   return (
-    <div className="flex flex-row gap-14">
+    <div className="flex flex-row gap-14 border-b border-red-700 py-16">
       <div>
         {lastImage && (
           <Image
@@ -18,6 +24,9 @@ const BlogCard = ({ title, content, lastImage }) => {
         )}
       </div>
       <div className="flex flex-col">
+        <div className="text-lg text-gray-600">
+          {formatDate(date)}
+        </div>
         <div className="font-quicksandMedium font-medium text-5xl pb-3">
           {title}
         </div>
