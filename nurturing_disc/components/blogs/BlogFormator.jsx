@@ -14,6 +14,10 @@ function BlogFormator({ content }) {
   const toggleContent = () => {
     setIsExpanded(!isExpanded);
   };
+
+  // Determine if content is longer than the max length
+  const shouldShowToggle = content.length > maxLength;
+
   const styles = `
     .blog-content {
       padding: 16px;
@@ -48,9 +52,11 @@ function BlogFormator({ content }) {
           __html: isExpanded ? content : truncatedContent,
         }}
       />
-      <div className="read-more" onClick={toggleContent}>
-        {isExpanded ? "Read Less" : "Read More"}
-      </div>
+      {shouldShowToggle && (
+        <div className="read-more" onClick={toggleContent}>
+          {isExpanded ? "Read Less" : "Read More"}
+        </div>
+      )}
     </div>
   );
 }
