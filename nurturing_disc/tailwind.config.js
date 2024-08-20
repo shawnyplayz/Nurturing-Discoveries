@@ -23,6 +23,7 @@ module.exports = {
     },
     fontFamily: {
       quicksand: ["Quick-Sand-Bold", "sans-serif"],
+      quicksandMedium: ["Quick-Sand-Medium", "sans-serif"],
     },
   },
   plugins: [
