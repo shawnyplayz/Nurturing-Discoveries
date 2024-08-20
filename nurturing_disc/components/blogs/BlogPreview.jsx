@@ -1,35 +1,53 @@
-import { BlogData } from "@/app/constants";
-import Image from "next/image";
-import React from "react";
-import BlogFormator from "./BlogFormator";
+"use client";
+
+import { useState, useEffect } from "react";
+import BlogCard from "./BlogCard";
+import endpoints from "@/config/endpoints";
+import { showToastError } from "@/config/toast";
 
 const BlogPreview = () => {
-  // Access the last image from the pictures array
-  const lastImage = BlogData?.pictures[BlogData.pictures.length - 1];
+  const [blogs, setBlogs] = useState([]);
+
+  const fetchBlogs = async () => {
+    try {
+      const url = endpoints.fetchBlogs;
+      const response = await fetch(url); // Use standard fetch here
+      if (!response.ok) {
+        showToastError("Network response was not ok");
+        return;
+      }
+      const data = await response.json(); // Convert the response to JSON
+      if (data.length > 0) {
+        setBlogs(data); // Set all blogs
+      }
+    } catch (error) {
+      showToastError("Error fetching blogs:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
+
+  if (blogs.length === 0) {
+    return <div>Loading...</div>; // Show a loading state while data is being fetched
+  }
+
   return (
-    <div className="flex items-center justify-center pt-28 px-40">
-      <div className="flex flex-row gap-14">
-        <div>
-          {lastImage && (
-            <Image
-              src={lastImage.url}
-              className="object-contain max-w-96"
-              width={500}
-              height={500}
-              objectFit="fill"
-              alt="Blog image"
-            />
-          )}
-        </div>
-        <div className="flex flex-col">
-          <div className="font-quicksandMedium font-medium text-5xl pb-3">
-            {BlogData.blog_title}
-          </div>
-          <div>
-            <BlogFormator content={BlogData.blog_content} />
-          </div>
-        </div>
-      </div>
+    <div className="flex flex-col items-center pt-28 px-40">
+      {blogs.map((blog) => {
+        const { blog_title, blog_content, pictures } = blog;
+        const lastImage = pictures[pictures.length - 1]?.url;
+
+        return (
+          <BlogCard
+            key={blog.blog_id}
+            title={blog_title}
+            content={blog_content}
+            lastImage={lastImage}
+          />
+        );
+      })}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 // baseURLLive and baseURLDev are defined for live and development
-const baseURLLive = ``;
-const baseURLDev = ``;
+const baseURLLive = `http://192.46.210.31:8080`;
+const baseURLDev = `http://192.46.210.31:8080`;
 
 const isLive = false;
 
@@ -8,7 +8,7 @@ const isLive = false;
 const baseUrl = isLive ? baseURLLive : baseURLDev;
 
 const endpoints = {
-  register: `${baseUrl}/register`,
+  fetchBlogs: `${baseUrl}/fetchBlogs`,
 };
 
 export default endpoints;
