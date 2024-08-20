@@ -18,33 +18,6 @@ const AboutUsSection = () => {
     { id: 4, title: "Play Based Learning" },
   ];
 
-  const { username, setUserName } = useState("");
-  const { password, setPassword } = useState("");
-
-  const handleRegister = async () => {
-    if (!username || !password) {
-      console.log("");
-    }
-    try {
-      let urlUsername = `username=${username}`;
-
-      let url = `${endpoints.register}&${urlUsername}`;
-      let response = await fetchDataGet(url);
-
-      if (response.status === "1") {
-        showToastSuccess();
-      } else {
-        showToastError();
-      }
-    } finally {
-      console.log();
-    }
-  };
-
-  useEffect(() => {
-    handleRegister();
-  }, []);
-
   return (
     <div className="flex flex-col md:flex-row justify-around relative p-4 md:p-8 bg-[#EFF5F6]">
       <Image
