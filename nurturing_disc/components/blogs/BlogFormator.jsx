@@ -8,7 +8,7 @@ function BlogFormator({ content }) {
 
   // Create a truncated version of the content
   const truncatedContent =
-    content.length > maxLength ? content.slice(0, maxLength) + "..." : content;
+    content.length > maxLength ? content.slice(0, maxLength) : content;
 
   // Toggle between expanded and truncated content
   const toggleContent = () => {
@@ -21,6 +21,9 @@ function BlogFormator({ content }) {
   const styles = `
     .blog-content {
       padding: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
     }
 
     .blog-content ul {
@@ -36,27 +39,34 @@ function BlogFormator({ content }) {
     .blog-content li {
       margin-bottom: 8px;
     }
+
     .read-more {
       color: blue;
       cursor: pointer;
       font-weight: bold;
+      display: inline;
+      white-space: nowrap;
     }
   `;
 
   return (
     <div>
       <style>{styles}</style>
-      <div
-        className="blog-content"
-        dangerouslySetInnerHTML={{
-          __html: isExpanded ? content : truncatedContent,
-        }}
-      />
-      {shouldShowToggle && (
-        <div className="read-more" onClick={toggleContent}>
-          {isExpanded ? "Read Less" : "Read More"}
-        </div>
-      )}
+      <div className="blog-content">
+        <span
+          className="text-container"
+          dangerouslySetInnerHTML={{
+            __html: isExpanded
+              ? content
+              : truncatedContent + (shouldShowToggle ? "..." : ""),
+          }}
+        />
+        {shouldShowToggle && (
+          <span className="read-more" onClick={toggleContent}>
+            {isExpanded ? "Read Less" : "Read More"}
+          </span>
+        )}
+      </div>
     </div>
   );
 }
