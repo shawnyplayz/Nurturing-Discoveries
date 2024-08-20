@@ -6,7 +6,7 @@ const Blogs = () => {
   return (
     <div>
       <SectionSeparator title="Our Blogs" subHeading="Home > Blog" />
-      <div>
+      <div className="mx-auto container">
         <BlogPreview/>
       </div>
     </div>

@@ -4,13 +4,13 @@ import BlogFormator from "./BlogFormator";
 
 const formatDate = (dateStr) => {
   const dateObj = new Date(dateStr);
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
-  return new Intl.DateTimeFormat('en-US', options).format(dateObj);
+  const options = { year: "numeric", month: "long", day: "numeric" };
+  return new Intl.DateTimeFormat("en-US", options).format(dateObj);
 };
 
 const BlogCard = ({ title, content, lastImage, date }) => {
   return (
-    <div className="flex flex-row gap-14 border-b border-red-700 py-16">
+    <div className="grid lg:flex md:flex-row md:gap-14 gap-7 border-b border-gray-300 md:py-16 py-4">
       <div>
         {lastImage && (
           <Image
@@ -24,13 +24,13 @@ const BlogCard = ({ title, content, lastImage, date }) => {
         )}
       </div>
       <div className="flex flex-col">
-        <div className="text-lg text-gray-600">
+        <div className="text-[#717171] font-sans font-normal text-sm pb-3 ">
           {formatDate(date)}
         </div>
-        <div className="font-quicksandMedium font-medium text-5xl pb-3">
+        <div className="font-quicksandMedium font-medium text-3xl md:text-4xl pb-3 md:text-left">
           {title}
         </div>
-        <div>
+        <div className="font-normal text-base md:text-xl font-quicksandRegular">
           <BlogFormator content={content} />
         </div>
       </div>

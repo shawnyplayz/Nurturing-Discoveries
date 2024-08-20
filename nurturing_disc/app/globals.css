@@ -84,6 +84,13 @@ html {
   height: calc(var(--size) + 75px);
 }
 
+.grid-background {
+  background-image: linear-gradient(to right, rgba(204, 204, 204, 0.3) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(204, 204, 204, 0.3) 1px, transparent 1px);
+  background-size: 50px 50px; /* Increase the grid size */
+}
+
+
 @font-face {
   font-family: "Quick-Sand-Bold";
   src: url("../public/fonts/Quicksand/Quicksand-Bold.ttf");
@@ -92,4 +99,9 @@ html {
 @font-face {
   font-family: "Quick-Sand-Medium";
   src: url("../public/fonts/Quicksand/Quicksand-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Quick-Sand-Regular";
+  src: url("../public/fonts/Quicksand/Quicksand-Regular.ttf");
 }

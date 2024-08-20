@@ -34,7 +34,7 @@ const BlogPreview = () => {
   }
 
   return (
-    <div className="flex flex-col items-center pt-28 px-40">
+    <div className="flex flex-col items-center lg:pt-28 lg:px-40 pt-6 px-20">
       {blogs.map((blog) => {
         const { blog_title, blog_content, pictures, date } = blog;
         const lastImage = pictures[pictures.length - 1]?.url;

@@ -20,7 +20,6 @@ function BlogFormator({ content }) {
 
   const styles = `
     .blog-content {
-      padding: 16px;
       display: flex;
       flex-wrap: wrap;
       align-items: baseline;
@@ -41,7 +40,7 @@ function BlogFormator({ content }) {
     }
 
     .read-more {
-      color: blue;
+      color: peach;
       cursor: pointer;
       font-weight: bold;
       display: inline;
@@ -62,7 +61,7 @@ function BlogFormator({ content }) {
           }}
         />
         {shouldShowToggle && (
-          <span className="read-more" onClick={toggleContent}>
+          <span className="read-more text-peach pt-1" onClick={toggleContent}>
             {isExpanded ? "Read Less" : "Read More"}
           </span>
         )}
