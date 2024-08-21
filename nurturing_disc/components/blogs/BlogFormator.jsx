@@ -4,7 +4,7 @@ function BlogFormator({ content }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   // Define a maximum length for the truncated content
-  const maxLength = 300; // Adjust this value as needed
+  const maxLength = 400; // Adjust this value as needed
 
   // Create a truncated version of the content
   const truncatedContent =

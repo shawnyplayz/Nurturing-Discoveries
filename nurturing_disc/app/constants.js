@@ -36,7 +36,7 @@ export const navLinks = [
   { href: "/aboutus", label: "About Us" },
   { href: "/programsandevents", label: "Programs & Events" },
   { href: "/blogs", label: "Blogs" },
-  { href: "/contact", label: "Contact" },
+  { href: "/contactus", label: "Contact Us" },
 ];
 
 export const HomeSection = {
@@ -220,34 +220,6 @@ export const testimonialsData = [
   },
 ];
 
-export const BlogData = {
-  blog_id: "71820e64-e638-49ca-a2ad-db72e8ad7ab6",
-  blog_title: "Montessori Education?",
-  blog_content:
-    "<p>The Montessori Method is an educational approach that focuses on child-led learning. Unlike traditional educational systems, where the teacher directs the learning process, Montessori education allows children to take control of their own learning. Classrooms are designed to foster independence and natural curiosity, equipped with specially designed materials that encourage exploration and discovery.</p><p><br></p><p>Key Principles of Montessori Education</p><p><br></p><ul><li>Child-Centered Learning: In Montessori classrooms, children choose activities based on their interests and developmental stage. This encourages engagement and enthusiasm for learning.</li><li>Prepared Environment: The classroom is carefully arranged to offer a variety of activities that cater to different learning styles. The environment is orderly, beautiful, and accessible, promoting independence and concentration.</li><li>Mixed Age Groups: Montessori classrooms typically consist of mixed-age groups, usually spanning three years. This setup allows younger children to learn from older peers, while older children reinforce their knowledge by teaching concepts they’ve mastered.</li><li>Hands-On Learning: Montessori materials are designed to be tactile and self-correcting, enabling children to learn through their senses. This hands-on approach helps solidify abstract concepts and promotes deep understanding.</li><li>Teacher as Guide: Montessori teachers, often referred to as guides, observe and support children’s learning rather than direct it. They intervene only when necessary, allowing children to learn through their own experiences and mistakes.</li></ul>",
-  date: "2024-08-20",
-  pictures: [
-    {
-      url: "http://res.cloudinary.com/dpauqvsd6/image/upload/v1724159435/nurturing/blog_71820e64-e638-49ca-a2ad-db72e8ad7ab6/g7ejut98kxayey23sivt.png",
-      secure_url:
-        "https://res.cloudinary.com/dpauqvsd6/image/upload/v1724159435/nurturing/blog_71820e64-e638-49ca-a2ad-db72e8ad7ab6/g7ejut98kxayey23sivt.png",
-      public_id:
-        "nurturing/blog_71820e64-e638-49ca-a2ad-db72e8ad7ab6/g7ejut98kxayey23sivt",
-      folder: "nurturing/blog_71820e64-e638-49ca-a2ad-db72e8ad7ab6",
-    },
-    {
-      url: "http://res.cloudinary.com/dpauqvsd6/image/upload/v1724170527/nurturing/blog_71820e64-e638-49ca-a2ad-db72e8ad7ab6/niz4vikkgkimsnhy4uoo.jpg",
-      secure_url:
-        "https://res.cloudinary.com/dpauqvsd6/image/upload/v1724170527/nurturing/blog_71820e64-e638-49ca-a2ad-db72e8ad7ab6/niz4vikkgkimsnhy4uoo.jpg",
-      public_id:
-        "nurturing/blog_71820e64-e638-49ca-a2ad-db72e8ad7ab6/niz4vikkgkimsnhy4uoo",
-      folder: "nurturing/blog_71820e64-e638-49ca-a2ad-db72e8ad7ab6",
-    },
-  ],
-  createdAt: "2024-08-20T10:49:54.000Z",
-  updatedAt: "2024-08-20T17:14:21.000Z",
-};
-
 export const aboutUsPage = {
   title: "Who we are ?",
   subHeading: "Myself",
@@ -283,18 +255,5 @@ export const OurValueCardData = [
     title: "Hands-On Learning",
     description:
       "We utilize specially designed Montessori materials that are tactile and self-correcting. These tools help children understand complex concepts through direct experience and sensory engagement, leading to a deeper comprehension.",
-  },
-];
-
-export const AboutUsStaffData = [
-  {
-    name: "Dhruti Josh",
-    position: "Founder and Director",
-    imageUrl: "/about/staff1.svg",
-  },
-  {
-    name: "Daisy",
-    position: "CSRO",
-    imageUrl: "/about/staff1.svg",
   },
 ];
