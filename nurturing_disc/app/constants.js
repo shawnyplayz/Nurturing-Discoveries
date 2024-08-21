@@ -247,3 +247,54 @@ export const BlogData = {
   createdAt: "2024-08-20T10:49:54.000Z",
   updatedAt: "2024-08-20T17:14:21.000Z",
 };
+
+export const aboutUsPage = {
+  title: "Who we are ?",
+  subHeading: "Myself",
+  description:
+    "Hello! I'm Juber Abbas, and I'm passionate about Montessori education. With extensive training and years of experience, I've seen how this method transforms young minds. My goal is to create a nurturing, hands-on learning environment where children thrive. I continuously strive to stay updated with the latest in Montessori education to provide the best for my students. Outside the classroom, I enjoy spending time with my family and exploring nature. I look forward to sharing the Montessori journey with you and your child!",
+};
+
+export const OurValueCardData = [
+  {
+    backgroundColor: "#F8B81F",
+    cardNumber: 1,
+    title: "Child-Centered Learning",
+    description:
+      "Our classrooms are designed to cater to the individual interests and developmental stages of each child. Students are encouraged to choose their activities, fostering a sense of ownership and enthusiasm for their learning journey.",
+  },
+  {
+    backgroundColor: "#39C0FA",
+    cardNumber: 2,
+    title: "Prepared Environment",
+    description:
+      "We create a carefully arranged, aesthetically pleasing environment filled with hands-on materials that invite exploration and discovery. This setup promotes independence, concentration, and a deep engagement with learning.",
+  },
+  {
+    backgroundColor: "#5866EB",
+    cardNumber: 3,
+    title: "Mixed Age Groups",
+    description:
+      "Our mixed-age classrooms, typically spanning three years, allow younger children to learn from older peers, while older children reinforce their knowledge by guiding the younger ones. This dynamic builds a strong community and enhances social skills.",
+  },
+  {
+    backgroundColor: "#F92596",
+    cardNumber: 4,
+    title: "Hands-On Learning",
+    description:
+      "We utilize specially designed Montessori materials that are tactile and self-correcting. These tools help children understand complex concepts through direct experience and sensory engagement, leading to a deeper comprehension.",
+  },
+];
+
+export const AboutUsStaffData = [
+  {
+    name: "Dhruti Josh",
+    position: "Founder and Director",
+    imageUrl: "/about/staff1.svg",
+  },
+  {
+    name: "Daisy",
+    position: "CSRO",
+    imageUrl: "/about/staff1.svg",
+  },
+];

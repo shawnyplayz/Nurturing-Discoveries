@@ -9,6 +9,7 @@ const baseUrl = isLive ? baseURLLive : baseURLDev;
 
 const endpoints = {
   fetchBlogs: `${baseUrl}/fetchBlogs`,
+  fetchStaffs: `${baseUrl}/fetchStaff`,
 };
 
 export default endpoints;
