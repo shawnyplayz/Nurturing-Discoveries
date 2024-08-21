@@ -10,25 +10,25 @@ const InstructionsSection = () => {
         src="/cartoons/love.svg"
         width={270}
         height={270}
-        className="absolute bottom-2 left-6"
+        className="absolute md:bottom-2 md:left-6 left-2 top-4 w-32 md:w-fit"
       />
       <Image
         src="/cartoons/rainbow.svg"
         width={240}
         height={240}
-        className="absolute bottom-52 right-6"
+        className="absolute md:bottom-52 md:right-6 bottom-3 right-4 z-10 w-32 md:w-fit"
       />
       <div className="flex flex-col items-center justify-center container mx-auto">
         <div className="pt-28 flex flex-col items-center justify-center">
-          <div className="font-sans font-normal text-xl text-peach pb-3">
+          <div className="font-sans font-normal text-xl text-peach pb-3 text-center">
             {InstructionsSectionData.title}
           </div>
-          <div className="font-quicksand font-bold text-5xl overflow-hidden pb-7 text-fiord">
+          <div className="font-quicksand font-bold text-5xl overflow-hidden pb-7 text-fiord text-center">
             {InstructionsSectionData.subHeading}
           </div>
         </div>
         <div>
-          <div className="justify-center gap-7 py-7 pb-28 grid grid-cols-2">
+          <div className="justify-center gap-7 py-7 pb-28 grid lg:grid-cols-2">
             {InstructionsSectionData.teamMembers.map((team) => (
               <TeamCard
                 key={team.id}

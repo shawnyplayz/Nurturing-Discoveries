@@ -3,9 +3,9 @@ import React from "react";
 
 const ActivityCard = ({ title, description, backgroundColor, src }) => {
   return (
-    <div className="max-w-80 flex flex-row pb-3">
+    <div className="flex flex-row sm:flex-row max-w-full sm:max-w-md pb-3">
       <div
-        className="flex items-center justify-center p-5 rounded-lg"
+        className="flex items-center justify-center p-4 sm:p-5 rounded-lg"
         style={{ backgroundColor }}
       >
         <Image
@@ -13,12 +13,14 @@ const ActivityCard = ({ title, description, backgroundColor, src }) => {
           width={50}
           height={50}
           alt="Photo"
-          className="flex items-center"
+          className="flex-shrink-0"
         />
       </div>
-      <div className="flex flex-col pl-5">
-        <div className="pb-1 font-quicksand font-bold text-lg">{title}</div>
-        <div className="font-sans font-normal text-base text-fiord">
+      <div className="flex flex-col justify-center pl-0 sm:pl-5 mt-2 sm:mt-0">
+        <div className="pb-1 font-quicksand font-bold text-lg sm:text-xl">
+          {title}
+        </div>
+        <div className="font-sans font-normal text-base text-fiord sm:text-lg">
           {description}
         </div>
       </div>

@@ -42,7 +42,7 @@ const ProgramSection = () => {
         </div>
       </div>
       {/* //Card Section */}
-      <div className="pt-10 md:pt-16 pb-16 md:pb-24 flex flex-col md:flex-row gap-8 md:gap-10 lg:gap-12 md:px-4">
+      <div className="sm:grid pt-10 md:pt-16 pb-16 md:pb-24 lg:grid-cols-3 md:flex-row gap-8 md:gap-10 lg:gap-12 md:px-4">
         {programSectionCardData.map((program, index) => (
           <ProgramCard
             key={index}
