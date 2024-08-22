@@ -9,6 +9,7 @@ import { LandingAboutUs } from "../constants";
 import endpoints from "@/config/endpoints";
 import { fetchDataGet } from "@/utils/fetchData";
 import { showToastError, showToastSuccess } from "@/config/toast";
+import Link from "next/link";
 
 const AboutUsSection = () => {
   const data = [
@@ -61,7 +62,9 @@ const AboutUsSection = () => {
         </div>
         <div className="flex flex-col md:flex-row items-center pt-10">
           <div className="flex flex-row items-center gap-6">
-            <Button>Explore More</Button>
+            <Link href={"/aboutus"}>
+              <Button>Explore More</Button>
+            </Link>
           </div>
           <div className="pt-5 md:pt-0 md:pl-7 flex flex-row items-center gap-6 font-quicksand font-semibold text-sm text-fiord text-center md:text-left">
             <PhoneIcon />

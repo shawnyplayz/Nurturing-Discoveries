@@ -36,8 +36,8 @@ const ChildrenGallery = () => {
           {ChildrenGalleryData.title}
         </h1>
       </div>
-      <Marquee autoFill>
-        <div className="pt-16 pb-32 grid md:grid-cols-6 gap-5 px-2">
+      <Marquee direction="left" autoFill>
+        <div className="pt-16 pb-32 flex gap-5 px-2">
           {gallery.map((galleries) => (
             <Gallery
               key={galleries.public_id}

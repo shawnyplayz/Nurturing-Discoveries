@@ -3,11 +3,22 @@
 import Button from "@/components/buttons/Button";
 import PlayButton from "@/components/buttons/PlayButton";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { HomeSection } from "../constants";
 import { TypeAnimation } from "react-type-animation";
+import VideoModal from "@/components/modal/VideoModal";
 
 const HomeCarousel = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handlePlayButtonClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="bg-[#ECF8FF] py-36 px-4 sm:px-6 lg:px-8">
       <section className="container mx-auto flex flex-col lg:flex-row items-center lg:justify-between">
@@ -39,7 +50,7 @@ const HomeCarousel = () => {
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-center lg:items-start">
             <Button>Apply Today</Button>
             <div className="flex flex-row items-center gap-4 font-sans font-bold text-base text-fiord">
-              <PlayButton />
+              <PlayButton onClick={handlePlayButtonClick} />
               <p>Play Video</p>
             </div>
           </div>
@@ -54,6 +65,12 @@ const HomeCarousel = () => {
           />
         </div>
       </section>
+
+      <VideoModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        videoUrl="https://www.youtube.com/embed/bnGyifk_33U"
+      />
     </div>
   );
 };
