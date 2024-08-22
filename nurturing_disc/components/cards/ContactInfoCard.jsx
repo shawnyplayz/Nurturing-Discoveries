@@ -51,7 +51,7 @@ const ContactInfoCard = () => {
             <source src="/demo.mp4" type="video/mp4" />
           </video> */}
           <Iframe
-            url="https://www.youtube.com/embed/dSt6jP6vr4k"
+            url="https://www.youtube.com/embed/UzmvtVAuuyI"
             width="100%"
             height="350px"
             id=""

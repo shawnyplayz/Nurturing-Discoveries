@@ -4,10 +4,22 @@ import ContactForm from "@/components/forms/ContactForm";
 import SectionSeparator from "@/components/SectionSeparator";
 import React from "react";
 import { contactUsPage } from "../constants";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const ContactUs = () => {
   return (
     <div>
+      <ToastContainer
+        position="top-center"
+        theme="light"
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <SectionSeparator title="Contact Us" subHeading="Home > Contact us" />
       <div className="contact-us-info py-16 md:py-24 lg:py-32 flex flex-col lg:flex-row justify-center lg:justify-evenly gap-6">
         <ContactInfoCard />
