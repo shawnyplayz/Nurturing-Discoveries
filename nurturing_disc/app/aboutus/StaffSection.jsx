@@ -13,6 +13,7 @@ const StaffSection = () => {
   const [staffs, setStaff] = useState([]);
 
   const settings = {
+    arrows: false,
     dots: false,
     infinite: true,
     speed: 500,
@@ -75,7 +76,7 @@ const StaffSection = () => {
           alt="rainbow cartoon"
         />
       </div>
-      <div className="flex items-center justify-center flex-col pt-16 pb-10">
+      <div className="flex items-center justify-center flex-col mt-16 mb-10">
         <div className="pb-3 font-normal text-xl font-sans text-peach text-center">
           Our Experts
         </div>
@@ -83,9 +84,8 @@ const StaffSection = () => {
           Our Staff
         </div>
       </div>
-      <div className="flex items-center justify-center pb-5">
-        <div className="w-full px-4">
-          {" "}
+      <div className="flex items-center justify-center pb-5 ">
+        <div className="w-full px-4 my-5">
           <Slider {...settings}>
             {staffs.map((staff) => {
               const { staff_name, staff_position, pictures } = staff;
