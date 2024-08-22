@@ -20,7 +20,7 @@ const ActivityCard = ({ title, description, backgroundColor, src }) => {
         <div className="pb-1 font-quicksand font-bold text-lg sm:text-xl">
           {title}
         </div>
-        <div className="font-sans font-normal text-base text-fiord sm:text-lg">
+        <div className="font-sans font-normal text-base text-fiord sm:text-lg px-5 md:px-0">
           {description}
         </div>
       </div>

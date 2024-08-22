@@ -116,7 +116,7 @@ const Footer = () => {
             width={100}
             height={100}
             alt="Zebra Right"
-            className="w-auto h-auto"
+            className="w-40 h-auto"
           />
         </div>
       </div>

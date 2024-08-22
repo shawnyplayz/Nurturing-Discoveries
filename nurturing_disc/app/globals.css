@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("slick-carousel/slick/slick.css");
+@import url("slick-carousel/slick/slick-theme.css");
+
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700&display=swap");
 
 * {

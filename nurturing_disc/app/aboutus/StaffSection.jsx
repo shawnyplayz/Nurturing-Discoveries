@@ -5,9 +5,18 @@ import StaffCard from "@/components/cards/StaffCard";
 import { showToastError } from "@/config/toast";
 import endpoints from "@/config/endpoints";
 import Image from "next/image";
+import Slider from "react-slick";
 
 const StaffSection = () => {
   const [staffs, setStaff] = useState([]);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+  };
 
   const fetchStaffs = async () => {
     try {
@@ -47,12 +56,14 @@ const StaffSection = () => {
         </div>
       </div>
       <div className="flex items-center justify-center pb-5">
-        <div className="grid sm:grid-cols-2 gap-14 pb-16">
+      <Slider {...settings}>
+        <div className="grid sm:grid-cols-4 gap-14 pb-16">
           {staffs.map((staff) => {
             const { staff_name, staff_position, pictures } = staff;
             const latestImage = pictures[pictures.length - 1]?.url;
 
             return (
+
               <StaffCard
                 key={staff.staff_id}
                 name={staff_name}
@@ -62,6 +73,7 @@ const StaffSection = () => {
             );
           })}
         </div>
+        </Slider>
       </div>
     </div>
   );
