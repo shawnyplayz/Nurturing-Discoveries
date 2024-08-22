@@ -6,32 +6,50 @@ import { showToastError } from "@/config/toast";
 import endpoints from "@/config/endpoints";
 import Image from "next/image";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const StaffSection = () => {
   const [staffs, setStaff] = useState([]);
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: Math.min(4, staffs.length),
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: Math.min(2, staffs.length),
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: Math.min(1, staffs.length),
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   const fetchStaffs = async () => {
     try {
       const url = endpoints.fetchStaffs;
-      const response = await fetch(url); // Use standard fetch here
+      const response = await fetch(url);
       if (!response.ok) {
         showToastError("Network response was not ok");
         return;
       }
-      const data = await response.json(); // Convert the response to JSON
+      const data = await response.json();
       if (data.length > 0) {
-        setStaff(data); // Set all blogs
+        setStaff(data);
       }
     } catch (error) {
-      showToastError("Error fetching blogs:", error);
+      showToastError("Error fetching staff:", error);
     }
   };
 
@@ -42,10 +60,20 @@ const StaffSection = () => {
   return (
     <div className="staff-section relative">
       <div className="absolute bottom-4 left-5">
-        <Image src="/cartoons/love.svg" width={250} height={250} />
+        <Image
+          src="/cartoons/love.svg"
+          width={250}
+          height={250}
+          alt="love cartoon"
+        />
       </div>
       <div className="absolute top-5 right-7">
-        <Image src="/cartoons/rainbow.svg" width={250} height={250} />
+        <Image
+          src="/cartoons/rainbow.svg"
+          width={250}
+          height={250}
+          alt="rainbow cartoon"
+        />
       </div>
       <div className="flex items-center justify-center flex-col pt-16 pb-10">
         <div className="pb-3 font-normal text-xl font-sans text-peach text-center">
@@ -56,24 +84,24 @@ const StaffSection = () => {
         </div>
       </div>
       <div className="flex items-center justify-center pb-5">
-      <Slider {...settings}>
-        <div className="grid sm:grid-cols-4 gap-14 pb-16">
-          {staffs.map((staff) => {
-            const { staff_name, staff_position, pictures } = staff;
-            const latestImage = pictures[pictures.length - 1]?.url;
+        <div className="w-full px-4">
+          {" "}
+          <Slider {...settings}>
+            {staffs.map((staff) => {
+              const { staff_name, staff_position, pictures } = staff;
+              const latestImage = pictures[pictures.length - 1]?.url;
 
-            return (
-
-              <StaffCard
-                key={staff.staff_id}
-                name={staff_name}
-                position={staff_position}
-                imageUrl={latestImage}
-              />
-            );
-          })}
+              return (
+                <StaffCard
+                  key={staff.staff_id}
+                  name={staff_name}
+                  position={staff_position}
+                  imageUrl={latestImage}
+                />
+              );
+            })}
+          </Slider>
         </div>
-        </Slider>
       </div>
     </div>
   );
