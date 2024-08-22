@@ -23,7 +23,7 @@ export default function TestimonialCard({
       </div>
 
       <div className="skew-x-6">
-        <p className="text-lg leading-relaxed">"{text}"</p>
+        <p className="text-lg leading-relaxed">{text}</p>
       </div>
 
       <div className="mt-4 flex items-center justify-center">

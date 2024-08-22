@@ -1,13 +1,42 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import TestimonialCard from "@/components/cards/TestimonialCard";
-import { testimonialsData } from "../constants";
 import Image from "next/image";
+import endpoints from "@/config/endpoints";
+import { showToastError } from "@/config/toast";
 
 const TestimonialsSection = () => {
+  const [testimonials, setTestimonial] = useState([]);
+
+  const fetchTestimonials = async () => {
+    try {
+      const url = endpoints.fetchTestimonials;
+      const response = await fetch(url);
+      if (!response.ok) {
+        showToastError("Network response was not ok");
+        return;
+      }
+      const data = await response.json();
+      if (data.length > 0) {
+        setTestimonial(data);
+      }
+    } catch (error) {
+      showToastError("Error fetching blogs:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchTestimonials();
+  }, []);
+
+  const predefinedBackgroundColors = ["#385469", "#70A6B1", "#F39F5F"];
+  const predefinedBorderTopColors = ["#385469", "#70A6B1", "#F39F5F"];
+
   return (
     <div className="overflow-hidden flex items-center justify-center text-center relative">
       <div className="absolute top-36 right-1">
-        <Image src="/cartoons/bee.svg" width={100} height={100} />
+        <Image src="/cartoons/bee.svg" width={100} height={100} alt="Bee" />
       </div>
       <div>
         <div className="flex items-center justify-center flex-col">
@@ -19,16 +48,39 @@ const TestimonialsSection = () => {
           </div>
         </div>
         <div className="grid md:grid-cols-3 pt-8 pb-48 gap-8">
-          {testimonialsData.map((testimonial) => (
-            <TestimonialCard
-              key={testimonial.id}
-              text={testimonial.text}
-              author={testimonial.author}
-              imageSrc={testimonial.imageSrc}
-              backgroundColor={testimonial.backgroundColor}
-              borderTopColor={testimonial.borderTopColor}
-            />
-          ))}
+          {testimonials.map((testimonial, index) => {
+            const {
+              reviewer_name,
+              review,
+              pictures,
+              backgroundColor,
+              borderTopColor,
+            } = testimonial;
+
+            // Extract the first image URL from the pictures array
+            const imageSrc = pictures[0]?.url;
+
+            // Use modulo to iterate over the predefined colors
+            const appliedBackgroundColor =
+              predefinedBackgroundColors[
+                index % predefinedBackgroundColors.length
+              ] || backgroundColor;
+            const appliedBorderTopColor =
+              predefinedBorderTopColors[
+                index % predefinedBorderTopColors.length
+              ] || borderTopColor;
+
+            return (
+              <TestimonialCard
+                key={testimonial.testimonial_id}
+                text={review}
+                author={reviewer_name}
+                imageSrc={imageSrc}
+                backgroundColor={appliedBackgroundColor}
+                borderTopColor={appliedBorderTopColor}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

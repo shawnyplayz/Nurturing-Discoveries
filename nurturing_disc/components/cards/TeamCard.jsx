@@ -11,25 +11,6 @@ const TeamCard = ({ name, position, imageUrl }) => {
           objectFit="cover"
           className="rounded-xl"
         />
-        <button
-          className="absolute top-2 right-2 bg-white text-blue-600 rounded-full p-2  hover:bg-gray-100"
-          aria-label="Share"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-5 h-5"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M18 8.25a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zM6.75 15.75a2.25 2.25 0 114.5 0 2.25 2.25 0 01-4.5 0zM12 3.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5zM12 15.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5zM6.75 8.25a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5zM17.25 15.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z"
-            />
-          </svg>
-        </button>
       </div>
       <div className="p-6 text-center">
         <h4 className="block mb-2 font-sans text-2xl antialiased font-bold leading-snug tracking-normal text-blue-gray-900">
