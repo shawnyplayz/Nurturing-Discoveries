@@ -22,7 +22,7 @@ const ContactInfoItem = ({ iconSrc, label, value }) => {
 
 const ContactInfoCard = () => {
   return (
-    <div className="max-w-2xl mx-auto bg-peach rounded-3xl shadow-lg">
+    <div className="max-w-2xl bg-peach rounded-3xl shadow-lg">
       <ContactInfoItem
         iconSrc="/contactus/emailIcon.svg"
         label="Email"

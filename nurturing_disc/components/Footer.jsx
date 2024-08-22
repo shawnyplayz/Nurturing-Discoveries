@@ -11,7 +11,7 @@ import {
 import { IoIosArrowForward } from "react-icons/io";
 import Link from "next/link";
 import Button from "./buttons/Button";
-import Input from "./Input";
+import { Input } from "./Input";
 
 const Footer = () => {
   return (

@@ -1,20 +1,30 @@
+"use client";
+
 import { navLinks } from "@/app/constants";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Button from "./buttons/Button";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const pathName = usePathname();
+
   return (
     <div className="flex flex-row justify-between container mx-auto py-5 px-5">
-      <div className="">
-        <Image src="/logo.svg" height={70} width={282} />
+      <div>
+        <Image src="/logo.svg" height={70} width={282} alt="Logo" />
       </div>
       <div className="sm:flex items-center hidden">
         <ul className="flex flex-row gap-8 text-base">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <Link href={link.href} className="font-semibold text-fiord">
+              <Link
+                href={link.href}
+                className={`font-semibold text-fiord link ${
+                  pathName === link.href ? "active" : ""
+                }`}
+              >
                 {link.label}
               </Link>
             </li>

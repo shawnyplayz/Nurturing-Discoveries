@@ -145,32 +145,6 @@ export const InstructionsSectionData = {
 
 export const ChildrenGalleryData = {
   title: "Children's Gallery",
-  gallery: [
-    {
-      id: 1,
-      imageUrl: "/gallery/child1.svg",
-    },
-    {
-      id: 2,
-      imageUrl: "/gallery/child2.svg",
-    },
-    {
-      id: 3,
-      imageUrl: "/gallery/child3.svg",
-    },
-    {
-      id: 4,
-      imageUrl: "/gallery/child4.svg",
-    },
-    {
-      id: 5,
-      imageUrl: "/gallery/child5.svg",
-    },
-    {
-      id: 6,
-      imageUrl: "/gallery/child6.svg",
-    },
-  ],
 };
 
 export const footerData = {
@@ -257,3 +231,9 @@ export const OurValueCardData = [
       "We utilize specially designed Montessori materials that are tactile and self-correcting. These tools help children understand complex concepts through direct experience and sensory engagement, leading to a deeper comprehension.",
   },
 ];
+
+export const contactUsPage = {
+  title: "Ready To Get Started?",
+  description:
+    "Nullam varius, erat quis iaculis dictum, eros urna varius eros, ut blandit felis odio in turpis. Quisque rhoncus, eros in auctor ultrices",
+};
