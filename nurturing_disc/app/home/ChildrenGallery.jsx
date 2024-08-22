@@ -36,7 +36,7 @@ const ChildrenGallery = () => {
           {ChildrenGalleryData.title}
         </h1>
       </div>
-      <Marquee>
+      <Marquee autoFill>
         <div className="pt-16 pb-32 grid md:grid-cols-6 gap-5 px-2">
           {gallery.map((galleries) => (
             <Gallery
