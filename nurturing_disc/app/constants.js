@@ -167,32 +167,6 @@ export const footerData = {
   ],
 };
 
-export const testimonialsData = [
-  {
-    id: 1,
-    text: "Corquent per conubia nostra, per inceptos himenaeos. Suspendisse gravida vitae nisi Class aptent taciti sociosqu ad litora.",
-    author: "Jenny Wilson",
-    imageSrc: "/testimonialsImage.svg",
-    backgroundColor: "#385469",
-    borderTopColor: "#385469",
-  },
-  {
-    id: 2,
-    text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-    author: "John Doe",
-    imageSrc: "/testimonialsImage.svg",
-    backgroundColor: "#70A6B1",
-    borderTopColor: "#70A6B1",
-  },
-  {
-    id: 3,
-    text: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.",
-    author: "Alice Johnson",
-    imageSrc: "/testimonialsImage.svg",
-    backgroundColor: "#F39F5F",
-    borderTopColor: "#F39F5F",
-  },
-];
 
 export const aboutUsPage = {
   title: "Who we are ?",

@@ -3,21 +3,38 @@
 import Button from "@/components/buttons/Button";
 import PlayButton from "@/components/buttons/PlayButton";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { HomeSection } from "../constants";
 import { TypeAnimation } from "react-type-animation";
 import VideoModal from "@/components/modal/VideoModal";
+import { useSpring, animated } from "@react-spring/web";
+
+const images = ["/home-image.svg", "/image-1.jpg", "/image-2.jpg"];
 
 const HomeCarousel = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handlePlayButtonClick = () => {
-    setIsModalOpen(true);
+  // React Spring animation
+  const props = useSpring({
+    opacity: 1,
+    from: { opacity: 0 },
+    reset: true,
+    config: { duration: 1000 }, // Duration for fade in and out
+  });
+
+  // Function to change image
+  const changeImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      changeImage();
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="bg-[#ECF8FF] py-36 px-4 sm:px-6 lg:px-8">
@@ -31,16 +48,31 @@ const HomeCarousel = () => {
           </header>
           <div className="mb-5">
             <div className="font-quicksand font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-fiord">
-              <TypeAnimation
-                sequence={["Inspiring", 1000]}
-                wrapper="div"
-                cursor={true}
-                repeat={Infinity}
-                className="inline-block"
-              />
-              <div>
-                <span className="text-peach">Young </span>
-                Minds Kids
+              <div className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-fiord mb-2">
+                Inspiring
+              </div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">
+                <TypeAnimation
+                  style={{ color: "#f39f5f" }}
+                  sequence={["Young", 1000]}
+                  wrapper="span"
+                  cursor={false}
+                  repeat={Infinity}
+                />{" "}
+                <TypeAnimation
+                  sequence={[
+                    "Minds Kids",
+                    1000,
+                    "Dreamers",
+                    1000,
+                    "Explorers",
+                    1000,
+                  ]}
+                  wrapper="span"
+                  cursor={true}
+                  repeat={Infinity}
+                  className="inline-block"
+                />
               </div>
             </div>
           </div>
@@ -50,25 +82,27 @@ const HomeCarousel = () => {
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-center lg:items-start">
             <Button>Apply Today</Button>
             <div className="flex flex-row items-center gap-4 font-sans font-bold text-base text-fiord">
-              <PlayButton onClick={handlePlayButtonClick} />
+              <PlayButton onClick={() => setIsModalOpen(true)} />
               <p>Play Video</p>
             </div>
           </div>
         </div>
         <div className="flex justify-center lg:w-1/2 mt-8 lg:mt-0">
-          <Image
-            src="/home-image.svg"
-            height={500}
-            width={500}
-            alt="Home Image"
-            className="max-w-full h-auto"
-          />
+          <animated.div style={props} className="max-w-full h-auto">
+            <Image
+              src={images[currentImageIndex]}
+              height={500}
+              width={500}
+              alt="Home Image"
+              className="max-w-full h-auto"
+            />
+          </animated.div>
         </div>
       </section>
 
       <VideoModal
         isOpen={isModalOpen}
-        onClose={handleCloseModal}
+        onClose={() => setIsModalOpen(false)}
         videoUrl="https://www.youtube.com/embed/bnGyifk_33U"
       />
     </div>
