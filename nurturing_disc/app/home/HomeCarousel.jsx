@@ -53,19 +53,16 @@ const HomeCarousel = () => {
               </div>
               <div className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">
                 <TypeAnimation
-                  style={{ color: "#f39f5f" }}
-                  sequence={["Young", 1000]}
-                  wrapper="span"
-                  cursor={false}
-                  repeat={Infinity}
-                />{" "}
-                <TypeAnimation
                   sequence={[
-                    "Minds Kids",
+                    "Young",
                     1000,
-                    "Dreamers",
+                    "Young Minds Kids",
                     1000,
-                    "Explorers",
+                    "Young Dreamers",
+                    1000,
+                    "Young Explorers",
+                    1000,
+                    "",
                     1000,
                   ]}
                   wrapper="span"
