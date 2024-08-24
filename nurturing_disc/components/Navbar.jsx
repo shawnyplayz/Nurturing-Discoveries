@@ -40,7 +40,7 @@ const Navbar = () => {
         </div>
       </div>
       {/* Mobile Hamburger Button */}
-      <div className="sm:hidden flex items-center">
+      <div className="md:hidden flex items-center">
         <button
           onClick={() => setOpen(!open)}
           className="p-2 text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200"

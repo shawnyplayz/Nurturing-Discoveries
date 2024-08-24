@@ -87,7 +87,7 @@ const TestimonialsSection = () => {
             Parents Words Are The Key To Happy Kids
           </div>
         </div>
-        <div className="pt-8 mb-38">
+        <div className="pt-8 mb-38 flex justify-center">
           {testimonials.length > 3 ? (
             <Slider {...settings}>
               {testimonials.map((testimonial, index) => {
@@ -106,10 +106,24 @@ const TestimonialsSection = () => {
               })}
             </Slider>
           ) : (
+            // <div
+            //   className={`grid ${
+            //     testimonials.length === 1 ? "justify-center" : "md:grid-cols-3"
+            //   } gap-8`}
+            // >
             <div
-              className={`grid ${
-                testimonials.length === 1 ? "justify-center" : "md:grid-cols-3"
-              } gap-8`}
+              className={`grid ${(() => {
+                switch (testimonials.length) {
+                  case 1:
+                    return "justify-center";
+                  case 2:
+                    return "md:grid-cols-2 w-fit";
+                  case 3:
+                    return "md:grid-cols-3";
+                  default:
+                    return "md:grid-cols-4"; // Default case for more than 3 testimonials
+                }
+              })()} gap-8`}
             >
               {testimonials.map((testimonial, index) => {
                 const { reviewer_name, review, pictures } = testimonial;

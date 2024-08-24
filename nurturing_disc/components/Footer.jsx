@@ -47,8 +47,7 @@ const Footer = () => {
                 <Image src="/logo.svg" width={270} height={70} alt="Logo" />
                 <div className="pt-5 pb-10">
                   <p className="font-sans font-normal text-base text-fiord">
-                    Phasellus ultricies aliquam volutpat ullamcorper laoreet
-                    neque, a lacinia curabitur lacinia mollis.
+                    Discover and Nurture the ability
                   </p>
                 </div>
                 <div className="flex gap-4 pb-12">

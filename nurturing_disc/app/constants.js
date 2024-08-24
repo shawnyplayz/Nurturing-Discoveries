@@ -152,16 +152,16 @@ export const footerData = {
     {
       iconSrc: "footerAssets/phoneIcon.svg",
       text: "+91 83695 96061",
-      subtext: "Call us 24/7",
+      subtext: "Call us",
     },
     {
       iconSrc: "footerAssets/emailIcon.svg",
-      text: "support@example.com",
+      text: "nurturingdiscoveries@gmail.com",
       subtext: "Email us",
     },
     {
       iconSrc: "footerAssets/phoneIcon.svg",
-      text: "1234 Street Name, City, Country",
+      text: "I.C. Colony, Borivali west, Mumbai 400103",
       subtext: "Visit us",
     },
   ],
