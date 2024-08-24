@@ -1,6 +1,6 @@
 // baseURLLive and baseURLDev are defined for live and development
-const baseURLLive = `http://170.187.250.246:8080`;
-const baseURLDev = `http://170.187.250.246:8080`;
+const baseURLLive = `https://api.nurturingdiscoveries.in`;
+const baseURLDev = `https://api.nurturingdiscoveries.in`;
 
 const isLive = false;
 

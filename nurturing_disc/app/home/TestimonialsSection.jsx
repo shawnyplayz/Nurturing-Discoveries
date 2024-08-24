@@ -26,7 +26,6 @@ const TestimonialsSection = () => {
       }
     } catch (error) {
       showToastError("Error fetching testimonials:", error);
-      setTestimonial(defaultTestimonials);
     }
   };
 
@@ -79,7 +78,11 @@ const TestimonialsSection = () => {
             Parents Words Are The Key To Happy Kids
           </div>
         </div>
-        <div className="pt-8 mb-38 flex justify-center">
+        <div
+          className={`pt-8 mb-38 ${
+            testimonials.length === 2 ? "flex justify-center" : ""
+          }`}
+        >
           {testimonials.length > 3 ? (
             <Slider {...settings}>
               {testimonials.map((testimonial, index) => {
