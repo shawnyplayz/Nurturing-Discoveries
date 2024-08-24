@@ -14,7 +14,7 @@ export default function TestimonialCard({
   ];
 
   return (
-    <div className="relative p-8 text-white" style={{ backgroundColor }}>
+    <div className="relative p-6 sm:p-8 text-white" style={{ backgroundColor }}>
       {/* Container Image */}
       <div className="relative">
         <div className="absolute -top-6 right-4 w-12 h-12 rounded-full overflow-hidden">
@@ -35,20 +35,18 @@ export default function TestimonialCard({
         />
 
         {/* Content Inside the Container */}
-        <div className="absolute inset-0 flex flex-col justify-center p-8 overflow-hidden">
-          {/* Author Image */}
-
+        <div className="absolute inset-0 flex flex-col justify-center p-6 sm:p-8 overflow-hidden">
           {/* Text */}
-          <div className="flex-1 flex flex-col justify-end">
-            <p className="text-lg leading-relaxed max-w-80 min-h-3 overflow-hidden text-ellipsis">
+          <div className="flex flex-col justify-end">
+            <p className="text-sm sm:text-lg leading-relaxed max-w-full min-h-3 overflow-hidden text-ellipsis">
               {text}
             </p>
           </div>
 
           {/* Author */}
-          <div className="mt-4 flex items-center justify-center">
-            <div className="mr-2 w-6 border-t-2 border-white"></div>
-            <span className="font-bold">{author}</span>
+          <div className="mt-2 sm:mt-4 flex items-center justify-center">
+            <div className="mr-1 sm:mr-2 w-4 sm:w-6 border-t-2 border-white"></div>
+            <span className="text-xs sm:text-base font-bold">{author}</span>
           </div>
         </div>
       </div>

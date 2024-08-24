@@ -3,6 +3,7 @@ import ProgramCard from "@/components/cards/ProgramCard";
 import React from "react";
 import { programSectionCardData, programSectionData } from "../constants";
 import Image from "next/image";
+import Link from "next/link";
 
 const ProgramSection = () => {
   return (
@@ -54,7 +55,9 @@ const ProgramSection = () => {
         ))}
       </div>
       <div className="py-8 md:py-12">
-        <Button>View All Programs</Button>
+        <Link href={"/programs&events"}>
+          <Button>View All Programs</Button>
+        </Link>
       </div>
     </div>
   );

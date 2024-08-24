@@ -13,6 +13,7 @@ const endpoints = {
   fetchTestimonials: `${baseUrl}/fetchTestimonials`,
   fetchGallery: `${baseUrl}/fetchGallery`,
   sendInquiry: `${baseUrl}/sendInquiry`,
+  fetchEvents: `${baseUrl}/fetchEvents`,
 };
 
 export default endpoints;

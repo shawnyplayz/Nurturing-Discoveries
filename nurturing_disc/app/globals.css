@@ -99,6 +99,18 @@ html {
   color: #f39f5f;
 }
 
+.slick-dots {
+  bottom: 10px !important; 
+}
+
+.slick-dots li button:before {
+  font-size: 10px !important; 
+  color: #c4c4c4 !important;   }
+
+.slick-dots li.slick-active button:before {
+  color: #ff5733 !important; 
+}
+
 @font-face {
   font-family: "Quick-Sand-Bold";
   src: url("../public/fonts/Quicksand/Quicksand-Bold.ttf");
