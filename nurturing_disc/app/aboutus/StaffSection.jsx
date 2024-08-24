@@ -13,25 +13,27 @@ const StaffSection = () => {
   const [staffs, setStaff] = useState([]);
 
   const settings = {
-    arrows: false,
-    dots: false,
-    infinite: true,
+    dots: true,
+    infinite: false,
     speed: 500,
-    slidesToShow: Math.min(2, staffs.length),
+    slidesToShow: 3,
     slidesToScroll: 1,
+    variableWidth: true,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 768,
         settings: {
-          slidesToShow: Math.min(2, staffs.length),
+          slidesToShow: 1,
           slidesToScroll: 1,
+          autoplaySpeed: 2000,
+          arrows: false,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 1024,
         settings: {
-          slidesToShow: Math.min(1, staffs.length),
-          slidesToScroll: 1,
+          slidesToShow: 2,
+          slidesToScroll: 2,
         },
       },
     ],
@@ -57,6 +59,8 @@ const StaffSection = () => {
   useEffect(() => {
     fetchStaffs();
   }, []);
+
+  const isSliderEnabled = staffs.length > 4;
 
   return (
     <div className="staff-section relative">
@@ -84,24 +88,58 @@ const StaffSection = () => {
           Our Staff
         </div>
       </div>
-      <div className="flex items-center justify-center pb-5 ">
-        <div className="w-full my-5 flex gap-8 items-center justify-center">
-          {/* <Slider {...settings}> */}
-          {staffs.map((staff) => {
-            const { staff_name, staff_position, pictures } = staff;
-            const latestImage = pictures[pictures.length - 1]?.url;
+      <div
+        className={`w-full my-5 ${
+          staffs.length < 5 ? "flex justify-center items-center" : ""
+        }`}
+      >
+        {isSliderEnabled ? (
+          <Slider {...settings}>
+            {staffs.map((staff) => {
+              const { staff_name, staff_position, pictures } = staff;
+              const latestImage = pictures[pictures.length - 1]?.url;
 
-            return (
-              <StaffCard
-                key={staff.staff_id}
-                name={staff_name}
-                position={staff_position}
-                imageUrl={latestImage}
-              />
-            );
-          })}
-          {/* </Slider> */}
-        </div>
+              return (
+                <div className={`${staffs.length === 4 ? "px-6" : "px-4"}`}>
+                  <StaffCard
+                    key={staff.staff_id}
+                    name={staff_name}
+                    position={staff_position}
+                    imageUrl={latestImage}
+                  />
+                </div>
+              );
+            })}
+          </Slider>
+        ) : (
+          <div
+            className={`grid ${(() => {
+              switch (staffs.length) {
+                case 1:
+                  return "justify-center";
+                case 2:
+                  return "md:grid-cols-2 w-fit";
+                case 3:
+                  return "md:grid-cols-3";
+                default:
+                  return "md:grid-cols-4";
+              }
+            })()} gap-8`}
+          >
+            {staffs.map((staff) => {
+              const { staff_name, staff_position, pictures } = staff;
+              const latestImage = pictures[pictures.length - 1]?.url;
+              return (
+                <StaffCard
+                  key={staff.staff_id}
+                  name={staff_name}
+                  position={staff_position}
+                  imageUrl={latestImage}
+                />
+              );
+            })}
+          </div>
+        )}
       </div>
     </div>
   );
