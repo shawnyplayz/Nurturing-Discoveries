@@ -116,7 +116,7 @@ const HomeCarousel = () => {
       <VideoModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        videoUrl="https://www.youtube.com/embed/bnGyifk_33U"
+        videoUrl="/home/video1.mp4"
       />
     </div>
   );
