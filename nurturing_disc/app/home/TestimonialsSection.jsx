@@ -9,6 +9,16 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+const defaultTestimonials = [
+  {
+    testimonial_id: "default1",
+    reviewer_name: "Jenny Wilson",
+    review:
+      "Corquent per conubia nostra, per inceptos himenaeos. Suspendisse gravida vitae nisi Class aptent taciti sociosqu ad litora.",
+    pictures: [{ url: "/path/to/default/image.jpg" }],
+  },
+];
+
 const TestimonialsSection = () => {
   const [testimonials, setTestimonial] = useState([]);
 
@@ -23,9 +33,12 @@ const TestimonialsSection = () => {
       const data = await response.json();
       if (data.length > 0) {
         setTestimonial(data);
+      } else {
+        setTestimonial(defaultTestimonials);
       }
     } catch (error) {
       showToastError("Error fetching testimonials:", error);
+      setTestimonial(defaultTestimonials);
     }
   };
 
@@ -40,10 +53,9 @@ const TestimonialsSection = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    // Optionally hide arrows
     responsive: [
       {
-        breakpoint: 768, // Adjust as needed
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -94,7 +106,11 @@ const TestimonialsSection = () => {
               })}
             </Slider>
           ) : (
-            <div className="grid md:grid-cols-3 gap-8">
+            <div
+              className={`grid ${
+                testimonials.length === 1 ? "justify-center" : "md:grid-cols-3"
+              } gap-8`}
+            >
               {testimonials.map((testimonial, index) => {
                 const { reviewer_name, review, pictures } = testimonial;
                 const imageSrc = pictures[0]?.url;
