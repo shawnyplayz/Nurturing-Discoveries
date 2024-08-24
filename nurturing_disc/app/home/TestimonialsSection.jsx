@@ -49,26 +49,10 @@ const TestimonialsSection = () => {
         </div>
         <div className="grid md:grid-cols-3 pt-8 pb-48 gap-8">
           {testimonials.map((testimonial, index) => {
-            const {
-              reviewer_name,
-              review,
-              pictures,
-              backgroundColor,
-              borderTopColor,
-            } = testimonial;
+            const { reviewer_name, review, pictures } = testimonial;
 
             // Extract the first image URL from the pictures array
             const imageSrc = pictures[0]?.url;
-
-            // Use modulo to iterate over the predefined colors
-            const appliedBackgroundColor =
-              predefinedBackgroundColors[
-                index % predefinedBackgroundColors.length
-              ] || backgroundColor;
-            const appliedBorderTopColor =
-              predefinedBorderTopColors[
-                index % predefinedBorderTopColors.length
-              ] || borderTopColor;
 
             return (
               <TestimonialCard
@@ -76,8 +60,7 @@ const TestimonialsSection = () => {
                 text={review}
                 author={reviewer_name}
                 imageSrc={imageSrc}
-                backgroundColor={appliedBackgroundColor}
-                borderTopColor={appliedBorderTopColor}
+                imageVariant={index % 3}
               />
             );
           })}

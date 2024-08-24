@@ -9,7 +9,7 @@ import { TypeAnimation } from "react-type-animation";
 import VideoModal from "@/components/modal/VideoModal";
 import { useSpring, animated } from "@react-spring/web";
 
-const images = ["/home-image.svg", "/image-1.jpg", "/image-2.jpg"];
+const images = ["/home/image2.jpg", "/home/image3.jpg", "/home/image1.jpg"];
 
 const HomeCarousel = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -31,7 +31,7 @@ const HomeCarousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       changeImage();
-    }, 3000); // Change image every 3 seconds
+    }, 5000); // Change image every 3 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -86,12 +86,21 @@ const HomeCarousel = () => {
         </div>
         <div className="flex justify-center lg:w-1/2 mt-8 lg:mt-0">
           <animated.div style={props} className="max-w-full h-auto">
+            {/* Image */}
+            <div className=" w-1/3 h-1/3 bg-blue-500 rounded-full translate-x-1/2 translate-y-1/2"></div>
+            {/* <div className="w-1/3 h-1/3 bg-pink-500 rounded-lg -translate-x-1/2"></div> */}
             <Image
+            className="-z-[1]"
               src={images[currentImageIndex]}
-              height={500}
-              width={500}
+              style={{
+                borderRadius: "38% 62% 35% 65% / 54% 30% 70% 46%",
+                objectFit: "cover",
+                width: "100%",
+                height: "100%",
+              }}
+              height={380}
+              width={380}
               alt="Home Image"
-              className="max-w-full h-auto"
             />
           </animated.div>
         </div>
