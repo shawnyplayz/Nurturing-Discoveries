@@ -34,7 +34,7 @@ export const HEADER_DATA = {
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/aboutus", label: "About Us" },
-  { href: "/programsandevents", label: "Programs & Events" },
+  { href: "/programs&events", label: "Programs & Events" },
   { href: "/blogs", label: "Blogs" },
   { href: "/contactus", label: "Contact Us" },
 ];
@@ -166,7 +166,6 @@ export const footerData = {
     },
   ],
 };
-
 
 export const aboutUsPage = {
   title: "Who we are ?",

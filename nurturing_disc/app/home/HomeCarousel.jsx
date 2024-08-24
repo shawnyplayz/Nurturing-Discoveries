@@ -36,6 +36,13 @@ const HomeCarousel = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const getStyledText = (text) => {
+    if (text === "Young") {
+      return <span style={{ color: "yellow" }}>{text}</span>;
+    }
+    return text;
+  };
+
   return (
     <div className="bg-[#ECF8FF] py-36 px-4 sm:px-6 lg:px-8">
       <section className="container mx-auto flex flex-col lg:flex-row items-center lg:justify-between">
@@ -69,6 +76,8 @@ const HomeCarousel = () => {
                   cursor={true}
                   repeat={Infinity}
                   className="inline-block"
+                  preRenderFirstString={true} // Ensure pre-rendering
+                  render={(text) => getStyledText(text)} // Custom rendering logic
                 />
               </div>
             </div>
