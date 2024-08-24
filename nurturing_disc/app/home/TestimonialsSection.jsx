@@ -47,7 +47,7 @@ const TestimonialsSection = () => {
             Parents Words Are The Key To Happy Kids
           </div>
         </div>
-        <div className="grid md:grid-cols-3 pt-8 pb-48 gap-8">
+        <div className="grid md:grid-cols-3 pt-8 mb-38 gap-8">
           {testimonials.map((testimonial, index) => {
             const { reviewer_name, review, pictures } = testimonial;
 

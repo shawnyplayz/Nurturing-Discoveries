@@ -126,12 +126,12 @@ export const ActivitiesSectionData = {
 
 export const InstructionsSectionData = {
   title: "Our Experts",
-  subHeading: " Our Expert Instructors",
+  subHeading: "Our Expert Instructors",
   teamMembers: [
     {
       id: 1,
-      name: "Natalie Paisley",
-      position: "CEO",
+      name: "Dhruti Joshi",
+      position: "Founder and Director",
       imageUrl: "/team/dhriti.svg",
     },
     {

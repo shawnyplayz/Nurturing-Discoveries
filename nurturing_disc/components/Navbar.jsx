@@ -13,7 +13,9 @@ const Navbar = () => {
   return (
     <div className="flex flex-row justify-between container mx-auto py-5 px-5">
       <div>
+        <Link href="/">
         <Image src="/logo.svg" height={70} width={282} alt="Logo" />
+        </Link>
       </div>
       <div className="sm:flex items-center hidden">
         <ul className="flex flex-row gap-8 text-base">

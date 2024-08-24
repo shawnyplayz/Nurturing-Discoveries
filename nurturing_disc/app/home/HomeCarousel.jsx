@@ -9,7 +9,7 @@ import { TypeAnimation } from "react-type-animation";
 import VideoModal from "@/components/modal/VideoModal";
 import { useSpring, animated } from "@react-spring/web";
 
-const images = ["/home/image2.jpg", "/home/image3.jpg", "/home/image1.jpg"];
+const images = ["/home/Hero1.svg", "/home/Hero2.svg", "/home/Hero3.svg"];
 
 const HomeCarousel = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -31,21 +31,14 @@ const HomeCarousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       changeImage();
-    }, 5000); // Change image every 3 seconds
+    }, 3000); // Change image every 3 seconds
 
     return () => clearInterval(interval);
   }, []);
 
-  const getStyledText = (text) => {
-    if (text === "Young") {
-      return <span style={{ color: "yellow" }}>{text}</span>;
-    }
-    return text;
-  };
-
   return (
-    <div className="bg-[#ECF8FF] py-36 px-4 sm:px-6 lg:px-8">
-      <section className="container mx-auto flex flex-col lg:flex-row items-center lg:justify-between">
+    <div className="bg-[#ECF8FF] sm:px-6 lg:px-8">
+      <section className="container mx-auto flex flex-col lg:flex-row items-center">
         <div className="text-center lg:text-left lg:w-1/2 lg:pl-8">
           <header className="flex flex-row items-center lg:items-center gap-2 mb-4">
             <h2 className="text-peach font-semibold text-xl sm:text-2xl lg:text-lg">
@@ -58,19 +51,29 @@ const HomeCarousel = () => {
               <div className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-fiord mb-2">
                 Inspiring
               </div>
-              <div className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">
+              <div></div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl flex flex-row gap-4">
+                <TypeAnimation
+                  style={{
+                    color: "#f39f5f",
+                  }}
+                  sequence={["Young", 2000]}
+                  wrapper="span"
+                  cursor={false}
+                  repeat={Infinity}
+                  className="inline-block"
+                  preRenderFirstString={true} // Ensure pre-rendering
+                  render={(text) => getStyledText(text)} // Custom rendering logic
+                />
                 <TypeAnimation
                   sequence={[
-                    "Young",
-                    1000,
-                    "Young Minds Kids",
-                    1000,
-                    "Young Dreamers",
-                    1000,
-                    "Young Explorers",
-                    1000,
+                    "Kids",
+                    2000,
+                    "Dreamers",
+                    2000,
+                    "Explorers",
+                    2000,
                     "",
-                    1000,
                   ]}
                   wrapper="span"
                   cursor={true}
@@ -93,25 +96,20 @@ const HomeCarousel = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center lg:w-1/2 mt-8 lg:mt-0">
-          <animated.div style={props} className="max-w-full h-auto">
-            {/* Image */}
-            <div className=" w-1/3 h-1/3 bg-blue-500 rounded-full translate-x-1/2 translate-y-1/2"></div>
-            {/* <div className="w-1/3 h-1/3 bg-pink-500 rounded-lg -translate-x-1/2"></div> */}
-            <Image
-            className="-z-[1]"
-              src={images[currentImageIndex]}
-              style={{
-                borderRadius: "38% 62% 35% 65% / 54% 30% 70% 46%",
-                objectFit: "cover",
-                width: "100%",
-                height: "100%",
-              }}
-              height={380}
-              width={380}
-              alt="Home Image"
-            />
-          </animated.div>
+        <div className="flex justify-center lg:w-1/2 pt-4">
+          {/* <animated.div style={props} className="max-w-full h-auto py-8"> */}
+          <Image
+            className="max-w-full"
+            // src={images[currentImageIndex]}
+            src="/home/Hero2.svg"
+            style={{
+              objectFit: "cover",
+            }}
+            height={600}
+            width={600}
+            alt="Home Image"
+          />
+          {/* </animated.div> */}
         </div>
       </section>
 

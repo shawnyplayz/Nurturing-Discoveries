@@ -5,7 +5,6 @@ export default function TestimonialCard({
   author,
   imageSrc,
   backgroundColor,
-  borderTopColor,
   imageVariant, // Add this prop to decide which image to use
 }) {
   const containerImages = [
@@ -18,6 +17,15 @@ export default function TestimonialCard({
     <div className="relative p-8 text-white" style={{ backgroundColor }}>
       {/* Container Image */}
       <div className="relative">
+        <div className="absolute -top-6 right-4 w-12 h-12 rounded-full overflow-hidden">
+          <Image
+            src={imageSrc}
+            alt={author}
+            width={50}
+            height={50}
+            className="object-cover z-10"
+          />
+        </div>
         <Image
           src={containerImages[imageVariant]} // Select the image based on the imageVariant prop
           width={500}
@@ -29,19 +37,10 @@ export default function TestimonialCard({
         {/* Content Inside the Container */}
         <div className="absolute inset-0 flex flex-col justify-center p-8 overflow-hidden">
           {/* Author Image */}
-          <div className="absolute -top-6 right-4 w-12 h-12 rounded-full overflow-hidden">
-            <Image
-              src={imageSrc}
-              alt={author}
-              width={50}
-              height={50}
-              className="object-cover"
-            />
-          </div>
 
           {/* Text */}
           <div className="flex-1 flex flex-col justify-end">
-            <p className="text-lg leading-relaxed max-w-full overflow-hidden text-ellipsis">
+            <p className="text-lg leading-relaxed max-w-80 min-h-3 overflow-hidden text-ellipsis">
               {text}
             </p>
           </div>

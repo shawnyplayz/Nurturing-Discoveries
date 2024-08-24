@@ -17,7 +17,7 @@ const StaffSection = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: Math.min(4, staffs.length),
+    slidesToShow: Math.min(2, staffs.length),
     slidesToScroll: 1,
     responsive: [
       {
@@ -85,22 +85,22 @@ const StaffSection = () => {
         </div>
       </div>
       <div className="flex items-center justify-center pb-5 ">
-        <div className="w-full px-4 my-5">
-          <Slider {...settings}>
-            {staffs.map((staff) => {
-              const { staff_name, staff_position, pictures } = staff;
-              const latestImage = pictures[pictures.length - 1]?.url;
+        <div className="w-full my-5 flex gap-8 items-center justify-center">
+          {/* <Slider {...settings}> */}
+          {staffs.map((staff) => {
+            const { staff_name, staff_position, pictures } = staff;
+            const latestImage = pictures[pictures.length - 1]?.url;
 
-              return (
-                <StaffCard
-                  key={staff.staff_id}
-                  name={staff_name}
-                  position={staff_position}
-                  imageUrl={latestImage}
-                />
-              );
-            })}
-          </Slider>
+            return (
+              <StaffCard
+                key={staff.staff_id}
+                name={staff_name}
+                position={staff_position}
+                imageUrl={latestImage}
+              />
+            );
+          })}
+          {/* </Slider> */}
         </div>
       </div>
     </div>
