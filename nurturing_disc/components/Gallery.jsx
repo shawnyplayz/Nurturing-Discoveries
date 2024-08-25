@@ -3,8 +3,13 @@ import React from "react";
 
 const Gallery = ({ imageUrl }) => {
   return (
-    <div>
-      <Image src={imageUrl} width={250} height={250} />
+    <div className="relative w-[250px] h-[250px]">
+      <Image
+        src={imageUrl}
+        alt="Gallery Image"
+        layout="fill"
+        objectFit="cover"
+      />
     </div>
   );
 };

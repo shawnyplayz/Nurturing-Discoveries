@@ -61,7 +61,9 @@ const StaffSection = () => {
   }, []);
 
   const isSliderEnabled = staffs.length > 4;
-
+  if (staffs.length === 0) {
+    return null;
+  }
   return (
     <div className="staff-section relative">
       <div className="absolute bottom-4 left-5">

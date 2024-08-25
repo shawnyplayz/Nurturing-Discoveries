@@ -29,10 +29,7 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    if (!name || !email || !message || !mobile_number) {
-      showToastError("Please fill all fields");
-      return;
-    }
+
     try {
       const result = await fetchDataPost(endpoints.sendInquiry, formData);
 
