@@ -38,7 +38,7 @@ export default function TestimonialCard({
         <div className="absolute inset-0 flex flex-col justify-center p-6 sm:p-8 overflow-hidden">
           {/* Text */}
           <div className="flex flex-col justify-end">
-            <p className="text-sm sm:text-lg leading-relaxed max-w-full min-h-3 overflow-hidden text-ellipsis">
+            <p className="text-xs sm:text-sm leading-relaxed max-w-full min-h-3 overflow-hidden text-ellipsis ">
               {text}
             </p>
           </div>

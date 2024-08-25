@@ -72,7 +72,7 @@ const Footer = () => {
                 <h1 className="font-quicksand font-bold text-2xl pb-8 lg:pb-12">
                   Quick Links
                 </h1>
-                <ul className="font-sans font-normal text-base text-fiord space-y-4">
+                <ul className="font-sans font-normal text-base !text-fiord space-y-4">
                   {[
                     "Our Program",
                     "Our Staff",
