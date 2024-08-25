@@ -1,5 +1,4 @@
 import BlogPreview from "@/components/blogs/BlogPreview";
-import Footer from "@/components/Footer";
 import SectionSeparator from "@/components/SectionSeparator";
 import React from "react";
 
@@ -8,9 +7,8 @@ const Blogs = () => {
     <div>
       <SectionSeparator title="Our Blogs" subHeading="Home > Blog" />
       <div className="mx-auto container">
-        <BlogPreview />
+        <BlogPreview/>
       </div>
-      <Footer />
     </div>
   );
 };
