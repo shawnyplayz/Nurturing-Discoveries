@@ -101,9 +101,11 @@ const StaffSection = () => {
               const latestImage = pictures[pictures.length - 1]?.url;
 
               return (
-                <div className={`${staffs.length === 4 ? "px-6" : "px-4"}`}>
+                <div
+                  key={staff.staff_id}
+                  className={`${staffs.length === 4 ? "px-6" : "px-4"}`}
+                >
                   <StaffCard
-                    key={staff.staff_id}
                     name={staff_name}
                     position={staff_position}
                     imageUrl={latestImage}
