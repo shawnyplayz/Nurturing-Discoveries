@@ -40,7 +40,7 @@ const ContactInfoCard = () => {
         label="Location"
         value="I.C. Colony, Borivali west, Mumbai 400103"
       />
-      <div className="mt-6">
+      <div className="mt-6 flex items-center justify-center">
         <div className="w-full h-full overflow-hidden rounded-b-3xl">
           {/* <video
             muted
@@ -52,7 +52,7 @@ const ContactInfoCard = () => {
           </video> */}
           <Iframe
             url="https://www.youtube.com/embed/UzmvtVAuuyI"
-            width="100%"
+            width="101%"
             height="350px"
             id=""
             className=""
