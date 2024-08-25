@@ -13,12 +13,13 @@ const StaffSection = () => {
   const [staffs, setStaff] = useState([]);
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: false,
-    speed: 500,
+
     slidesToShow: 3,
     slidesToScroll: 1,
     variableWidth: true,
+
     responsive: [
       {
         breakpoint: 768,
