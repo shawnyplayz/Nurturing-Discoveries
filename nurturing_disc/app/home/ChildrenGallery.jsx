@@ -28,7 +28,9 @@ const ChildrenGallery = () => {
   useEffect(() => {
     fetchGallery();
   }, []);
-
+  if (gallery.length === 0) {
+    return null;
+  }
   return (
     <div className="flex items-center justify-center flex-col">
       <div className="pt-28">

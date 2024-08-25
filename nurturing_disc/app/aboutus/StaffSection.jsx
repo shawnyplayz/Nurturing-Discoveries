@@ -62,7 +62,9 @@ const StaffSection = () => {
   }, []);
 
   const isSliderEnabled = staffs.length > 4;
-
+  if (staffs.length === 0) {
+    return null;
+  }
   return (
     <div className="staff-section relative">
       <div className="absolute bottom-4 left-5">
@@ -96,7 +98,7 @@ const StaffSection = () => {
       >
         {isSliderEnabled ? (
           <Slider {...settings}>
-            {staffs.map((staff) => {
+            {staffs.map((staff, index) => {
               const { staff_name, staff_position, pictures } = staff;
               const latestImage = pictures[pictures.length - 1]?.url;
 
