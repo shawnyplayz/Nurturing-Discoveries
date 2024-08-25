@@ -119,11 +119,11 @@ const Footer = () => {
           />
         </div>
       </div>
-      <div className="reverse-curved flex justify-between items-center pl-4 relative">
-        <div className="flex justify-center w-full absolute mt-10 font-quicksand">
+      <div className="reverse-curved flex flex-col md:flex-row md:flex items-center pl-4 gap-1 text-fiord text-xs">
+        <div className="flex md:justify-start md:mt-10 mt-10 font-quicksand">
           © 2024 Nurturing Discoveries. All rights reserved.
         </div>
-        <div className="font-quicksand flex items-center gap-2 mt-10 ml-auto pr-4">
+        <div className="font-quicksand flex items-center gap-2 md:mt-10 md:ml-auto pr-4">
           Designed and Developed by
           <span>
             <Image src="innocursor.svg" width={25} height={25} />
