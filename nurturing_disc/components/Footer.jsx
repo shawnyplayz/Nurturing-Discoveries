@@ -17,14 +17,14 @@ const Footer = () => {
   return (
     <div className="relative overflow-hidden bg-gray-100">
       <div className="container mx-auto px-4 md:px-8 lg:px-16 py-12 flex flex-col lg:flex-row justify-between items-center">
-        {/* Left Zebra */}
-        <div className="absolute left-0 bottom-0 z-10 hidden md:block">
+        {/* Left Rainbow */}
+        <div className="absolute left-1 bottom-20 z-10 hidden md:block">
           <Image
             src="/cartoons/rainbow.svg"
-            width={200}
-            height={200}
+            width={100}
+            height={100}
             alt="Zebra Left"
-            className="w-auto h-auto"
+            className="w-40 h-auto"
           />
         </div>
 
@@ -109,7 +109,7 @@ const Footer = () => {
         </div>
 
         {/* Right Zebra */}
-        <div className="absolute right-0 bottom-0 z-10 hidden md:block">
+        <div className="absolute right-0 bottom-20 z-10 hidden md:block">
           <Image
             src="/cartoons/zebra.svg"
             width={100}
@@ -117,6 +117,18 @@ const Footer = () => {
             alt="Zebra Right"
             className="w-40 h-auto"
           />
+        </div>
+      </div>
+      <div className="reverse-curved flex justify-between items-center pl-4 relative">
+        <div className="flex justify-center w-full absolute mt-10 font-quicksand">
+          © 2024 Nurturing Discoveries. All rights reserved.
+        </div>
+        <div className="font-quicksand flex items-center gap-2 mt-10 ml-auto pr-4">
+          Designed and Developed by
+          <span>
+            <Image src="innocursor.svg" width={25} height={25} />
+          </span>
+          <span>Innovative Cursor</span>
         </div>
       </div>
     </div>
