@@ -7,11 +7,21 @@ import React, { useState } from "react";
 import Button from "./buttons/Button";
 import { usePathname } from "next/navigation";
 import Sidebar from "@/components/Sidebar"; // Corrected import
+import EnrollFormModel from "./modal/EnrollFormModel";
+import EnrollForm from "./EnrollForm";
 
 const Navbar = () => {
   const pathName = usePathname();
   const [open, setOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <div className="flex flex-row justify-between container mx-auto py-5 px-5 relative">
       <div>
@@ -36,8 +46,11 @@ const Navbar = () => {
           ))}
         </ul>
         <div className="ml-8">
-          <Button>Enroll Now</Button>
+          <Button onClick={handleOpenModal}>Enroll Now</Button>
         </div>
+        <EnrollFormModel isOpen={isModalOpen} onClose={handleCloseModal}>
+          <EnrollForm />
+        </EnrollFormModel>
       </div>
       {/* Mobile Hamburger Button */}
       <div className="md:hidden flex items-center">
