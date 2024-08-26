@@ -50,18 +50,34 @@ const Footer = () => {
                     Discover and Nurture the ability
                   </p>
                 </div>
-                <div className="flex gap-4 pb-12">
-                  <a href="https://facebook.com" aria-label="Facebook">
-                    <FaFacebookF size={30} />
+                <div className="flex gap-4 pb-12 ">
+                  <a
+                    className="border p-2"
+                    href="https://facebook.com"
+                    aria-label="Facebook"
+                  >
+                    <FaFacebookF size={30} className=" w-4 h-4 text-fiord" />
                   </a>
-                  <a href="https://youtube.com" aria-label="YouTube">
-                    <FaYoutube size={30} />
+                  <a
+                    className="border p-2"
+                    href="https://youtube.com"
+                    aria-label="YouTube"
+                  >
+                    <FaYoutube size={30} className=" w-4 h-4 text-fiord" />
                   </a>
-                  <a href="https://linkedin.com" aria-label="LinkedIn">
-                    <FaLinkedin size={30} />
+                  <a
+                    className="border p-2"
+                    href="https://linkedin.com"
+                    aria-label="LinkedIn"
+                  >
+                    <FaLinkedin size={30} className=" w-4 h-4 text-fiord" />
                   </a>
-                  <a href="https://instagram.com" aria-label="Instagram">
-                    <FaInstagram size={30} />
+                  <a
+                    className="border p-2"
+                    href="https://instagram.com"
+                    aria-label="Instagram"
+                  >
+                    <FaInstagram size={30} className=" w-4 h-4 text-fiord" />
                   </a>
                 </div>
               </div>
@@ -112,10 +128,10 @@ const Footer = () => {
         <div className="absolute right-0 bottom-20 z-10 hidden md:block">
           <Image
             src="/cartoons/zebra.svg"
-            width={100}
-            height={100}
+            width={200}
+            height={200}
             alt="Zebra Right"
-            className="w-40 h-auto"
+            className="w-200 h-auto"
           />
         </div>
       </div>
