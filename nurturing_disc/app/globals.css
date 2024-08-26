@@ -112,6 +112,16 @@ html {
 .slick-dots li.slick-active button:before {
   color: #ff5733 !important; 
 }
+/* Add this to your global CSS or a CSS module */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;  /* Internet Explorer and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 
 @font-face {
   font-family: "Quick-Sand-Bold";

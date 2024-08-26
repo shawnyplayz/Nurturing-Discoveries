@@ -5,7 +5,7 @@ export default function TestimonialCard({
   author,
   imageSrc,
   backgroundColor,
-  imageVariant, // Add this prop to decide which image to use
+  imageVariant,
 }) {
   const containerImages = [
     "testimonialsAssets/Container1.svg",
@@ -27,7 +27,7 @@ export default function TestimonialCard({
           />
         </div>
         <Image
-          src={containerImages[imageVariant]} // Select the image based on the imageVariant prop
+          src={containerImages[imageVariant]}
           width={500}
           height={500}
           alt="Container"
@@ -37,7 +37,7 @@ export default function TestimonialCard({
         {/* Content Inside the Container */}
         <div className="absolute inset-0 flex flex-col justify-center p-6 sm:p-8 overflow-hidden">
           {/* Text */}
-          <div className="flex flex-col justify-end !max-h-24 sm:max-h-28 overflow-hidden">
+          <div className="relative flex flex-col justify-end max-h-24 sm:max-h-28 overflow-hidden">
             <p className="text-xs sm:text-sm leading-relaxed text-left overflow-y-auto scrollbar-hidden">
               {`"${text}"`}
             </p>
