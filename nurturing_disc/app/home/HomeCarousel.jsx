@@ -40,12 +40,16 @@ const HomeCarousel = () => {
     <div className="bg-[#ECF8FF] sm:px-6 lg:px-8">
       <section className="container mx-auto flex flex-col lg:flex-row items-center">
         <div className="text-center lg:text-left lg:w-1/2 lg:pl-8">
-          <header className="flex flex-row items-center lg:items-center gap-2 mb-4">
-            <h2 className="text-peach font-semibold text-xl sm:text-2xl lg:text-lg">
-              {HomeSection.HomeCarousel.title}
-            </h2>
-            <Image src="/star.svg" width={20} height={20} alt="star icon" />
-          </header>
+          <div className="flex flex-col gap-2 mb-4 mt-4">
+            <div className="flex gap-3">
+              <h2 className="text-peach font-semibold text-xl sm:text-2xl lg:text-lg">
+                {HomeSection.HomeCarousel.title}
+              </h2>
+
+              <Image src="/star.svg" width={20} height={20} alt="star icon" />
+            </div>
+          </div>
+
           <div className="mb-5">
             <div className="font-quicksand font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-fiord">
               <div className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-fiord mb-2">

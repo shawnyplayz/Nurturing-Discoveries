@@ -18,6 +18,7 @@ const Home = () => {
       <InstructionsSection />
       <TestimonialsSection />
       <ChildrenGallery />
+
       <Footer />
     </>
   );

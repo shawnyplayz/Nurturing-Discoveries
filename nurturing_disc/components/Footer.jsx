@@ -12,6 +12,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import Link from "next/link";
 import Button from "./buttons/Button";
 import { Input } from "./Input";
+import FloatingButton from "@/components/buttons/FloatingButton";
 
 const Footer = () => {
   return (
@@ -29,8 +30,8 @@ const Footer = () => {
         </div>
 
         {/* Footer Content */}
-        <div className="flex flex-col w-full z-20 relative">
-          <div className="flex flex-col md:flex-row justify-center gap-8 lg:gap-24 pb-12 lg:pb-16">
+        <div className="flex flex-col w-full z-20 relative ">
+          <div className="flex flex-col md:flex-row justify-center gap-8 lg:gap-48 pb-10 border-b-2">
             {footerData.ContactInfoData.map((contactData, index) => (
               <ContactInfo
                 key={index}
@@ -41,7 +42,7 @@ const Footer = () => {
             ))}
           </div>
 
-          <div className="flex flex-col lg:flex-row justify-between px-6 lg:px-10">
+          <div className="flex flex-col lg:flex-row justify-between px-6 lg:px-10 py-16">
             <div className="section-1 max-w-full lg:max-w-xl pb-12 lg:pb-0">
               <div className="px-3 max-w-full lg:max-w-lg">
                 <Image src="/logo.svg" width={270} height={70} alt="Logo" />
@@ -85,7 +86,7 @@ const Footer = () => {
 
             <div className="section-2 w-full lg:w-auto pb-12 lg:pb-0">
               <div className="px-5 pt-8 pb-14">
-                <h1 className="font-quicksand font-bold text-2xl pb-8 lg:pb-12">
+                <h1 className="font-quicksand font-bold text-2xl pb-8 lg:pb-12 text-fiord">
                   Quick Links
                 </h1>
                 <ul className="font-sans font-normal text-base !text-fiord space-y-4">
@@ -121,6 +122,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
+            <FloatingButton />
           </div>
         </div>
 
@@ -128,10 +130,10 @@ const Footer = () => {
         <div className="absolute right-0 bottom-20 z-10 hidden md:block">
           <Image
             src="/cartoons/zebra.svg"
-            width={200}
-            height={200}
+            width={180}
+            height={180}
             alt="Zebra Right"
-            className="w-200 h-auto"
+            className="w-180 h-auto"
           />
         </div>
       </div>
