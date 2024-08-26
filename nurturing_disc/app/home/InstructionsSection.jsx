@@ -11,12 +11,14 @@ const InstructionsSection = () => {
         width={270}
         height={270}
         className="absolute md:bottom-2 md:left-6 left-2 top-4 w-32 md:w-fit"
+        alt="Heart Cartoon"
       />
       <Image
         src="/cartoons/rainbow.svg"
         width={240}
         height={240}
         className="absolute md:bottom-52 md:right-6 bottom-3 right-4 z-10 w-32 md:w-fit"
+        alt="Rainbow Cartoon"
       />
       <div className="flex flex-col items-center justify-center container mx-auto">
         <div className="pt-28 flex flex-col items-center justify-center">

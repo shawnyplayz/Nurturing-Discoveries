@@ -126,7 +126,12 @@ const Footer = () => {
         <div className="font-quicksand flex items-center gap-2 md:mt-10 md:ml-auto pr-4">
           Designed and Developed by
           <span>
-            <Image src="innocursor.svg" width={25} height={25} />
+            <Image
+              src="innocursor.svg"
+              width={25}
+              height={25}
+              alt="Innovative Cursor Logo"
+            />
           </span>
           <span>Innovative Cursor</span>
         </div>

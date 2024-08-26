@@ -14,24 +14,28 @@ const ProgramSection = () => {
           width={100}
           height={72}
           className="absolute top-20 left-5"
+          alt="Mask Cartoon"
         />
         <Image
           src="/cartoons/pencil-5.svg"
           width={90}
           height={90}
           className="absolute bottom-12 left-24"
+          alt="Pencil Cartoon"
         />
         <Image
           src="/cartoons/compass.svg"
           width={100}
           height={100}
           className="absolute bottom-12 right-28"
+          alt="Compass Cartoon"
         />
         <Image
           src="/cartoons/mask-2.svg"
           width={150}
           height={150}
           className="absolute top-10 right-12"
+          alt="Mask Cartoon"
         />
       </div>
       <div>

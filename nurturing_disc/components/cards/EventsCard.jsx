@@ -1,5 +1,6 @@
 import { FaCalendar, FaMapMarkerAlt } from "react-icons/fa";
 import Button from "../buttons/Button";
+import Image from "next/image";
 
 export default function EventsCards({
   title,
@@ -11,7 +12,14 @@ export default function EventsCards({
   return (
     <div className="flex flex-col mt-6 text-gray-700 border-2 bg-clip-border rounded-3xl md:w-96 w-full transition-transform transform hover:scale-105 cursor-pointer">
       <div className="relative h-56 mx-4 mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-3xl bg-blue-gray-500 shadow-blue-gray-500/40">
-        <img alt={title} src={src} className="w-full h-full object-cover" />
+        <Image
+          alt="card-image"
+          src={src}
+          layout="full"
+          width={500}
+          height={300}
+          className="w-full h-full object-cover"
+        />
         <div className="flex gap-2 justify-center absolute top-8 left-6 bg-peach text-[#fff] text-xs px-3 py-3 rounded-md ">
           <FaCalendar />
           {date}

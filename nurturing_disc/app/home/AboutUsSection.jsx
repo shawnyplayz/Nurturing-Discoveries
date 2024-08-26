@@ -34,6 +34,7 @@ const AboutUsSection = () => {
           width={600}
           height={400}
           className="clip-custom-shape"
+          alt="About Us Image"
         />
       </div>
       <div className="right max-w-3xl py-16 md:py-32">
