@@ -42,6 +42,8 @@ html {
   height: calc(var(--size) + 75px);
 }
 
+
+
 .section-curved {
   --size: 20px;
   --R: calc(var(--size) * 1.28);

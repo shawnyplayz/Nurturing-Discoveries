@@ -5,7 +5,7 @@ const EnrollFormModel = ({ isOpen, onClose, children }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white p-6 rounded-lg shadow-lg relative w-800">
+      <div className="bg-white p-6 rounded-lg shadow-lg relative w-80">
         <div className="container mx-auto px-1 py-2">
           <p>Enroll Form</p>
           <button

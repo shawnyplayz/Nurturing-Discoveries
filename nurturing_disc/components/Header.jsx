@@ -9,7 +9,7 @@ const Header = () => {
       <WavedSeparator>
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between py-4 px-6 md:px-8">
           {/* Locations Section */}
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-6">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-1 md:gap-6">
             {HEADER_DATA.locations.map((item, index) => {
               const IconComponent = item.icon;
               return (
@@ -29,11 +29,11 @@ const Header = () => {
           </div>
 
           {/* Social Media Section */}
-          <div className="flex flex-row items-center gap-3 mt-4 md:mt-0">
+          <div className="flex flex-row items-center gap-3 mt-4 md:mt-0 md:flex">
             <span className="text-fiord font-sans hidden md:block">
               {HEADER_DATA.socialMedia.title}
             </span>
-            <div className="flex gap-3">
+            <div className="flex gap-3 hidden md:flex">
               {HEADER_DATA.socialMedia.icons.map((item, index) => {
                 const IconComponent = item.icon;
                 return (
