@@ -15,7 +15,7 @@ const Input = ({
     <div className={`w-full ${className}`}>
       <input
         type={type}
-        className="rounded-xl border py-3 px-5 w-full"
+        className="rounded-xl border py-3 px-5 w-full bg-transparent"
         placeholder={placeholder}
         value={value}
         onChange={onChange}

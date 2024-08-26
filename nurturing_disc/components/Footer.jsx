@@ -42,7 +42,7 @@ const Footer = () => {
             ))}
           </div>
 
-          <div className="flex flex-col lg:flex-row justify-between px-6 lg:px-10 py-16">
+          <div className="flex flex-col lg:flex-row justify-between items-center px-6 lg:px-10 py-16">
             <div className="section-1 max-w-full lg:max-w-xl pb-12 lg:pb-0">
               <div className="px-3 max-w-full lg:max-w-lg">
                 <Image src="/logo.svg" width={270} height={70} alt="Logo" />
@@ -110,7 +110,7 @@ const Footer = () => {
             </div>
 
             <div className="newsletter max-w-full lg:max-w-md">
-              <div className="pt-8 px-5 lg:px-8">
+              <div className="px-5 lg:px-8">
                 <h1 className="pb-8 lg:pb-12 font-quicksand font-bold text-2xl text-fiord">
                   Newsletter
                 </h1>

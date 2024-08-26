@@ -1,9 +1,34 @@
+"use client";
+
 import TeamCard from "@/components/cards/TeamCard";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { InstructionsSectionData } from "../constants";
+import endpoints from "@/config/endpoints";
 
 const InstructionsSection = () => {
+  const [staffs, setStaff] = useState([]);
+
+  const fetchStaffs = async () => {
+    try {
+      const url = endpoints.fetchStaffs;
+      const response = await fetch(url);
+      if (!response.ok) {
+        showToastError("Network response was not ok");
+        return;
+      }
+      const data = await response.json();
+      if (data.length > 0) {
+        setStaff(data);
+      }
+    } catch (error) {
+      showToastError("Error fetching staff:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchStaffs();
+  }, []);
   return (
     <div className="bg-ivory relative">
       <Image
@@ -31,14 +56,22 @@ const InstructionsSection = () => {
         </div>
         <div>
           <div className="justify-center gap-7 py-7 pb-28 grid lg:grid-cols-2">
-            {InstructionsSectionData.teamMembers.map((team) => (
-              <TeamCard
-                key={team.id}
-                name={team.name}
-                position={team.position}
-                imageUrl={team.imageUrl}
-              />
-            ))}
+            {staffs.map((staff) => {
+              
+              if(staff?.staff_featured){
+                const { pictures } = staff;
+                const latestImage = pictures[pictures?.length - 1]?.url;
+                return (
+                  <TeamCard
+                    key={staff?.staff_id}
+                    name={staff?.staff_name}
+                    position={staff?.staff_position}
+                    imageUrl={latestImage}
+                  />
+                );
+              }
+              
+            })}
           </div>
         </div>
       </div>

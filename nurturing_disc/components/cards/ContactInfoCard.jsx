@@ -31,7 +31,7 @@ const ContactInfoCard = () => {
       <div className="border-b border-white my-4"></div>
       <ContactInfoItem
         iconSrc="/contactus/callIcon.svg"
-        label="Call Us 24/7"
+        label="Call Us"
         value="+91 83695 96061"
       />
       <div className="border-b border-white my-4"></div>
@@ -42,14 +42,6 @@ const ContactInfoCard = () => {
       />
       <div className="mt-6 flex items-center justify-center">
         <div className="w-full h-full overflow-hidden rounded-b-3xl">
-          {/* <video
-            muted
-            className="w-full h-full object-contain"
-            controls="false"
-            preload="none"
-          >
-            <source src="/demo.mp4" type="video/mp4" />
-          </video> */}
           <Iframe
             url="https://www.youtube.com/embed/UzmvtVAuuyI"
             width="101%"
