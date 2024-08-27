@@ -104,19 +104,18 @@ const HomeCarousel = () => {
           <div className="relative">
             <Image
               src="/home/heroSectionAssets/frame.svg"
-              width={500}
+              width={600}
               height={500}
               alt="Blob"
-              className=""
             />
             <Image
               src="/home/heroSectionAssets/home2.jpg"
-              width={500}
+              width={600}
               height={500}
               alt="Home"
               style={{
-                width: "500px",
-                height: "500px",
+                width: "600px",
+                height: "600px",
                 backgroundColor: "#FF5733", // The color of the blob
                 WebkitMaskImage: `url(${imageData})`, // Use the imported SVG
                 WebkitMaskRepeat: "no-repeat",

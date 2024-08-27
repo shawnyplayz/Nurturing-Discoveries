@@ -7,6 +7,7 @@ import InstructionsSection from "./InstructionsSection";
 import TestimonialsSection from "./TestimonialsSection";
 import ChildrenGallery from "./ChildrenGallery";
 import Footer from "@/components/Footer";
+import RoadMapSection from "./RoadMapSection";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <HomeCarousel />
       <AboutUsSection />
       <ProgramSection />
+      <RoadMapSection/>
       <ActivitiesSection />
       <InstructionsSection />
       <TestimonialsSection />
