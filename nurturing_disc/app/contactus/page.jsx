@@ -27,7 +27,7 @@ const ContactUs = () => {
           <h1 className="font-quicksand font-semibold text-3xl sm:text-4xl pb-4 text-fiord">
             {contactUsPage.title}
           </h1>
-          <p className="pb-10 sm:pb-16 font-quicksand font-light">
+          <p className="pb-10 sm:pb-5 font-quicksand font-light text-fiord">
             {contactUsPage.description}
           </p>
           <ContactForm />

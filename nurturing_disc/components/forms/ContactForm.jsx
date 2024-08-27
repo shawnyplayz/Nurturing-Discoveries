@@ -57,7 +57,7 @@ const ContactForm = () => {
       className="flex flex-col gap-4 lg:max-w-lg mx-auto container"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div>
+        <div className="grid gap-1">
           <label className="mb-2 font-quicksand text-left font-medium text-fiord">
             Your Name
           </label>
@@ -68,7 +68,7 @@ const ContactForm = () => {
             placeholder="Your Name"
           />
         </div>
-        <div>
+        <div className="grid gap-1">
           <label className="mb-2 text-left font-medium font-quicksand text-fiord">
             Your Email
           </label>
@@ -80,7 +80,7 @@ const ContactForm = () => {
           />
         </div>
       </div>
-      <div>
+      <div className="grid gap-1">
         <label className="mb-2 text-left font-medium font-quicksand text-fiord">
           Your Phone
         </label>
@@ -91,7 +91,7 @@ const ContactForm = () => {
           placeholder="Your Phone"
         />
       </div>
-      <div>
+      <div className="grid gap-1">
         <label className="mb-2 text-left font-medium font-quicksand text-fiord">
           Write Message
         </label>
