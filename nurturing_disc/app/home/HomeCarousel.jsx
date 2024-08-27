@@ -8,7 +8,7 @@ import { HomeSection } from "../constants";
 import { TypeAnimation } from "react-type-animation";
 import VideoModal from "@/components/modal/VideoModal";
 import { useSpring, animated } from "@react-spring/web";
-
+import imageData from "@/public/data/imageData";
 const images = ["/home/Hero1.svg", "/home/Hero2.svg", "/home/Hero3.svg"];
 
 const HomeCarousel = () => {
@@ -101,19 +101,33 @@ const HomeCarousel = () => {
           </div>
         </div>
         <div className="flex justify-center lg:w-1/2 pt-4">
-          {/* <animated.div style={props} className="max-w-full h-auto py-8"> */}
-          <Image
-            className="max-w-full"
-            // src={images[currentImageIndex]}
-            src="/home/Hero2.svg"
-            style={{
-              objectFit: "cover",
-            }}
-            height={600}
-            width={600}
-            alt="Home Image"
-          />
-          {/* </animated.div> */}
+          <div className="relative">
+            <Image
+              src="/home/heroSectionAssets/frame.svg"
+              width={500}
+              height={500}
+              alt="Blob"
+              className=""
+            />
+            <Image
+              src="/home/heroSectionAssets/home2.jpg"
+              width={500}
+              height={500}
+              alt="Home"
+              style={{
+                width: "500px",
+                height: "500px",
+                backgroundColor: "#FF5733", // The color of the blob
+                WebkitMaskImage: `url(${imageData})`, // Use the imported SVG
+                WebkitMaskRepeat: "no-repeat",
+                WebkitMaskSize: "cover", // Adjust this to fit the mask image
+                WebkitMaskPosition: "center", // Center the mask image
+                position: "absolute",
+                bottom: "4rem",
+                left: "1.5rem",
+              }}
+            />
+          </div>
         </div>
       </section>
 
