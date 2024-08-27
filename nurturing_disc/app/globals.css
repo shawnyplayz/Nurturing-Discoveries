@@ -43,6 +43,12 @@ html {
 }
 
 
+@media screen and (max-width: 960px) {
+  .curved{
+    height: calc(var(--size) + 107px) !important;
+  }
+}
+
 
 .section-curved {
   --size: 20px;
