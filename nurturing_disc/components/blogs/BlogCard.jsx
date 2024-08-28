@@ -10,7 +10,7 @@ const formatDate = (dateStr) => {
 
 const BlogCard = ({ title, content, lastImage, date }) => {
   return (
-    <div className="grid lg:flex md:flex-row md:gap-14 gap-7 border-b border-gray-300 md:py-16 py-4">
+    <div className="grid lg:flex md:flex-row md:gap-[4.5rem] gap-7 border-b border-gray-300 md:py-16 py-4">
       <div>
         {lastImage && (
           <div className="w-full h-[250px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] relative">
