@@ -65,8 +65,16 @@ const StaffSection = () => {
   if (staffs.length === 0) {
     return null;
   }
+
+  if (
+    staffs.length === 0 ||
+    staffs.filter((staff) => staff.staff_featured === true)
+  ) {
+    return null;
+  }
+
   return (
-    <div className="staff-section relative md:pb-40" id="staff-section">
+    <div className="staff-section relative md:pb-40">
       <div className="absolute bottom-1 left-5 w-52">
         <Image
           src="/cartoons/love.svg"

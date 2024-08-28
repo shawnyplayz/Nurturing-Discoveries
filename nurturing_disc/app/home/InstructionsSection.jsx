@@ -59,10 +59,13 @@ const InstructionsSection = () => {
     fetchStaffs();
   }, []);
 
-  if (staffs.length === 0) {
+  const featuredStaffs = staffs.filter((staff) => staff.staff_featured);
+
+  // If there are no featured staff members, return null to remove the section
+  if (featuredStaffs.length === 0) {
     return null;
   }
-
+  
   return (
     <div className="bg-ivory relative md:py-20">
       <Image
