@@ -66,7 +66,7 @@ const StaffSection = () => {
     return null;
   }
   return (
-    <div className="staff-section relative">
+    <div className="staff-section relative" id="staff-section">
       <div className="absolute bottom-4 left-5">
         <Image
           src="/cartoons/love.svg"

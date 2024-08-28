@@ -1,6 +1,6 @@
 import React from "react";
 import ContactInfo from "./ContactInfo";
-import { footerData } from "@/app/constants";
+import { footerData, footerQuickLinks } from "@/app/constants";
 import Image from "next/image";
 import {
   FaFacebookF,
@@ -15,6 +15,7 @@ import { Input } from "./Input";
 import FloatingButton from "@/components/buttons/FloatingButton";
 
 const Footer = () => {
+  const links = footerQuickLinks();
   return (
     <div className="relative overflow-hidden bg-gray-100">
       <div className="container mx-auto px-4 md:px-8 lg:px-16 py-12 flex flex-col lg:flex-row justify-between items-center">
@@ -84,7 +85,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="section-2 w-full lg:w-auto pb-12 lg:pb-0">
+            {/* <div className="section-2 w-full lg:w-auto pb-12 lg:pb-0">
               <div className="px-5 pt-8 pb-14">
                 <h1 className="font-quicksand font-bold text-2xl pb-8 lg:pb-12 text-fiord">
                   Quick Links
@@ -103,6 +104,22 @@ const Footer = () => {
                       >
                         {linkText}
                       </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div> */}
+
+            <div className="section-2 w-full lg:w-auto pb-12 lg:pb-0">
+              <div className="px-5 pt-8 pb-14">
+                <h1 className="font-quicksand font-bold text-2xl pb-8 lg:pb-12 text-fiord">
+                  Quick Links
+                </h1>
+                <ul className="font-sans font-normal text-base !text-fiord space-y-4">
+                  {links.map((link, index) => (
+                    <li key={index} className="flex items-center">
+                      <IoIosArrowForward className="mr-2" />
+                      <Link href={link.href}>{link.text}</Link>
                     </li>
                   ))}
                 </ul>
@@ -151,7 +168,9 @@ const Footer = () => {
               alt="Innovative Cursor Logo"
             />
           </span>
-          <span>Innovative Cursor</span>
+          <Link href="https://www.innovativecursor.com/">
+            <span>Innovative Cursor</span>
+          </Link>
         </div>
       </div>
     </div>

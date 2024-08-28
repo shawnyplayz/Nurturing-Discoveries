@@ -4,7 +4,7 @@ import React from "react";
 const RoadMapSection = () => {
   return (
     <div className="hidden md:flex justify-center items-center py-48">
-      <div className="relative w-full max-w-screen-lg">
+      <div className="relative w-full max-w-screen-xl">
         <Image
           src="/home/roadMapAssets/roadmap_line.jpg"
           width={1000}

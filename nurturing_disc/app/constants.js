@@ -167,6 +167,15 @@ export const footerData = {
   ],
 };
 
+export const footerQuickLinks = () => {
+  return [
+    { text: "Our Program", href: "/programs&events" },
+    { text: "Our Staff", href: "#staff-section" },
+    { text: "Our Blogs", href: "/blogs" },
+    { text: "Contact Us", href: "/contactus" },
+  ];
+};
+
 export const aboutUsPage = {
   title: "Who we are ?",
   subHeading: "Myself",
