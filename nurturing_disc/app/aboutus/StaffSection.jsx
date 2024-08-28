@@ -66,20 +66,27 @@ const StaffSection = () => {
     return null;
   }
   return (
-    <div className="staff-section relative" id="staff-section">
-      <div className="absolute bottom-4 left-5">
+    <div className="staff-section relative md:pb-40" id="staff-section">
+      <div className="absolute bottom-1 left-5 w-52">
         <Image
           src="/cartoons/love.svg"
-          width={250}
-          height={250}
+          width={200}
+          height={200}
           alt="love cartoon"
         />
       </div>
-      <div className="absolute top-5 right-7">
+      <div
+        className="w-48"
+        style={{
+          position: "absolute",
+          top: "-3.5rem",
+          right: "1.75rem",
+        }}
+      >
         <Image
           src="/cartoons/rainbow.svg"
-          width={250}
-          height={250}
+          width={200}
+          height={200}
           alt="rainbow cartoon"
         />
       </div>
