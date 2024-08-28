@@ -7,20 +7,21 @@ import React, { useEffect, useState } from "react";
 import { HomeSection } from "../constants";
 import { TypeAnimation } from "react-type-animation";
 import VideoModal from "@/components/modal/VideoModal";
-import { useSpring, animated } from "@react-spring/web";
+import { useTransition, animated } from "@react-spring/web";
 import imageData from "@/public/data/imageData";
+
 const images = ["/home/home1.jpg", "/home/image3.jpg", "/home/image2.jpg"];
 
 const HomeCarousel = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // React Spring animation for image opacity
-  const { opacity } = useSpring({
-    opacity: 1,
+  // React Spring transition for smooth image fading
+  const transitions = useTransition(currentImageIndex, {
     from: { opacity: 0 },
-    reset: true,
-    config: { duration: 1000 }, // Duration for fade in and out
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+    config: { duration: 500 }, // Set the duration to 500ms
   });
 
   // Function to change image
@@ -67,7 +68,6 @@ const HomeCarousel = () => {
                   repeat={Infinity}
                   className="inline-block"
                   preRenderFirstString={true} // Ensure pre-rendering
-                  render={(text) => getStyledText(text)} // Custom rendering logic
                 />
                 <TypeAnimation
                   sequence={[
@@ -84,7 +84,6 @@ const HomeCarousel = () => {
                   repeat={Infinity}
                   className="inline-block"
                   preRenderFirstString={true} // Ensure pre-rendering
-                  render={(text) => getStyledText(text)} // Custom rendering logic
                 />
               </div>
             </div>
@@ -108,30 +107,31 @@ const HomeCarousel = () => {
               height={500}
               alt="Blob"
             />
-            <div
-              style={{
-                opacity, // Apply the opacity animation
-                position: "absolute",
-                bottom: "0rem",
-                left: "-2.5rem",
-                width: "650px",
-                height: "650px",
-                backgroundColor: "#FF5733", // The color of the blob
-                WebkitMaskImage: `url(${imageData})`, // Use the imported SVG
-                WebkitMaskRepeat: "no-repeat",
-                WebkitMaskSize: "cover", // Adjust this to fit the mask image
-                WebkitMaskPosition: "center", // Center the mask image
-              }}
-            >
-              <Image
-                src={images[currentImageIndex]}
-                // width={600}
-                // height={600}
-                alt="Home"
-                layout="fill"
-                objectFit="cover"
-              />
-            </div>
+            {transitions((style, index) => (
+              <animated.div
+                style={{
+                  ...style,
+                  position: "absolute",
+                  bottom: "0rem",
+                  left: "-2.5rem",
+                  width: "650px",
+                  height: "650px",
+                  backgroundColor: "#FF5733", // The color of the blob
+                  WebkitMaskImage: `url(${imageData})`, // Use the imported SVG
+                  WebkitMaskRepeat: "no-repeat",
+                  WebkitMaskSize: "cover", // Adjust this to fit the mask image
+                  WebkitMaskPosition: "center", // Center the mask image
+                }}
+                key={index}
+              >
+                <Image
+                  src={images[index]}
+                  alt="Home"
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </animated.div>
+            ))}
           </div>
         </div>
       </section>

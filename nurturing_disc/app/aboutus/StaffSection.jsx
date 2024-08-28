@@ -66,7 +66,7 @@ const StaffSection = () => {
   if (nonFeaturedStaff.length === 0) {
     return null;
   }
-  
+
   const isSliderEnabled = staffs.length > 4;
   if (staffs.length === 0) {
     return null;
