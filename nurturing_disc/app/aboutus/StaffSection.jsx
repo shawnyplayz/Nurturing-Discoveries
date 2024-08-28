@@ -93,56 +93,66 @@ const StaffSection = () => {
       </div>
       <div
         className={`w-full my-5 ${
-          staffs.length < 5 ? "flex justify-center items-center" : ""
+          staffs.filter((staff) => !staff.staff_featured).length <= 4
+            ? "flex justify-center"
+            : ""
         }`}
       >
-        {isSliderEnabled ? (
+        {staffs.filter((staff) => !staff.staff_featured).length > 4 ? (
+          // Use slider if there are more than 4 non-featured staff members
           <Slider {...settings}>
-            {staffs.map((staff, index) => {
-              const { staff_name, staff_position, pictures } = staff;
-              const latestImage = pictures[pictures.length - 1]?.url;
+            {staffs
+              .filter((staff) => !staff.staff_featured)
+              .map((staff) => {
+                const { staff_name, staff_position, pictures } = staff;
+                const latestImage = pictures[pictures.length - 1]?.url;
 
-              return (
-                <div
-                  key={staff.staff_id}
-                  className={`${staffs.length === 4 ? "px-6" : "px-4"}`}
-                >
-                  <StaffCard
-                    name={staff_name}
-                    position={staff_position}
-                    imageUrl={latestImage}
-                  />
-                </div>
-              );
-            })}
+                return (
+                  <div key={staff.staff_id} className="px-4">
+                    <StaffCard
+                      name={staff_name}
+                      position={staff_position}
+                      imageUrl={latestImage}
+                    />
+                  </div>
+                );
+              })}
           </Slider>
         ) : (
+          // Center the items if there are 4 or fewer non-featured staff members
           <div
-            className={`grid ${(() => {
-              switch (staffs.length) {
-                case 1:
-                  return "justify-center";
-                case 2:
-                  return "md:grid-cols-2 w-fit";
-                case 3:
-                  return "md:grid-cols-3";
-                default:
-                  return "md:grid-cols-4";
-              }
-            })()} gap-8`}
+            className={`grid justify-center ${
+              staffs.filter((staff) => !staff.staff_featured).length === 1
+                ? "grid-cols-1"
+                : ""
+            } ${
+              staffs.filter((staff) => !staff.staff_featured).length === 2
+                ? "md:grid-cols-2"
+                : ""
+            } ${
+              staffs.filter((staff) => !staff.staff_featured).length === 3
+                ? "md:grid-cols-3"
+                : ""
+            } ${
+              staffs.filter((staff) => !staff.staff_featured).length === 4
+                ? "md:grid-cols-4"
+                : ""
+            } gap-8`}
           >
-            {staffs.map((staff) => {
-              const { staff_name, staff_position, pictures } = staff;
-              const latestImage = pictures[pictures.length - 1]?.url;
-              return (
-                <StaffCard
-                  key={staff.staff_id}
-                  name={staff_name}
-                  position={staff_position}
-                  imageUrl={latestImage}
-                />
-              );
-            })}
+            {staffs
+              .filter((staff) => !staff.staff_featured)
+              .map((staff) => {
+                const { staff_name, staff_position, pictures } = staff;
+                const latestImage = pictures[pictures.length - 1]?.url;
+                return (
+                  <StaffCard
+                    key={staff?.staff_id}
+                    name={staff?.staff_name}
+                    position={staff?.staff_position}
+                    imageUrl={latestImage}
+                  />
+                );
+              })}
           </div>
         )}
       </div>
