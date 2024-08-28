@@ -46,7 +46,7 @@ const BlogPreview = () => {
   }
 
   return (
-    <div className="flex flex-col items-center lg:pt-28 lg:px-40 pt-6 px-20 gap-8 py-9">
+    <div className="flex flex-col items-center lg:pt-28 lg:px-40 pt-6 px-8 gap-8 py-9">
       {blogs.slice(0, visibleBlogs).map((blog) => {
         const { blog_title, blog_content, pictures, date } = blog;
         const lastImage = pictures[pictures.length - 1]?.url;

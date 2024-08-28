@@ -13,18 +13,18 @@ const BlogCard = ({ title, content, lastImage, date }) => {
     <div className="grid lg:flex md:flex-row md:gap-14 gap-7 border-b border-gray-300 md:py-16 py-4">
       <div>
         {lastImage && (
-          <Image
-            src={lastImage}
-            className="object-contain max-w-96"
-            width={500}
-            height={500}
-            objectFit="fill"
-            alt="Blog image"
-          />
+          <div className="w-full h-[250px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] relative">
+            <Image
+              src={lastImage}
+              layout="fill"
+              className="object-cover"
+              alt="Blog image"
+            />
+          </div>
         )}
       </div>
       <div className="flex flex-col">
-        <div className="text-[#717171] font-sans font-normal text-sm pb-3 ">
+        <div className="text-[#717171] font-sans font-normal text-sm pb-3">
           {formatDate(date)}
         </div>
         <div className="font-quicksandMedium font-medium text-3xl md:text-4xl pb-3 md:text-left">
