@@ -103,7 +103,7 @@ const HomeCarousel = () => {
         <div className="flex justify-center lg:w-1/2 pt-4">
           <div className="relative">
             <Image
-              src="/home/heroSectionAssets/frame.svg"
+              src="/home/heroSectionAssets/frame.png"
               width={600}
               height={500}
               alt="Blob"
@@ -122,8 +122,8 @@ const HomeCarousel = () => {
                 WebkitMaskSize: "cover", // Adjust this to fit the mask image
                 WebkitMaskPosition: "center", // Center the mask image
                 position: "absolute",
-                bottom: "4rem",
-                left: "1.5rem",
+                bottom: "2rem",
+                left: "-0.5rem",
               }}
             />
           </div>
