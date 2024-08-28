@@ -61,15 +61,14 @@ const StaffSection = () => {
     fetchStaffs();
   }, []);
 
-  const isSliderEnabled = staffs.length > 4;
-  if (staffs.length === 0) {
+  const nonFeaturedStaff = staffs.filter((staff) => !staff.staff_featured);
+
+  if (nonFeaturedStaff.length === 0) {
     return null;
   }
-
-  if (
-    staffs.length === 0 ||
-    staffs.filter((staff) => staff.staff_featured === true)
-  ) {
+  
+  const isSliderEnabled = staffs.length > 4;
+  if (staffs.length === 0) {
     return null;
   }
 
