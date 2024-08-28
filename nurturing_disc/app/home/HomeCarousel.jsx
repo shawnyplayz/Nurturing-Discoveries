@@ -102,9 +102,11 @@ const HomeCarousel = () => {
         <div className="flex justify-center lg:w-1/2 pt-4">
           <div className="relative">
             <Image
-              src="/home/heroSectionAssets/Frame5.png"
+              src="/home/heroSectionAssets/finally.svg"
               width={600}
-              height={500}
+              // loading="lazy"
+              // priority
+              height={600}
               alt="Blob"
             />
             {transitions((style, index) => (
@@ -112,10 +114,10 @@ const HomeCarousel = () => {
                 style={{
                   ...style,
                   position: "absolute",
-                  bottom: "0rem",
-                  left: "-2.5rem",
-                  width: "650px",
-                  height: "650px",
+                  bottom: "-1.5rem",
+                  left: "-3.6rem",
+                  width: "700px",
+                  height: "700px",
                   backgroundColor: "#FF5733", // The color of the blob
                   WebkitMaskImage: `url(${imageData})`, // Use the imported SVG
                   WebkitMaskRepeat: "no-repeat",
@@ -127,6 +129,8 @@ const HomeCarousel = () => {
                 <Image
                   src={images[index]}
                   alt="Home"
+                  loading="eager"
+                  priority
                   layout="fill"
                   objectFit="cover"
                 />
