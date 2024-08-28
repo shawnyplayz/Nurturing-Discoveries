@@ -59,6 +59,10 @@ const InstructionsSection = () => {
     fetchStaffs();
   }, []);
 
+  if (staffs.length === 0) {
+    return null;
+  }
+
   return (
     <div className="bg-ivory relative md:py-20">
       <Image

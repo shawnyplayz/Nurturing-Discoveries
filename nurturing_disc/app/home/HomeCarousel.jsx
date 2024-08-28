@@ -9,14 +9,14 @@ import { TypeAnimation } from "react-type-animation";
 import VideoModal from "@/components/modal/VideoModal";
 import { useSpring, animated } from "@react-spring/web";
 import imageData from "@/public/data/imageData";
-const images = ["/home/Hero1.svg", "/home/Hero2.svg", "/home/Hero3.svg"];
+const images = ["/home/home1.jpg", "/home/image3.jpg", "/home/image2.jpg"];
 
 const HomeCarousel = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // React Spring animation
-  const props = useSpring({
+  // React Spring animation for image opacity
+  const { opacity } = useSpring({
     opacity: 1,
     from: { opacity: 0 },
     reset: true,
@@ -103,29 +103,35 @@ const HomeCarousel = () => {
         <div className="flex justify-center lg:w-1/2 pt-4">
           <div className="relative">
             <Image
-              src="/home/heroSectionAssets/frame.png"
+              src="/home/heroSectionAssets/Frame5.png"
               width={600}
               height={500}
               alt="Blob"
             />
-            <Image
-              src="/home/heroSectionAssets/home2.jpg"
-              width={600}
-              height={500}
-              alt="Home"
+            <div
               style={{
-                width: "600px",
-                height: "600px",
+                opacity, // Apply the opacity animation
+                position: "absolute",
+                bottom: "0rem",
+                left: "-2.5rem",
+                width: "650px",
+                height: "650px",
                 backgroundColor: "#FF5733", // The color of the blob
                 WebkitMaskImage: `url(${imageData})`, // Use the imported SVG
                 WebkitMaskRepeat: "no-repeat",
                 WebkitMaskSize: "cover", // Adjust this to fit the mask image
                 WebkitMaskPosition: "center", // Center the mask image
-                position: "absolute",
-                bottom: "2rem",
-                left: "-0.5rem",
               }}
-            />
+            >
+              <Image
+                src={images[currentImageIndex]}
+                // width={600}
+                // height={600}
+                alt="Home"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
           </div>
         </div>
       </section>
