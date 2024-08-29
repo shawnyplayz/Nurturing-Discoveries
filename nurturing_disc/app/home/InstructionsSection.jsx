@@ -64,20 +64,13 @@ const InstructionsSection = () => {
   }
 
   return (
-    <div className="bg-ivory relative md:py-20">
+    <div className="bg-ivory relative md:py-32">
       <Image
         src="/cartoons/love.svg"
         width={240}
         height={240}
         className="absolute md:bottom-2 md:left-6 left-2 top-4 w-48"
         alt="Heart Cartoon"
-      />
-      <Image
-        src="/cartoons/rainbow.svg"
-        width={200}
-        height={200}
-        className="absolute md:bottom-4 md:right-6 bottom-3 right-4 z-10"
-        alt="Rainbow Cartoon"
       />
       <div className="flex flex-col items-center justify-center container mx-auto">
         <div className="pt-28 flex flex-col items-center justify-center">
@@ -154,6 +147,13 @@ const InstructionsSection = () => {
           )}
         </div>
       </div>
+      <Image
+        src="/cartoons/rainbow.svg"
+        width={200}
+        height={200}
+        className="absolute md:bottom-4 md:right-6 bottom-3 right-4 z-10"
+        alt="Rainbow Cartoon"
+      />
     </div>
   );
 };

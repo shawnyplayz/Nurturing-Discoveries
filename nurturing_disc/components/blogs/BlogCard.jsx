@@ -1,4 +1,4 @@
-// components/BlogContent.js
+// components/BlogCard.js
 import Image from "next/image";
 import BlogFormator from "./BlogFormator";
 
@@ -8,9 +8,13 @@ const formatDate = (dateStr) => {
   return new Intl.DateTimeFormat("en-US", options).format(dateObj);
 };
 
-const BlogCard = ({ title, content, lastImage, date }) => {
+const BlogCard = ({ title, content, lastImage, date, isOnlyBlog }) => {
   return (
-    <div className="grid lg:flex md:flex-row md:gap-[4.5rem] gap-7 border-b border-gray-300 md:py-16 py-4">
+    <div
+      className={`grid lg:flex md:flex-row md:gap-[4.5rem] gap-7 ${
+        !isOnlyBlog ? "border-b border-gray-300" : ""
+      } md:py-16 py-4`}
+    >
       <div>
         {lastImage && (
           <div className="w-full h-[250px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] relative">

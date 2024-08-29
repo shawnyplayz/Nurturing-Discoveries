@@ -10,6 +10,7 @@ import endpoints from "@/config/endpoints";
 import { fetchDataGet } from "@/utils/fetchData";
 import { showToastError, showToastSuccess } from "@/config/toast";
 import Link from "next/link";
+import { homeAboutUsImageData } from "@/public/data/imageData";
 
 const AboutUsSection = () => {
   const data = [
@@ -30,10 +31,15 @@ const AboutUsSection = () => {
       />
       <div className="left py-16 md:py-32 pl-9">
         <Image
+          style={{
+            WebkitMaskImage: `url(${homeAboutUsImageData})`,
+            WebkitMaskRepeat: "no-repeat",
+            WebkitMaskSize: "cover",
+            WebkitMaskPosition: "center",
+          }}
           src="aboutus-image.svg"
           width={600}
           height={400}
-          className="clip-custom-shape"
           alt="About Us Image"
         />
       </div>
