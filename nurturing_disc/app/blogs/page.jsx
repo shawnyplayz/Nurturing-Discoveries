@@ -6,7 +6,7 @@ import React from "react";
 const Blogs = () => {
   return (
     <div>
-      <SectionSeparator title="Our Blogs" subHeading="Home > Blog" />
+      <SectionSeparator title="Blogs" subHeading="Home > Blog" />
       <div className="mx-auto container">
         <BlogPreview />
       </div>

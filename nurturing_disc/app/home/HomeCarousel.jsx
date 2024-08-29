@@ -8,9 +8,13 @@ import { HomeSection } from "../constants";
 import { TypeAnimation } from "react-type-animation";
 import VideoModal from "@/components/modal/VideoModal";
 import { useTransition, animated } from "@react-spring/web";
-import {imageData} from "@/public/data/imageData";
+import { imageData } from "@/public/data/imageData";
 
-const images = ["/home/home1.jpg", "/home/image3.jpg", "/home/image2.jpg"];
+const images = [
+  "/home/heroSectionAssets/image1.webp",
+  "/home/heroSectionAssets/image2.webp",
+  "/home/heroSectionAssets/image2.webp",
+];
 
 const HomeCarousel = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -140,7 +144,7 @@ const HomeCarousel = () => {
       <VideoModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        videoUrl="/home/video1.mp4"
+        videoUrl="/home/heroSectionAssets/video1.mp4"
       />
     </div>
   );
