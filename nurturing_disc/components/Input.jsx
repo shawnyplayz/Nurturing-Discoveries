@@ -42,12 +42,13 @@ const TextArea = ({
   onChange,
   children,
   className,
+  textAreaHeight,
   ...rest
 }) => {
   return (
     <div className={`w-full ${className}`}>
       <textarea
-        className="rounded-xl border py-3 px-5 w-full resize-none"
+        className={`rounded-xl border py-3 px-5 w-full resize-none ${textAreaHeight}`}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
