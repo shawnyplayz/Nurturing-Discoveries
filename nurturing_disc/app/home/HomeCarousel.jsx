@@ -13,7 +13,7 @@ import { imageData } from "@/public/data/imageData";
 const images = [
   "/home/heroSectionAssets/image1.webp",
   "/home/heroSectionAssets/image2.webp",
-  "/home/heroSectionAssets/image2.webp",
+  "/home/heroSectionAssets/image3.webp",
 ];
 
 const HomeCarousel = () => {
