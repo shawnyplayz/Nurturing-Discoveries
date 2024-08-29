@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Button from "./buttons/Button";
 import { Input, TextArea } from "./Input";
 import endpoints from "@/config/endpoints";
@@ -19,13 +19,7 @@ const EnrollForm = () => {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
   const [loading, setLoading] = useState(false);
-
-  // Create refs for each input field
-  const childNameRef = useRef(null);
-  const guardianNameRef = useRef(null);
-  const emailRef = useRef(null);
-  const phoneNumberRef = useRef(null);
-  const messageRef = useRef(null);
+  const [formSuccessMessage, setFormSuccessMessage] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,65 +29,16 @@ const EnrollForm = () => {
     }));
   };
 
-  const validateForm = () => {
-    const {
-      enrollment_child_name,
-      enrollment_guardian_name,
-      enrollment_email_id,
-      enrollment_phNumber,
-    } = formData;
-
-    if (
-      !enrollment_child_name ||
-      !enrollment_guardian_name ||
-      !enrollment_email_id ||
-      !enrollment_phNumber
-    ) {
-      return "All fields are required.";
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(enrollment_email_id)) {
-      return "Please enter a valid email address.";
-    }
-
-    const phoneRegex = /^[0-9]{10}$/;
-    if (!phoneRegex.test(enrollment_phNumber)) {
-      return "Please enter a valid 10-digit phone number.";
-    }
-
-    return null;
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setError(null);
-    setSuccess(null);
-
-    const validationError = validateForm();
-    if (validationError) {
-      showToastError(validationError);
-      setError(validationError);
-      setLoading(false);
-      return;
-    }
+    setFormSuccessMessage(null);
 
     try {
       const result = await fetchDataPost(endpoints.sendEnrollment, formData);
 
-      if (result.ok && result.message) {
+      if (result && result.message) {
         showToastSuccess(result.message);
-        setSuccess(result.message);
-
-        // Clear the form using refs
-        childNameRef.current.value = "";
-        guardianNameRef.current.value = "";
-        emailRef.current.value = "";
-        phoneNumberRef.current.value = "";
-        messageRef.current.value = "";
-
-        // Reset the state as well
         setFormData({
           enrollment_child_name: "",
           enrollment_guardian_name: "",
@@ -101,16 +46,14 @@ const EnrollForm = () => {
           enrollment_phNumber: "",
           enrollment_message: "",
         });
+        setFormSuccessMessage(
+          "Your enrollment form has been submitted successfully!"
+        );
       } else {
-        const errorMessage =
-          result.message || "Failed to send inquiry. Please try again.";
-        showToastError(errorMessage);
-        setError(errorMessage);
+        showToastError("Failed to send inquiry. Please try again.");
       }
     } catch (err) {
-      const errorMessage = err.message || "An unexpected error occurred.";
-      showToastError(errorMessage);
-      setError(errorMessage);
+      showToastError(err.message || "An unexpected error occurred.");
     } finally {
       setLoading(false);
     }
@@ -127,7 +70,6 @@ const EnrollForm = () => {
             Child Name
           </label>
           <Input
-            ref={childNameRef}
             value={formData.enrollment_child_name}
             onChange={handleChange}
             type="text"
@@ -142,7 +84,6 @@ const EnrollForm = () => {
             Mobile Number
           </label>
           <Input
-            ref={phoneNumberRef}
             value={formData.enrollment_phNumber}
             onChange={handleChange}
             type="text"
@@ -157,7 +98,6 @@ const EnrollForm = () => {
             Guardian Parent Name
           </label>
           <Input
-            ref={guardianNameRef}
             value={formData.enrollment_guardian_name}
             onChange={handleChange}
             type="text"
@@ -172,7 +112,6 @@ const EnrollForm = () => {
             Email Address
           </label>
           <Input
-            ref={emailRef}
             value={formData.enrollment_email_id}
             onChange={handleChange}
             type="email"
@@ -189,7 +128,6 @@ const EnrollForm = () => {
           Message
         </label>
         <TextArea
-          ref={messageRef}
           value={formData.enrollment_message}
           onChange={handleChange}
           name="enrollment_message"
@@ -201,6 +139,9 @@ const EnrollForm = () => {
 
       {error && <p className="text-red-600 text-sm mt-2">{error}</p>}
       {success && <p className="text-green-600 text-sm mt-2">{success}</p>}
+      {formSuccessMessage && (
+        <p className="text-green-600 text-lg mt-4">{formSuccessMessage}</p>
+      )}
 
       <div className="flex justify-end sm:justify-start mt-4 sm:mt-6">
         <Button
