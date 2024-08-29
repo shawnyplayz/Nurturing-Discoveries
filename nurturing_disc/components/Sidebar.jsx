@@ -7,7 +7,7 @@ function Sidebar({ open, setOpen }) {
     <div
       className={`fixed top-0 right-0 w-64 bg-gray-50 h-full border-l border-gray-200 shadow-lg transform z-50 ${
         open ? "translate-x-0" : "translate-x-full"
-      } transition-transform duration-300 ease-in-out md:hidden`}
+      } transition-transform duration-300 ease-in-out lg:hidden`}
     >
       <div className="p-4">
         <button

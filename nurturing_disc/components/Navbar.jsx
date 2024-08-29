@@ -30,7 +30,7 @@ const Navbar = () => {
         </Link>
       </div>
       {/* Desktop Navigation */}
-      <div className="sm:flex items-center hidden">
+      <div className="lg:flex items-center hidden">
         <ul className="flex flex-row gap-8 text-base">
           {navLinks.map((link) => (
             <li key={link.href}>
@@ -53,7 +53,7 @@ const Navbar = () => {
         </EnrollFormModel>
       </div>
       {/* Mobile Hamburger Button */}
-      <div className="md:hidden flex items-center">
+      <div className="lg:hidden flex items-center">
         <button
           onClick={() => setOpen(!open)}
           className="p-2 text-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200"
