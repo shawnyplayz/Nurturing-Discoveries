@@ -102,10 +102,10 @@ const HomeCarousel = () => {
         <div className="flex justify-center lg:w-1/2 pt-4">
           <div className="relative">
             <Image
-              src="/home/heroSectionAssets/finally.svg"
+              src="/home/heroSectionAssets/heroShape.svg"
               width={600}
-              // loading="lazy"
-              // priority
+              loading="eager"
+              priority
               height={600}
               alt="Blob"
             />
@@ -114,11 +114,10 @@ const HomeCarousel = () => {
                 style={{
                   ...style,
                   position: "absolute",
-                  bottom: "-1.5rem",
-                  left: "-3.6rem",
-                  width: "700px",
-                  height: "700px",
-                  backgroundColor: "#FF5733", // The color of the blob
+                  bottom: "-3.5rem",
+                  left: "-2.5rem",
+                  width: "680px",
+                  height: "680px",
                   WebkitMaskImage: `url(${imageData})`, // Use the imported SVG
                   WebkitMaskRepeat: "no-repeat",
                   WebkitMaskSize: "cover", // Adjust this to fit the mask image
@@ -129,8 +128,6 @@ const HomeCarousel = () => {
                 <Image
                   src={images[index]}
                   alt="Home"
-                  loading="eager"
-                  priority
                   layout="fill"
                   objectFit="cover"
                 />
