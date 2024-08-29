@@ -118,7 +118,6 @@ const EnrollForm = () => {
             name="enrollment_email_id"
             placeholder="example@gmail.com"
             className="w-full font-quicksandMedium text-base sm:text-lg lg:text-xl"
-            required
           />
         </div>
       </div>
