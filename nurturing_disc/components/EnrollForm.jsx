@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Button from "./buttons/Button";
 import { Input, TextArea } from "./Input";
 import endpoints from "@/config/endpoints";
@@ -19,6 +19,13 @@ const EnrollForm = () => {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  // Create refs for each input field
+  const childNameRef = useRef(null);
+  const guardianNameRef = useRef(null);
+  const emailRef = useRef(null);
+  const phoneNumberRef = useRef(null);
+  const messageRef = useRef(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -78,6 +85,15 @@ const EnrollForm = () => {
       if (result.ok && result.message) {
         showToastSuccess(result.message);
         setSuccess(result.message);
+
+        // Clear the form using refs
+        childNameRef.current.value = "";
+        guardianNameRef.current.value = "";
+        emailRef.current.value = "";
+        phoneNumberRef.current.value = "";
+        messageRef.current.value = "";
+
+        // Reset the state as well
         setFormData({
           enrollment_child_name: "",
           enrollment_guardian_name: "",
@@ -111,6 +127,7 @@ const EnrollForm = () => {
             Child Name
           </label>
           <Input
+            ref={childNameRef}
             value={formData.enrollment_child_name}
             onChange={handleChange}
             type="text"
@@ -125,6 +142,7 @@ const EnrollForm = () => {
             Mobile Number
           </label>
           <Input
+            ref={phoneNumberRef}
             value={formData.enrollment_phNumber}
             onChange={handleChange}
             type="text"
@@ -139,6 +157,7 @@ const EnrollForm = () => {
             Guardian Parent Name
           </label>
           <Input
+            ref={guardianNameRef}
             value={formData.enrollment_guardian_name}
             onChange={handleChange}
             type="text"
@@ -153,6 +172,7 @@ const EnrollForm = () => {
             Email Address
           </label>
           <Input
+            ref={emailRef}
             value={formData.enrollment_email_id}
             onChange={handleChange}
             type="email"
@@ -169,6 +189,7 @@ const EnrollForm = () => {
           Message
         </label>
         <TextArea
+          ref={messageRef}
           value={formData.enrollment_message}
           onChange={handleChange}
           name="enrollment_message"
