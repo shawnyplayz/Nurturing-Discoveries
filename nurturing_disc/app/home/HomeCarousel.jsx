@@ -42,7 +42,7 @@ const HomeCarousel = () => {
   }, []);
 
   return (
-    <div className="bg-[#ECF8FF] sm:px-6 lg:px-8">
+    <div className="bg-[#ECF8FF] sm:px-6 lg:px-8 lg:py-24">
       <section className="container mx-auto flex flex-col lg:flex-row items-center">
         <div className="text-center lg:text-left lg:w-1/2 lg:pl-8">
           <div className="flex flex-col gap-2 mb-4 mt-4">
@@ -103,7 +103,7 @@ const HomeCarousel = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center lg:w-1/2 pt-4">
+        <div className="flex justify-center lg:w-1/2 pt-4" data-aos="fade-left">
           <div className="relative">
             <Image
               src="/home/heroSectionAssets/heroShape.svg"

@@ -85,31 +85,6 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* <div className="section-2 w-full lg:w-auto pb-12 lg:pb-0">
-              <div className="px-5 pt-8 pb-14">
-                <h1 className="font-quicksand font-bold text-2xl pb-8 lg:pb-12 text-fiord">
-                  Quick Links
-                </h1>
-                <ul className="font-sans font-normal text-base !text-fiord space-y-4">
-                  {[
-                    "Our Program",
-                    "Our Staff",
-                    "Our Gallery",
-                    "Contact Us",
-                  ].map((linkText, index) => (
-                    <li key={index} className="flex items-center">
-                      <IoIosArrowForward className="mr-2" />
-                      <Link
-                        href={`/${linkText.toLowerCase().replace(/\s+/g, "-")}`}
-                      >
-                        {linkText}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div> */}
-
             <div className="section-2 w-full lg:w-auto pb-12 lg:pb-0">
               <div className="px-5 pt-8 pb-14">
                 <h1 className="font-quicksand font-bold text-2xl pb-8 lg:pb-12 text-fiord">

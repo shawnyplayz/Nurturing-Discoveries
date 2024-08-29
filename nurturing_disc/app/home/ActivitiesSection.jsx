@@ -64,7 +64,7 @@ const ActivitiesSection = () => {
           </div>
         </div>
       </div>
-      <div className="relative">
+      <div className="relative pb-20">
         <div className="hidden md:flex absolute bottom-0 right-0 lg:bottom-0 lg:right-0 xl:h-[250px]">
           <Image
             src="/cartoons/zebra.svg"

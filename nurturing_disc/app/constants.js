@@ -34,7 +34,7 @@ export const HEADER_DATA = {
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/aboutus", label: "About Us" },
-  { href: "/programs&events", label: "Programs & Events" },
+  { href: "/programs_events", label: "Programs & Events" },
   { href: "/blogs", label: "Blogs" },
   { href: "/contactus", label: "Contact Us" },
 ];
@@ -160,7 +160,7 @@ export const footerData = {
       subtext: "Email us",
     },
     {
-      iconSrc: "footerAssets/phoneIcon.svg",
+      iconSrc: "footerAssets/locationIcon.svg",
       text: "I.C. Colony, Borivali west, Mumbai 400103",
       subtext: "Visit us",
     },
@@ -169,7 +169,7 @@ export const footerData = {
 
 export const footerQuickLinks = () => {
   return [
-    { text: "Program and Events", href: "/programs&events" },
+    { text: "Program and Events", href: "/programs_events" },
     { text: "About Us", href: "/aboutus" },
     { text: "Blogs", href: "/blogs" },
     { text: "Contact Us", href: "/contactus" },

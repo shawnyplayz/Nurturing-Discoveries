@@ -40,9 +40,9 @@ const ProgramSection = () => {
       </div>
       <div>
         <div className="font-sans font-semibold text-xl text-peach text-center">
-          {programSectionData.title}
+          <h1>{programSectionData.title}</h1>
         </div>
-        <div className="font-quicksand text-fiord font-bold text-4xl md:text-5xl max-w-2xl text-center pt-6 md:pt-10">
+        <div className="font-quicksand text-fiord font-bold md:text-5xl max-w-2xl text-center pt-6 md:pt-10">
           {programSectionData.subHeading}
         </div>
       </div>
@@ -59,7 +59,7 @@ const ProgramSection = () => {
         ))}
       </div>
       <div className="py-8 md:py-12">
-        <Link href={"/programs&events"}>
+        <Link href={"/programs_events"}>
           <Button>View All Programs</Button>
         </Link>
       </div>

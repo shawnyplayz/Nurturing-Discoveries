@@ -53,7 +53,7 @@ function Sidebar({ open, setOpen }) {
           </li>
           <li>
             <Link
-              href="/programs&events"
+              href="/programs_events"
               className="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100"
               onClick={() => setOpen(false)}
             >
