@@ -8,7 +8,7 @@ const PlayButton = ({ onClick }) => {
       aria-label="Play"
       onClick={onClick}
     >
-      <Image src="/play-button.svg" width={24} height={24} alt="Play" />
+      <Image src="/icons/play-button.svg" width={24} height={24} alt="Play" />
     </button>
   );
 };

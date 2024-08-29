@@ -37,7 +37,7 @@ const AboutUsSection = () => {
             WebkitMaskSize: "cover",
             WebkitMaskPosition: "center",
           }}
-          src="aboutus-image.svg"
+          src="/home/aboutUsAssets/aboutus-image.svg"
           width={600}
           height={400}
           alt="About Us Image"

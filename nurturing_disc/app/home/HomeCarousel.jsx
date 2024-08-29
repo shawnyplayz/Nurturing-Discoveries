@@ -51,7 +51,7 @@ const HomeCarousel = () => {
                 {HomeSection.HomeCarousel.title}
               </h2>
 
-              <Image src="/star.svg" width={20} height={20} alt="star icon" />
+              <Image src="/home/heroSectionAssets/star.svg" width={20} height={20} alt="star icon" />
             </div>
           </div>
 

@@ -21,7 +21,7 @@ const ActivitiesSection = () => {
       <div className="flex flex-col lg:flex-row justify-center items-center pt-16 lg:pt-32 overflow-hidden relative px-4 container mx-auto">
         <div className="order-2 lg:order-none lg:pr-8">
           <Image
-            src="/activities-image.svg"
+            src="home/activitiesAssets/activities-image.svg"
             height={300}
             width={300}
             alt="Activities"
