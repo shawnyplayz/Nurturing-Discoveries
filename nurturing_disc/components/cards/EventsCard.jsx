@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaCalendar, FaMapMarkerAlt } from "react-icons/fa";
 import Button from "../buttons/Button";
 import Image from "next/image";
+import CustomModal from "../modal/CustomModel";
 
 export default function EventsCards({
   title,
@@ -12,9 +13,11 @@ export default function EventsCards({
 }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
+  const [openModal, setopenModal] = useState(false);
+
   const toggleReadMore = () => setIsExpanded(!isExpanded);
 
-  const truncatedDescription = description.slice(0, 150);
+  const truncatedTitle = title?.slice(0, 150);
 
   return (
     <div className="flex flex-col mt-6 text-gray-700 border-2 bg-clip-border rounded-3xl md:w-96 w-full transition-transform transform hover:scale-105 cursor-pointer">
@@ -32,13 +35,13 @@ export default function EventsCards({
           {date}
         </div>
       </div>
-      <div className="p-4 sm:p-6">
+      <div className="p-4 sm:p-6 flex flex-col justify-end">
         <div className="flex items-start text-gray-300 mb-3 justify-start pb-2">
           <FaMapMarkerAlt className="mr-2 text-peach" />
           <span className="text-xs">{location}</span>
         </div>
         <p className="text-lg font-quicksand leading-relaxed text-inherit text-left font-light !text-fiord mb-4">
-          {isExpanded ? description : `${truncatedDescription}...`}
+          {isExpanded ? title : `${truncatedTitle}...`}
           {/* <span
             onClick={toggleReadMore}
             className="text-peach cursor-pointer ml-1 text-sm"
@@ -51,7 +54,9 @@ export default function EventsCards({
             - - - - - - - - - - - - - - - - - - - - - - - - - - - -
           </span>
         </div>
-        <Button>Read More</Button>
+        <div>
+          <Button>Read More</Button>
+        </div>
       </div>
     </div>
   );
