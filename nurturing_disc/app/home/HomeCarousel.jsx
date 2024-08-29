@@ -103,10 +103,9 @@ const HomeCarousel = () => {
           <div className="relative">
             <Image
               src="/home/heroSectionAssets/heroShape.svg"
-              width={600}
-              loading="eager"
+              width={500}
+              height={500}
               priority
-              height={600}
               alt="Blob"
             />
             {transitions((style, index) => (
@@ -114,10 +113,10 @@ const HomeCarousel = () => {
                 style={{
                   ...style,
                   position: "absolute",
-                  bottom: "-3.5rem",
-                  left: "-2.5rem",
-                  width: "680px",
-                  height: "680px",
+                  top: "0", // Stick to the top of the parent
+                  left: "0", // Stick to the left of the parent
+                  width: "100%", // Ensure it covers the parent
+                  height: "100%", // Ensure it covers the parent
                   WebkitMaskImage: `url(${imageData})`, // Use the imported SVG
                   WebkitMaskRepeat: "no-repeat",
                   WebkitMaskSize: "cover", // Adjust this to fit the mask image
@@ -129,6 +128,7 @@ const HomeCarousel = () => {
                   src={images[index]}
                   alt="Home"
                   layout="fill"
+                  priority
                   objectFit="cover"
                 />
               </animated.div>
