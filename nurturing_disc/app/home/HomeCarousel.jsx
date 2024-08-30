@@ -9,6 +9,8 @@ import { TypeAnimation } from "react-type-animation";
 import VideoModal from "@/components/modal/VideoModal";
 import { useTransition, animated } from "@react-spring/web";
 import { imageData } from "@/public/data/imageData";
+import EnrollFormModel from "@/components/modal/EnrollFormModel";
+import EnrollForm from "@/components/EnrollForm";
 
 const images = [
   "/home/heroSectionAssets/image1.webp",
@@ -18,7 +20,8 @@ const images = [
 
 const HomeCarousel = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [isEnrollModalOpen, setIsEnrollModalOpen] = useState(false); // State for Enroll modal
 
   // React Spring transition for smooth image fading
   const transitions = useTransition(currentImageIndex, {
@@ -44,14 +47,22 @@ const HomeCarousel = () => {
   return (
     <div className="bg-[#ECF8FF] sm:px-6 lg:px-8 lg:py-24">
       <section className="container mx-auto flex flex-col lg:flex-row items-center">
-        <div className="text-center lg:text-left lg:w-1/2 lg:pl-8" data-aos="fade-right">
+        <div
+          className="text-center lg:text-left lg:w-1/2 lg:pl-8"
+          data-aos="fade-right"
+        >
           <div className="flex flex-col gap-2 mb-4 mt-4">
             <div className="flex gap-3">
               <h2 className="text-peach font-semibold text-xl sm:text-2xl lg:text-lg">
                 {HomeSection.HomeCarousel.title}
               </h2>
 
-              <Image src="/home/heroSectionAssets/star.svg" width={20} height={20} alt="star icon" />
+              <Image
+                src="/home/heroSectionAssets/star.svg"
+                width={20}
+                height={20}
+                alt="star icon"
+              />
             </div>
           </div>
 
@@ -96,9 +107,12 @@ const HomeCarousel = () => {
             {HomeSection.HomeCarousel.subtitle}
           </p>
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-center lg:items-start">
-            <Button>Apply Today</Button>
+            <Button onClick={() => setIsEnrollModalOpen(true)}>
+              Apply Today
+            </Button>{" "}
+            {/* Open Enroll Modal */}
             <div className="flex flex-row items-center gap-4 font-sans font-bold text-base text-fiord">
-              <PlayButton onClick={() => setIsModalOpen(true)} />
+              <PlayButton onClick={() => setIsVideoModalOpen(true)} />
               <p>Play Video</p>
             </div>
           </div>
@@ -142,10 +156,17 @@ const HomeCarousel = () => {
       </section>
 
       <VideoModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
+        isOpen={isVideoModalOpen}
+        onClose={() => setIsVideoModalOpen(false)}
         videoUrl="/home/heroSectionAssets/video1.mp4"
       />
+
+      <EnrollFormModel
+        isOpen={isEnrollModalOpen}
+        onClose={() => setIsEnrollModalOpen(false)}
+      >
+        <EnrollForm />
+      </EnrollFormModel>
     </div>
   );
 };

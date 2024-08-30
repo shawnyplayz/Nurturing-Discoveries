@@ -76,7 +76,6 @@ const InstructionsSection = () => {
       <div className="flex flex-col items-center justify-center container mx-auto">
         <div
           className="pt-28 flex flex-col items-center justify-center"
-          data-aos="fade-down"
         >
           <div className="font-sans font-normal text-xl text-peach pb-3 text-center">
             {InstructionsSectionData.title}
@@ -91,7 +90,6 @@ const InstructionsSection = () => {
               ? "flex justify-center"
               : ""
           }`}
-          data-aos="zoom-in"
         >
           {staffs.filter((staff) => staff.staff_featured).length > 4 ? (
             // Use slider if there are more than 4 featured staff members
