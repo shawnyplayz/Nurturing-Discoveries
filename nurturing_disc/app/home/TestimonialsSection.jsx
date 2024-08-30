@@ -70,10 +70,7 @@ const TestimonialsSection = () => {
         <Image src="/cartoons/bee.svg" width={100} height={100} alt="Bee" />
       </div>
       <div className="w-full px-4">
-        <div
-          className="flex items-center justify-center flex-col"
-          data-aos="zoom-out"
-        >
+        <div className="flex items-center justify-center flex-col">
           <div className="font-sans font-semibold text-xl text-peach pt-32">
             Testimonials
           </div>
@@ -92,7 +89,7 @@ const TestimonialsSection = () => {
                 const { reviewer_name, review, pictures } = testimonial;
                 const imageSrc = pictures[0]?.url;
                 return (
-                  <div key={testimonial.testimonial_id} data-aos="flip-up">
+                  <div key={testimonial.testimonial_id}>
                     <TestimonialCard
                       text={review}
                       author={reviewer_name}

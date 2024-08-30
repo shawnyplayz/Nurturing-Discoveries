@@ -47,11 +47,11 @@ const BlogPreview = () => {
 
   return (
     <div className="flex flex-col items-center lg:pt-28 lg:px-40 pt-6 px-8 gap-0 py-9">
-      <div data-aos="zoom-out">
+      <div>
         {blogs.slice(0, visibleBlogs).map((blog, index) => {
           const { blog_title, blog_content, pictures, date } = blog;
           const lastImage = pictures[pictures.length - 1]?.url;
-          const isOnlyBlog = blogs.length === 1; // Determine if there is only one blog
+          const isOnlyBlog = blogs.length === 1;
 
           return (
             <BlogCard
@@ -60,7 +60,7 @@ const BlogPreview = () => {
               content={blog_content}
               lastImage={lastImage}
               date={date}
-              isOnlyBlog={isOnlyBlog} // Pass the isOnlyBlog prop
+              isOnlyBlog={isOnlyBlog}
             />
           );
         })}

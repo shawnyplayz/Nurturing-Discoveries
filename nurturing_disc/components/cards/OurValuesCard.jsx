@@ -3,7 +3,10 @@ import { MdDescription } from "react-icons/md";
 
 const OurValuesCard = ({ backgroundColor, cardNumber, title, description }) => {
   return (
-    <div className="bg-white flex-col flex gap-6 rounded-xl shadow-lg overflow-hidden h-full">
+    <div
+      className="bg-white flex-col flex gap-6 rounded-xl shadow-lg overflow-hidden h-full"
+      data-aos="flip-left"
+    >
       <div className="number-box pt-5 pl-5">
         <div
           className="py-4 px-6 bg-[#F8B81F] w-16 h-16 flex items-center justify-center rounded-lg"

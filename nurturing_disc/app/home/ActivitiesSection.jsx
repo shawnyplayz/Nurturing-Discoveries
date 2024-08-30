@@ -30,11 +30,10 @@ const ActivitiesSection = () => {
             width={300}
             alt="Activities"
             className="clip-path-activities w-3/4"
-            data-aos="fade-right"
           />
         </div>
         <div className="max-w-full lg:max-w-2xl mt-8 lg:mt-0 text-center lg:text-left">
-          <div data-aos="zoom-in">
+          <div>
             <div className="font-sans font-semibold text-lg lg:text-xl text-peach">
               {ActivitiesSectionData.title}
             </div>
@@ -45,10 +44,7 @@ const ActivitiesSection = () => {
               {ActivitiesSectionData.description}
             </div>
           </div>
-          <div
-            className="pt-6 lg:pt-10 grid grid-cols-1 sm:grid-cols-2 gap-4"
-            data-aos="flip-up"
-          >
+          <div className="pt-6 lg:pt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {ActivitiesSectionData.activities.map((activity) => (
               <ActivityCard
                 key={activity.id}
@@ -59,7 +55,7 @@ const ActivitiesSection = () => {
               />
             ))}
           </div>
-          <div data-aos="fade-right">
+          <div>
             <Link
               href="/home"
               className="pt-6 lg:pt-10 items-center flex flex-row gap-3 pb-16 lg:pb-32 justify-center lg:justify-start"

@@ -10,6 +10,7 @@ export default function ProgramCard({
     <div
       className="flex flex-col mt-6 text-gray-700 shadow-md bg-clip-border rounded-3xl md:w-96 w-full"
       style={{ backgroundColor }}
+      data-aos="flip-left"
     >
       <div className="h-56 mx-4 mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-3xl bg-blue-gray-500 shadow-blue-gray-500/40">
         <Image

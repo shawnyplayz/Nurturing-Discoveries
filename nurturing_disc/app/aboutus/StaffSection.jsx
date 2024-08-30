@@ -98,7 +98,7 @@ const StaffSection = () => {
           data-aos="fade-left"
         />
       </div>
-      <div className="flex items-center justify-center flex-col mt-16 mb-10" data-aos="zoom-in">
+      <div className="flex items-center justify-center flex-col mt-16 mb-10">
         <div className="pb-3 font-normal text-xl font-sans text-peach text-center">
           Our Experts
         </div>
@@ -112,7 +112,6 @@ const StaffSection = () => {
             ? "flex justify-center"
             : ""
         }`}
-        data-aos="zoom-in"
       >
         {staffs.filter((staff) => !staff.staff_featured).length > 4 ? (
           // Use slider if there are more than 4 non-featured staff members

@@ -3,11 +3,7 @@ import React from "react";
 
 const RoadMapSection = () => {
   return (
-    <div
-      className="hidden md:flex justify-center items-center py-48"
-      data-aos="zoom-in-up"
-      data-aos-offset="500"
-    >
+    <div className="hidden md:flex justify-center items-center py-48">
       <div className="relative w-full max-w-screen-xl">
         <Image
           src="/home/roadMapAssets/roadmap_line.jpg"

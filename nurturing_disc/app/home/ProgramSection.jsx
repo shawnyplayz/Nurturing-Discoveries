@@ -42,7 +42,7 @@ const ProgramSection = () => {
           data-aos="zoom-in"
         />
       </div>
-      <div data-aos="fade-up">
+      <div>
         <div className="font-sans font-semibold text-xl text-peach text-center">
           <h1>{programSectionData.title}</h1>
         </div>
@@ -51,10 +51,7 @@ const ProgramSection = () => {
         </div>
       </div>
       {/* //Card Section */}
-      <div
-        className="sm:grid pt-10 md:pt-16 pb-16 md:pb-24 lg:grid-cols-3 md:flex-row gap-8 md:gap-10 lg:gap-12 md:px-4"
-        data-aos="flip-up"
-      >
+      <div className="sm:grid pt-10 md:pt-16 pb-16 md:pb-24 lg:grid-cols-3 md:flex-row gap-8 md:gap-10 lg:gap-12 md:px-4">
         {programSectionCardData.map((program, index) => (
           <ProgramCard
             key={index}
@@ -65,7 +62,7 @@ const ProgramSection = () => {
           />
         ))}
       </div>
-      <div className="py-8 md:py-12" data-aos="zoom-out">
+      <div className="py-8 md:py-12">
         <Link href={"/programs_events"}>
           <Button>View All Programs</Button>
         </Link>
