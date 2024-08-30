@@ -20,6 +20,7 @@ const EnrollForm = () => {
   const [success, setSuccess] = useState(null);
   const [loading, setLoading] = useState(false);
   const [formSuccessMessage, setFormSuccessMessage] = useState(null);
+  const [formErrorMessage, setFormErrorMessage] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,6 +34,7 @@ const EnrollForm = () => {
     e.preventDefault();
     setLoading(true);
     setFormSuccessMessage(null);
+    setFormErrorMessage(null);
 
     try {
       const result = await fetchDataPost(endpoints.sendEnrollment, formData);
@@ -51,6 +53,7 @@ const EnrollForm = () => {
         );
       } else {
         showToastError("Failed to send inquiry. Please try again.");
+        setFormErrorMessage("Form Submission Failed, Please try again");
       }
     } catch (err) {
       showToastError(err.message || "An unexpected error occurred.");
@@ -140,6 +143,9 @@ const EnrollForm = () => {
       {success && <p className="text-green-600 text-sm mt-2">{success}</p>}
       {formSuccessMessage && (
         <p className="text-green-600 text-lg mt-4">{formSuccessMessage}</p>
+      )}
+      {formErrorMessage && (
+        <p className="text-red-600 text-lg mt-4">{formErrorMessage}</p>
       )}
 
       <div className="flex justify-end sm:justify-start mt-4 sm:mt-6">
