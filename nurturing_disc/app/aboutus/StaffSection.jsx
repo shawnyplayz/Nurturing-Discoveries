@@ -74,7 +74,7 @@ const StaffSection = () => {
 
   return (
     <div className="staff-section relative md:pb-40">
-      <div className="absolute bottom-1 left-5 w-52">
+      <div className="absolute bottom-1 left-5 w-52" data-aos="fade-right">
         <Image
           src="/cartoons/love.svg"
           width={200}
@@ -95,9 +95,10 @@ const StaffSection = () => {
           width={200}
           height={200}
           alt="rainbow cartoon"
+          data-aos="fade-left"
         />
       </div>
-      <div className="flex items-center justify-center flex-col mt-16 mb-10">
+      <div className="flex items-center justify-center flex-col mt-16 mb-10" data-aos="zoom-in">
         <div className="pb-3 font-normal text-xl font-sans text-peach text-center">
           Our Experts
         </div>
@@ -111,6 +112,7 @@ const StaffSection = () => {
             ? "flex justify-center"
             : ""
         }`}
+        data-aos="zoom-in"
       >
         {staffs.filter((staff) => !staff.staff_featured).length > 4 ? (
           // Use slider if there are more than 4 non-featured staff members

@@ -29,8 +29,9 @@ const AboutUsSection = () => {
           height={100}
           alt="bus"
           className="absolute top-10 left-4 md:top-16 md:left-7"
+          data-aos="zoom-in"
         />
-        <div className="left py-16 md:py-32 pl-9">
+        <div className="left py-16 md:py-32 pl-9" data-aos="zoom-in-right">
           <Image
             style={{
               WebkitMaskImage: `url(${homeAboutUsImageData})`,
@@ -44,13 +45,14 @@ const AboutUsSection = () => {
             alt="About Us Image"
           />
         </div>
-        <div className="right max-w-3xl py-16 md:py-32">
+        <div className="right max-w-3xl py-16 md:py-32" data-aos="fade-left">
           <Image
             src="/cartoons/girl.svg"
             width={150}
             height={150}
             alt="girl"
             className="absolute top-56 right-4 md:top-80 md:right-7 flex-shrink-0"
+            data-aos="zoom-in"
           />
           <div className="font-sans font-semibold text-xl text-[#F39F5F] pb-3 text-center md:text-start">
             {LandingAboutUs.AboutUsSection.title}

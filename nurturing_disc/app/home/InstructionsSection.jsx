@@ -69,11 +69,15 @@ const InstructionsSection = () => {
         src="/cartoons/love.svg"
         width={240}
         height={240}
-        className="absolute md:bottom-2 md:left-6 left-2 top-4 w-48"
+        className="hidden md:block absolute md:bottom-2 md:left-6 left-2 top-4 w-48"
         alt="Heart Cartoon"
+        data-aos="fade-right"
       />
       <div className="flex flex-col items-center justify-center container mx-auto">
-        <div className="pt-28 flex flex-col items-center justify-center">
+        <div
+          className="pt-28 flex flex-col items-center justify-center"
+          data-aos="fade-down"
+        >
           <div className="font-sans font-normal text-xl text-peach pb-3 text-center">
             {InstructionsSectionData.title}
           </div>
@@ -87,6 +91,7 @@ const InstructionsSection = () => {
               ? "flex justify-center"
               : ""
           }`}
+          data-aos="zoom-in"
         >
           {staffs.filter((staff) => staff.staff_featured).length > 4 ? (
             // Use slider if there are more than 4 featured staff members
@@ -151,8 +156,9 @@ const InstructionsSection = () => {
         src="/cartoons/rainbow.svg"
         width={200}
         height={200}
-        className="absolute md:bottom-4 md:right-6 bottom-3 right-4 z-10"
+        className="hidden md:block absolute md:bottom-4 md:right-6 bottom-3 right-4 z-10"
         alt="Rainbow Cartoon"
+        data-aos="fade-left"
       />
     </div>
   );

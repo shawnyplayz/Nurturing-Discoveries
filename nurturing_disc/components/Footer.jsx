@@ -20,7 +20,7 @@ const Footer = () => {
     <div className="relative overflow-hidden bg-gray-100">
       <div className="container mx-auto px-4 md:px-8 lg:px-16 py-12 flex flex-col lg:flex-row justify-between items-center">
         {/* Left Rainbow */}
-        <div className="absolute left-1 bottom-20 z-10 hidden md:block">
+        <div className="absolute left-1 bottom-20 z-10 hidden md:block" data-aos="fade-right">
           <Image
             src="/cartoons/rainbow.svg"
             width={100}
@@ -31,8 +31,11 @@ const Footer = () => {
         </div>
 
         {/* Footer Content */}
-        <div className="flex flex-col w-full z-20 relative ">
-          <div className="flex flex-col md:flex-row justify-center gap-8 lg:gap-48 pb-10 border-b-2">
+        <div className="flex flex-col w-full z-20 relative">
+          <div
+            className="flex flex-col md:flex-row justify-center gap-8 lg:gap-48 pb-10 border-b-2"
+            data-aos="zoom-in"
+          >
             {footerData.ContactInfoData.map((contactData, index) => (
               <ContactInfo
                 key={index}
@@ -119,7 +122,7 @@ const Footer = () => {
         </div>
 
         {/* Right Zebra */}
-        <div className="absolute right-0 bottom-20 z-10 hidden md:block">
+        <div className="absolute right-0 bottom-20 z-10 hidden md:block" data-aos="fade-left">
           <Image
             src="/cartoons/zebra.svg"
             width={180}

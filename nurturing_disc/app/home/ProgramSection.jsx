@@ -15,6 +15,7 @@ const ProgramSection = () => {
           height={72}
           className="absolute top-20 left-5"
           alt="Mask Cartoon"
+          data-aos="zoom-in"
         />
         <Image
           src="/cartoons/pencil-5.svg"
@@ -22,6 +23,7 @@ const ProgramSection = () => {
           height={90}
           className="absolute bottom-12 left-24"
           alt="Pencil Cartoon"
+          data-aos="zoom-in"
         />
         <Image
           src="/cartoons/compass.svg"
@@ -29,6 +31,7 @@ const ProgramSection = () => {
           height={100}
           className="absolute bottom-12 right-28"
           alt="Compass Cartoon"
+          data-aos="zoom-in"
         />
         <Image
           src="/cartoons/mask-2.svg"
@@ -36,9 +39,10 @@ const ProgramSection = () => {
           height={150}
           className="absolute top-10 right-12"
           alt="Mask Cartoon"
+          data-aos="zoom-in"
         />
       </div>
-      <div>
+      <div data-aos="fade-up">
         <div className="font-sans font-semibold text-xl text-peach text-center">
           <h1>{programSectionData.title}</h1>
         </div>
@@ -47,7 +51,10 @@ const ProgramSection = () => {
         </div>
       </div>
       {/* //Card Section */}
-      <div className="sm:grid pt-10 md:pt-16 pb-16 md:pb-24 lg:grid-cols-3 md:flex-row gap-8 md:gap-10 lg:gap-12 md:px-4">
+      <div
+        className="sm:grid pt-10 md:pt-16 pb-16 md:pb-24 lg:grid-cols-3 md:flex-row gap-8 md:gap-10 lg:gap-12 md:px-4"
+        data-aos="flip-up"
+      >
         {programSectionCardData.map((program, index) => (
           <ProgramCard
             key={index}
@@ -58,7 +65,7 @@ const ProgramSection = () => {
           />
         ))}
       </div>
-      <div className="py-8 md:py-12">
+      <div className="py-8 md:py-12" data-aos="zoom-out">
         <Link href={"/programs_events"}>
           <Button>View All Programs</Button>
         </Link>

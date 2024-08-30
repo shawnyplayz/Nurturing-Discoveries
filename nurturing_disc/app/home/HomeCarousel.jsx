@@ -44,7 +44,7 @@ const HomeCarousel = () => {
   return (
     <div className="bg-[#ECF8FF] sm:px-6 lg:px-8 lg:py-24">
       <section className="container mx-auto flex flex-col lg:flex-row items-center">
-        <div className="text-center lg:text-left lg:w-1/2 lg:pl-8">
+        <div className="text-center lg:text-left lg:w-1/2 lg:pl-8" data-aos="fade-right">
           <div className="flex flex-col gap-2 mb-4 mt-4">
             <div className="flex gap-3">
               <h2 className="text-peach font-semibold text-xl sm:text-2xl lg:text-lg">

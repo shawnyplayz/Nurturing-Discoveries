@@ -12,7 +12,7 @@ const AboutUs = () => {
       <WhoWeAreSection />
       <OurValuesSection />
       <StaffSection />
-      <Footer/>
+      <Footer />
     </section>
   );
 };

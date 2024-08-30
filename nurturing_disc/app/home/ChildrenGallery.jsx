@@ -33,13 +33,13 @@ const ChildrenGallery = () => {
   }
   return (
     <div className="flex items-center justify-center flex-col">
-      <div className="pt-28">
+      <div className="pt-28" data-aos="zoom-in-up">
         <h1 className="font-quicksand font-bold text-5xl text-fiord pb-8">
           {ChildrenGalleryData.title}
         </h1>
       </div>
       <Marquee direction="left" autoFill>
-        <div className="pt-16 pb-32 flex gap-5 px-2">
+        <div className="pt-16 pb-32 flex gap-5 px-2" data-aos="fade-left">
           {gallery.map((galleries) => (
             <Gallery
               key={galleries.public_id}
