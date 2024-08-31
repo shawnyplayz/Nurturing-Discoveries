@@ -41,7 +41,7 @@ const SectionSeparator = ({ title, subHeading }) => {
             className="absolute bottom-8 left-64"
           />
         </div>
-        <div className="font-quicksand font-bold text-6xl pt-24">{title}</div>
+        <div className="font-quicksand font-bold text-4xl lg:text-6xl pt-24">{title}</div>
         <div className="pb-20">{subHeading}</div>
       </div>
     </div>

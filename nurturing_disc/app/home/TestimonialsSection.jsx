@@ -66,15 +66,15 @@ const TestimonialsSection = () => {
 
   return (
     <div className="overflow-hidden flex items-center justify-center text-center relative">
-      <div className="absolute top-36 right-1">
+      <div className="hidden md:block absolute top-36 right-1">
         <Image src="/cartoons/bee.svg" width={100} height={100} alt="Bee" />
       </div>
       <div className="w-full px-4">
         <div className="flex items-center justify-center flex-col">
-          <div className="font-sans font-semibold text-xl text-peach pt-32">
+          <div className="font-sans font-semibold md:text-xl text-peach pt-32">
             Testimonials
           </div>
-          <div className="font-quicksand font-bold text-5xl text-fiord max-w-2xl pt-3 pb-8">
+          <div className="font-quicksand font-bold md:text-5xl text-fiord max-w-2xl pt-3 pb-8">
             Parents Words Are The Key To Happy Kids
           </div>
         </div>

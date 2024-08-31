@@ -34,7 +34,7 @@ const ChildrenGallery = () => {
   return (
     <div className="flex items-center justify-center flex-col">
       <div className="pt-28">
-        <h1 className="font-quicksand font-bold text-5xl text-fiord pb-8">
+        <h1 className="text-center font-quicksand font-bold md:text-5xl text-3xl text-fiord pb-8">
           {ChildrenGalleryData.title}
         </h1>
       </div>

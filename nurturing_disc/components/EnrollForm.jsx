@@ -57,6 +57,7 @@ const EnrollForm = () => {
       }
     } catch (err) {
       showToastError(err.message || "An unexpected error occurred.");
+      setFormErrorMessage("Form Submission Failed, Please try again");
     } finally {
       setLoading(false);
     }

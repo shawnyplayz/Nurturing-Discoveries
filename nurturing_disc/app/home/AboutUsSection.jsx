@@ -22,13 +22,13 @@ const AboutUsSection = () => {
 
   return (
     <div className="flex flex-col md:flex-row justify-around relative p-4 md:p-8 bg-[#EFF5F6]">
-      <div className="container mx-auto flex flex-row">
+      <div className="container mx-auto md:flex md:flex-row">
         <Image
           src="/cartoons/bus.svg"
           width={100}
           height={100}
           alt="bus"
-          className="absolute top-10 left-4 md:top-16 md:left-7"
+          className="hidden md:block absolute top-10 left-4 md:top-16 md:left-7"
           data-aos="zoom-in"
         />
         <div className="left py-16 md:py-32 pl-9" data-aos="zoom-in-right">
@@ -51,7 +51,7 @@ const AboutUsSection = () => {
             width={150}
             height={150}
             alt="girl"
-            className="absolute top-56 right-4 md:top-80 md:right-7 flex-shrink-0"
+            className="hidden md:block absolute top-56 right-4 md:top-80 md:right-7 flex-shrink-0"
             data-aos="fade-left"
           />
           <div className="font-sans font-semibold text-xl text-[#F39F5F] pb-3 text-center md:text-start">
