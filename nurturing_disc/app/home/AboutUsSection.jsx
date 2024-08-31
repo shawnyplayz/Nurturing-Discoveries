@@ -72,7 +72,7 @@ const AboutUsSection = () => {
           </div>
           <div className="flex flex-col md:flex-row items-center pt-10">
             <div className="flex flex-row items-center gap-6">
-              <Link href={"/aboutus"}>
+              <Link href={"/about-us"}>
                 <Button>Explore More</Button>
               </Link>
             </div>
