@@ -14,7 +14,7 @@ export default function TestimonialCard({
   ];
 
   // Default avatar in case imageSrc is not provided
-  const defaultAvatar = "logo.svg";
+  const defaultAvatar = "/icons/defaultProfilePicture.png";
 
   return (
     <div className="relative p-6 sm:p-8 text-white" style={{ backgroundColor }}>
