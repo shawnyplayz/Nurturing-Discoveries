@@ -10,7 +10,7 @@ const WhoWeAreSection = () => {
         data-aos="fade-right"
       >
         <Image
-          src="/about/aboutImage.svg"
+          src="/about/aboutImage.webp"
           width={500}
           height={500}
           alt="About Us Image"

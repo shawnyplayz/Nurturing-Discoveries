@@ -6,6 +6,13 @@ import React from "react";
 import { contactUsPage } from "../constants";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+export const metadata = {
+  title: {
+    absolute: "Contact Us",
+  },
+};
+
 const ContactUs = () => {
   return (
     <div>

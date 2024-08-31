@@ -3,6 +3,12 @@ import Footer from "@/components/Footer";
 import SectionSeparator from "@/components/SectionSeparator";
 import React from "react";
 
+export const metadata = {
+  title: {
+    absolute: "Blogs",
+  },
+};
+
 const Blogs = () => {
   return (
     <div>
