@@ -20,12 +20,12 @@ export default function TestimonialCard({
     <div className="relative p-6 sm:p-8 text-white" style={{ backgroundColor }}>
       {/* Container Image */}
       <div className="relative min-w-12 min-h-12 rounded-full">
-        <div className="absolute -top-6 right-4 w-12 h-12 rounded-full overflow-hidden">
+        <div className="absolute -top-6 right-4 w-14 h-14 rounded-full overflow-hidden">
           <Image
             src={imageSrc || defaultAvatar}
             alt={author}
-            width={75}
-            height={75}
+            width={100}
+            height={100}
             className="object-cover z-10"
           />
         </div>
@@ -34,7 +34,7 @@ export default function TestimonialCard({
           width={500}
           height={500}
           alt="Container"
-          className="object-cover w-full h-full"
+          className="object-cover"
         />
 
         {/* Content Inside the Container */}

@@ -44,7 +44,7 @@ function Sidebar({ open, setOpen }) {
           </li>
           <li>
             <Link
-              href="/aboutus"
+              href="/about-us"
               className="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100"
               onClick={() => setOpen(false)}
             >
@@ -71,7 +71,7 @@ function Sidebar({ open, setOpen }) {
           </li>
           <li>
             <Link
-              href="/contactus"
+              href="/contact-us"
               className="block py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100"
               onClick={() => setOpen(false)}
             >
