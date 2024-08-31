@@ -13,13 +13,16 @@ export default function TestimonialCard({
     "testimonialsAssets/Container3.svg",
   ];
 
+  // Default avatar in case imageSrc is not provided
+  const defaultAvatar = "logo.svg";
+
   return (
     <div className="relative p-6 sm:p-8 text-white" style={{ backgroundColor }}>
       {/* Container Image */}
       <div className="relative min-w-12 min-h-12 rounded-full">
         <div className="absolute -top-6 right-4 w-12 h-12 rounded-full overflow-hidden">
           <Image
-            src={imageSrc}
+            src={imageSrc || defaultAvatar}
             alt={author}
             width={75}
             height={75}
