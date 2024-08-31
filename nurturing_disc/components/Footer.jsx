@@ -143,7 +143,7 @@ const Footer = () => {
           Designed and Developed by
           <span>
             <Image
-              src="innovativecursor.svg"
+              src="/footerAssets/innocursor.svg"
               width={25}
               height={25}
               alt="Innovative Cursor Logo"

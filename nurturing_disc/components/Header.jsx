@@ -29,13 +29,14 @@ const Header = () => {
           </div>
 
           {/* Social Media Section */}
-          <div className="flex flex-row items-center gap-3 mt-4 md:mt-0 md:flex">
+          <div className="flex flex-row lg:flex items-center gap-3 mt-4 md:mt-0 md:grid md:grid-cols-1">
             <span className="text-fiord font-sans hidden md:block">
               {HEADER_DATA.socialMedia.title}
             </span>
-            <div className="flex gap-3 hidden md:flex">
+            <div className="flex gap-3">
               {HEADER_DATA.socialMedia.icons.map((item, index) => {
                 const IconComponent = item.icon;
+
                 return (
                   <Link
                     key={index}

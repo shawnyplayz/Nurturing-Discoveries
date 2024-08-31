@@ -31,7 +31,7 @@ const Navbar = () => {
       </div>
       {/* Desktop Navigation */}
       <div className="lg:flex items-center hidden">
-        <ul className="flex flex-row gap-8 text-base">
+        <ul className="flex flex-row gap-8 text-base text-[13px] xl:text-base">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link

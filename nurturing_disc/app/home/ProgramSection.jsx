@@ -4,6 +4,7 @@ import React from "react";
 import { programSectionCardData, programSectionData } from "../constants";
 import Image from "next/image";
 import Link from "next/link";
+import ProgramsCardHome from "@/components/cards/ProgramsCardHome";
 
 const ProgramSection = () => {
   return (
@@ -51,9 +52,9 @@ const ProgramSection = () => {
         </div>
       </div>
       {/* //Card Section */}
-      <div className="sm:grid pt-10 md:pt-16 pb-16 md:pb-24 lg:grid-cols-3 md:flex-row gap-8 md:gap-10 lg:gap-12 md:px-4">
+      <div className="grid pt-10 md:pt-16 pb-16 md:pb-24 lg:grid-cols-3 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 md:px-4 ">
         {programSectionCardData.map((program, index) => (
-          <ProgramCard
+          <ProgramsCardHome
             key={index}
             title={program.title}
             description={program.description}

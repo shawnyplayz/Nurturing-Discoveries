@@ -33,10 +33,10 @@ export const HEADER_DATA = {
 
 export const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/aboutus", label: "About Us" },
+  { href: "/about-us", label: "About Us" },
   { href: "/programs_events", label: "Programs & Events" },
   { href: "/blogs", label: "Blogs" },
-  { href: "/contactus", label: "Contact Us" },
+  { href: "/contact-us", label: "Contact Us" },
 ];
 
 export const HomeSection = {
@@ -169,10 +169,11 @@ export const footerData = {
 
 export const footerQuickLinks = () => {
   return [
+    { text: "Home", href: "/" },
     { text: "Program and Events", href: "/programs_events" },
-    { text: "About Us", href: "/aboutus" },
+    { text: "About Us", href: "/about-us" },
     { text: "Blogs", href: "/blogs" },
-    { text: "Contact Us", href: "/contactus" },
+    { text: "Contact Us", href: "/contact-us" },
   ];
 };
 
