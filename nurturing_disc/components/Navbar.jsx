@@ -3,7 +3,7 @@
 import { navLinks } from "@/app/constants";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "./buttons/Button";
 import { usePathname } from "next/navigation";
 import Sidebar from "@/components/Sidebar"; // Corrected import
@@ -15,6 +15,20 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
+    };
+  }, [isModalOpen]);
+
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
@@ -22,6 +36,7 @@ const Navbar = () => {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
+
   return (
     <div className="flex flex-row justify-between container mx-auto py-5 px-5 relative">
       <div>
@@ -29,9 +44,10 @@ const Navbar = () => {
           <Image src="/logo.svg" height={70} width={282} alt="Logo" />
         </Link>
       </div>
+
       {/* Desktop Navigation */}
-      <div className="lg:flex items-center hidden">
-        <ul className="flex flex-row gap-8 text-base text-[13px] xl:text-base">
+      <div className="sm:flex items-center hidden">
+        <ul className="flex flex-row gap-8 text-base !text-[13px] xl:!text-lg">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
@@ -52,6 +68,7 @@ const Navbar = () => {
           <EnrollForm />
         </EnrollFormModel>
       </div>
+
       {/* Mobile Hamburger Button */}
       <div className="lg:hidden flex items-center">
         <button
@@ -77,6 +94,7 @@ const Navbar = () => {
           </svg>
         </button>
       </div>
+
       {/* Sidebar */}
       <Sidebar open={open} setOpen={setOpen} />
     </div>
