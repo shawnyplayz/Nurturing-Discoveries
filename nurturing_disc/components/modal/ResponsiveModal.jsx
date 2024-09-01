@@ -20,32 +20,32 @@ const ResponsiveModal = ({
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
-      onClick={handleBackdropClick} // Attach click handler to backdrop
+      onClick={handleBackdropClick}
     >
       <div
-        className="bg-white rounded-lg max-w-lg w-full mx-4 md:mx-0 overflow-hidden"
-        onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
+        className="bg-white rounded-lg max-w-3xl w-full mx-4 md:mx-6 overflow-hidden shadow-lg"
+        onClick={(e) => e.stopPropagation()}
       >
         <div className="relative">
           <img
             src={imageSrc}
             alt="Modal Image"
-            className="w-full h-48 object-cover"
+            className="w-full h-64 object-cover"
           />
           <button
-            className="absolute top-2 right-2 text-white bg-gray-800 rounded-full p-2"
+            className="absolute top-4 right-4 text-white bg-black bg-opacity-75 rounded-full p-2 hover:bg-opacity-100 transition"
             onClick={onClose}
           >
             &times;
           </button>
         </div>
-        <div className="p-4">
-          <div className="flex justify-between items-center mb-2">
-            <p className="text-gray-700 font-semibold">{location}</p>
-            <p className="text-gray-500">{date}</p>
+        <div className="p-6">
+          <div className="flex justify-between items-center mb-4">
+            <p className="text-gray-800 font-semibold text-lg">{location}</p>
+            <p className="text-gray-600 text-sm">{date}</p>
           </div>
-          <div className="max-h-32 overflow-y-auto">
-            <p className="text-gray-600">{description}</p>
+          <div className="max-h-48 overflow-y-scroll scrollbar-hidden">
+            <p className="text-gray-700">{description}</p>
           </div>
         </div>
       </div>
