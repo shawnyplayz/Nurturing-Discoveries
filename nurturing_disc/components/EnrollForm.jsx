@@ -65,40 +65,36 @@ const EnrollForm = () => {
 
   return (
     <form
-      className="space-y-6 p-4 sm:p-6 lg:p-8 max-w-lg sm:max-w-2xl lg:max-w-3xl mx-auto bg-white"
+      className="space-y-6 p-4 sm:p-6 lg:p-8 bg-white rounded-lg shadow-md mx-auto max-w-full md:max-w-2xl"
       onSubmit={handleSubmit}
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         <div className="flex flex-col gap-2">
-          <label className="text-gray-700 font-quicksand text-base sm:text-lg lg:text-xl">
-            Child Name
-          </label>
+          <label className="text-gray-700 font-medium">Child Name</label>
           <Input
             value={formData.enrollment_child_name}
             onChange={handleChange}
             type="text"
             name="enrollment_child_name"
             placeholder="Enter Name"
-            className="w-full font-quicksandMedium text-base sm:text-lg lg:text-xl"
+            className="w-full"
             required
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label className="text-gray-700 font-quicksand text-base sm:text-lg lg:text-xl">
-            Mobile Number
-          </label>
+          <label className="text-gray-700 font-medium">Mobile Number</label>
           <Input
             value={formData.enrollment_phNumber}
             onChange={handleChange}
             type="text"
             name="enrollment_phNumber"
             placeholder="1401400 1231"
-            className="w-full font-quicksandMedium text-base sm:text-lg lg:text-xl"
+            className="w-full"
             required
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label className="text-gray-700 font-quicksand text-base sm:text-lg lg:text-xl">
+          <label className="text-gray-700 font-medium">
             Guardian Parent Name
           </label>
           <Input
@@ -107,36 +103,32 @@ const EnrollForm = () => {
             type="text"
             name="enrollment_guardian_name"
             placeholder="Guardian Name"
-            className="w-full font-quicksandMedium text-base sm:text-lg lg:text-xl"
+            className="w-full"
             required
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label className="text-gray-700 font-quicksand text-base sm:text-lg lg:text-xl">
-            Email Address
-          </label>
+          <label className="text-gray-700 font-medium">Email Address</label>
           <Input
             value={formData.enrollment_email_id}
             onChange={handleChange}
             type="email"
             name="enrollment_email_id"
             placeholder="example@gmail.com"
-            className="w-full font-quicksandMedium text-base sm:text-lg lg:text-xl"
+            className="w-full"
           />
         </div>
       </div>
 
-      <div className="flex flex-col mt-4 sm:mt-6 gap-2">
-        <label className="text-gray-700 font-quicksand text-base sm:text-lg lg:text-xl">
-          Message
-        </label>
+      <div className="flex flex-col gap-2 mt-4">
+        <label className="text-gray-700 font-medium">Message</label>
         <TextArea
           value={formData.enrollment_message}
           onChange={handleChange}
           name="enrollment_message"
           placeholder="Write here ..."
-          className="w-full font-quicksandMedium text-base sm:text-lg lg:text-xl"
-          textAreaHeight="h-32 sm:h-40"
+          className="w-full"
+          textAreaHeight="h-32 md:h-40"
         />
       </div>
 
@@ -149,11 +141,11 @@ const EnrollForm = () => {
         <p className="text-red-600 text-lg mt-4">{formErrorMessage}</p>
       )}
 
-      <div className="flex justify-end sm:justify-start mt-4 sm:mt-6">
+      <div className="flex justify-end mt-4">
         <Button
           type="submit"
           disabled={loading}
-          className="px-4 sm:px-6 py-2 sm:py-3 bg-orange-400 text-white rounded-lg shadow hover:bg-orange-500 transition-colors"
+          className="px-4 py-2 bg-orange-400 text-white rounded-lg shadow hover:bg-orange-500 transition-colors"
         >
           {loading ? "Submitting..." : "Submit"}
         </Button>
