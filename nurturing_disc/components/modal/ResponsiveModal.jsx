@@ -10,9 +10,22 @@ const ResponsiveModal = ({
 }) => {
   if (!isOpen) return null;
 
+  const handleBackdropClick = (e) => {
+    // Close the modal when clicking on the backdrop
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white rounded-lg max-w-lg w-full mx-4 md:mx-0 overflow-hidden">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+      onClick={handleBackdropClick} // Attach click handler to backdrop
+    >
+      <div
+        className="bg-white rounded-lg max-w-lg w-full mx-4 md:mx-0 overflow-hidden"
+        onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
+      >
         <div className="relative">
           <img
             src={imageSrc}

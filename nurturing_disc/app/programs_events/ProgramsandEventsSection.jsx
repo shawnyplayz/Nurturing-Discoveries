@@ -5,11 +5,14 @@ import SectionSeparator from "@/components/SectionSeparator";
 import Footer from "@/components/Footer";
 import ProgramCard from "@/components/cards/ProgramCard";
 import EventsCards from "@/components/cards/EventsCard";
+import ResponsiveModal from "@/components/modal/ResponsiveModal";
 import endpoints from "@/config/endpoints";
 import { programSectionCardData } from "../constants";
 
 const ProgramsandEventsSection = () => {
   const [events, setEvents] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalData, setModalData] = useState(null);
 
   const fetchEvents = async () => {
     try {
@@ -26,6 +29,18 @@ const ProgramsandEventsSection = () => {
     } catch (error) {
       console.error("Error fetching events:", error);
     }
+  };
+
+  const handleOpenModal = (eventData) => {
+    console.log("Opening Modal with data:", eventData);
+    setModalData(eventData);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    console.log("Closing Modal");
+    setIsModalOpen(false);
+    setModalData(null);
   };
 
   useEffect(() => {
@@ -81,6 +96,18 @@ const ProgramsandEventsSection = () => {
                     day: "numeric",
                     year: "numeric",
                   })}
+                  onClick={() =>
+                    handleOpenModal({
+                      imageSrc: latestImage,
+                      location: event.event_location,
+                      date: new Date(event.date).toLocaleDateString("en-US", {
+                        month: "long",
+                        day: "numeric",
+                        year: "numeric",
+                      }),
+                      description: event.event_description,
+                    })
+                  }
                 />
               );
             })}
@@ -88,6 +115,17 @@ const ProgramsandEventsSection = () => {
         </div>
       </div>
       <Footer />
+
+      {modalData && (
+        <ResponsiveModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          imageSrc={modalData.imageSrc}
+          location={modalData.location}
+          date={modalData.date}
+          description={modalData.description}
+        />
+      )}
     </section>
   );
 };

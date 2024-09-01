@@ -21,7 +21,7 @@ const images = [
 const HomeCarousel = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  const [isEnrollModalOpen, setIsEnrollModalOpen] = useState(false); // State for Enroll modal
+  const [isEnrollModalOpen, setIsEnrollModalOpen] = useState(false);
 
   // React Spring transition for smooth image fading
   const transitions = useTransition(currentImageIndex, {
@@ -124,6 +124,7 @@ const HomeCarousel = () => {
               width={500}
               height={500}
               priority
+              loading="eager"
               alt="Blob"
             />
             {transitions((style, index) => (

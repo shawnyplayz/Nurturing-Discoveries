@@ -9,13 +9,17 @@ export default function EventsCards({
   src,
   location,
   date,
+  onClick,
 }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const truncatedTitle = title?.slice(0, 150);
 
   return (
-    <div className="flex flex-col mt-6 text-gray-700 border-2 bg-clip-border rounded-3xl md:w-96 w-full transition-transform transform hover:scale-105 cursor-pointer">
+    <div
+      className="flex flex-col mt-6 text-gray-700 border-2 bg-clip-border rounded-3xl md:w-96 w-full transition-transform transform hover:scale-105 cursor-pointer"
+      onClick={onClick}
+    >
       <div className="relative h-56 mx-4 mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-3xl bg-blue-gray-500 shadow-blue-gray-500/40">
         <Image
           alt="card-image"
@@ -38,7 +42,6 @@ export default function EventsCards({
         <p className="text-lg font-quicksand leading-relaxed text-inherit text-left font-light !text-fiord mb-4">
           {isExpanded ? title : `${truncatedTitle}...`}
         </p>
-        {/* Spacer to push the button and line to the bottom */}
         <div className="flex-grow"></div>
         <div className="flex justify-center items-center">
           <span className="text-peach mb-2">
