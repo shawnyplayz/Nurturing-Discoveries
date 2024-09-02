@@ -15,8 +15,11 @@ const Home = () => {
       <HomeCarousel />
       <AboutUsSection />
       <ProgramSection />
-      <RoadMapSection/>
+      <RoadMapSection />
       <ActivitiesSection />
+
+      {/*activies and about us issue */}
+
       <InstructionsSection />
       <TestimonialsSection />
       <ChildrenGallery />

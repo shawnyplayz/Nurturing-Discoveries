@@ -74,9 +74,7 @@ const InstructionsSection = () => {
         data-aos="fade-right"
       />
       <div className="flex flex-col items-center justify-center container mx-auto">
-        <div
-          className="pt-28 flex flex-col items-center justify-center"
-        >
+        <div className="pt-28 flex flex-col items-center justify-center">
           <div className="font-sans font-normal text-xl text-peach pb-3 text-center">
             {InstructionsSectionData.title}
           </div>

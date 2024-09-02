@@ -18,9 +18,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        <Navbar />
-        <AOSComponent>{children}</AOSComponent>
+        <div className="overflow-x-hidden">
+          <Header />
+          <Navbar />
+          <AOSComponent>{children}</AOSComponent>
+        </div>
       </body>
     </html>
   );

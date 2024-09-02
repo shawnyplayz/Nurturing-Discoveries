@@ -74,7 +74,10 @@ const StaffSection = () => {
 
   return (
     <div className="staff-section relative md:pb-40">
-      <div className="hidden lg:block absolute bottom-1 left-5 w-52" data-aos="fade-right">
+      <div
+        className="hidden lg:block absolute bottom-1 left-5 w-52"
+        data-aos="fade-right"
+      >
         <Image
           src="/cartoons/love.svg"
           width={200}
@@ -95,7 +98,6 @@ const StaffSection = () => {
           width={200}
           height={200}
           alt="rainbow cartoon"
-          data-aos="fade-left"
           className="hidden lg:block "
         />
       </div>

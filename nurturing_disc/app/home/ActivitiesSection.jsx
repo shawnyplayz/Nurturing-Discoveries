@@ -68,7 +68,7 @@ const ActivitiesSection = () => {
           </div>
         </div>
       </div>
-      <div className="relative pb-20" data-aos="fade-left">
+      <div className="relative pb-20">
         <div className="hidden md:flex absolute bottom-0 right-0 lg:bottom-0 lg:right-0 xl:h-[250px]">
           <Image
             src="/cartoons/zebra.svg"
@@ -76,6 +76,7 @@ const ActivitiesSection = () => {
             width={200}
             alt="Zebra"
             className="xl:h-[250px]"
+            data-aos="fade-left"
           />
         </div>
       </div>

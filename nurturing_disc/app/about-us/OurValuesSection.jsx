@@ -14,10 +14,7 @@ const OurValuesSection = () => {
             Our Approach
           </div>
         </div>
-        <div
-          className="pt-5 grid grid-cols-1 px-4 lg:px-6 sm:px-4 lg:grid-cols-4 gap-8 place-items-center pb-20 sm:grid-cols-2"
-          data-aos="fade-up"
-        >
+        <div className="pt-5 grid grid-cols-1 px-4 lg:px-6 sm:px-4 lg:grid-cols-4 gap-8 place-items-center pb-20 sm:grid-cols-2">
           {OurValueCardData.map((card) => (
             <OurValuesCard
               key={card.index}

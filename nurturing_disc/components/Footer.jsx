@@ -54,6 +54,7 @@ const Footer = () => {
               iconSrc={contactData.iconSrc}
               text={contactData.text}
               subtext={contactData.subtext}
+              href={contactData.href}
             />
           ))}
         </div>
