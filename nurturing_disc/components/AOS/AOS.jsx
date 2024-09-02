@@ -6,9 +6,7 @@ import "aos/dist/aos.css";
 
 export default function AOSComponent({ children }) {
   useEffect(() => {
-    AOS.init({
-      once: true,
-    });
+    AOS.init();
   }, []);
 
   return <div>{children}</div>;
