@@ -118,7 +118,7 @@ const HomeCarousel = () => {
           </div>
         </div>
         <div className="flex justify-center lg:w-1/2 pt-4">
-          <div className="relative">
+          <div className="relative" data-aos="fade-left">
             <Image
               src="/home/heroSectionAssets/heroShape.svg"
               width={500}
