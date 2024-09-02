@@ -1,13 +1,21 @@
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
 
 const ContactInfo = ({ iconSrc, text, subtext }) => {
   return (
-    <div className="flex flex-row items-center gap-5">
-      <Image src={iconSrc} width={65} height={65} alt="icon" />
-      <div>
-        <p className="font-sans font-normal text-base text-fiord pb-1">{subtext}</p>
-        <p className="font-sans font-bold text-base text-fiord">{text}</p>
+    <div className="flex items-center">
+      <div className="w-16 h-16 flex-shrink-0">
+        <Image
+          src={iconSrc}
+          width={64}
+          height={64}
+          alt="Contact Icon"
+          className="w-full h-full object-contain"
+        />
+      </div>
+      <div className="ml-4">
+        <p className="text-gray-500 text-sm">{subtext}</p>
+        <p className="text-gray-800 text-base font-medium">{text}</p>
       </div>
     </div>
   );

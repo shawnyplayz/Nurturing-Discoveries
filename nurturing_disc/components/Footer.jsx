@@ -16,123 +16,128 @@ import FloatingButton from "@/components/buttons/FloatingButton";
 
 const Footer = () => {
   const links = footerQuickLinks();
+
   return (
-    <div className="relative overflow-hidden bg-gray-100">
-      <div className="container mx-auto px-4 md:px-8 lg:px-16 py-12 flex flex-col lg:flex-row justify-between items-center">
-        {/* Left Rainbow */}
-        <div
-          className="absolute left-1 bottom-20 z-10 hidden md:block"
-          data-aos="fade-right"
-        >
-          <Image
-            src="/cartoons/rainbow.svg"
-            width={100}
-            height={100}
-            alt="Zebra Left"
-            className="w-40 h-auto"
-          />
+    <footer className="relative bg-gray-100 overflow-hidden">
+      {/* Decorative Images */}
+      <div
+        className="hidden xl:block absolute left-2 bottom-24"
+        data-aos="fade-right"
+      >
+        <Image
+          src="/cartoons/rainbow.svg"
+          width={150}
+          height={150}
+          alt="Rainbow Decoration"
+          className="w-40 h-auto"
+        />
+      </div>
+      <div
+        className="hidden xl:block absolute -right-[-0.5rem] bottom-[95px]"
+        data-aos="fade-left"
+      >
+        <Image
+          src="/cartoons/zebra.svg"
+          width={200}
+          height={200}
+          alt="Zebra Decoration"
+          className="w-40 h-auto"
+        />
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Contact Information */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-10 border-b border-gray-300">
+          {footerData.ContactInfoData.map((contactData, index) => (
+            <ContactInfo
+              key={index}
+              iconSrc={contactData.iconSrc}
+              text={contactData.text}
+              subtext={contactData.subtext}
+            />
+          ))}
         </div>
 
-        {/* Footer Content */}
-        <div className="flex flex-col w-full z-20 relative">
-          <div className="flex flex-col md:flex-row justify-center gap-8 lg:gap-48 pb-10 border-b-2">
-            {footerData.ContactInfoData.map((contactData, index) => (
-              <ContactInfo
-                key={index}
-                iconSrc={contactData.iconSrc}
-                text={contactData.text}
-                subtext={contactData.subtext}
-              />
-            ))}
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 py-12">
+          {/* Logo and Social Media */}
+          <div>
+            <Image
+              src="/logo.svg"
+              width={200}
+              height={60}
+              alt="Logo"
+              className="w-40 h-auto"
+            />
+            <p className="mt-4 text-gray-700">
+              Discover and Nurture the ability
+            </p>
+            <div className="flex items-center gap-4 mt-6">
+              <Link
+                href="https://facebook.com"
+                aria-label="Facebook"
+                className="text-gray-500 hover:text-blue-600 transition"
+              >
+                <FaFacebookF size={20} />
+              </Link>
+              <Link
+                href="https://youtube.com"
+                aria-label="YouTube"
+                className="text-gray-500 hover:text-red-600 transition"
+              >
+                <FaYoutube size={20} />
+              </Link>
+              <Link
+                href="https://linkedin.com"
+                aria-label="LinkedIn"
+                className="text-gray-500 hover:text-blue-700 transition"
+              >
+                <FaLinkedin size={20} />
+              </Link>
+              <Link
+                href="https://instagram.com"
+                aria-label="Instagram"
+                className="text-gray-500 hover:text-pink-600 transition"
+              >
+                <FaInstagram size={20} />
+              </Link>
+            </div>
           </div>
 
-          <div className="flex flex-col lg:flex-row justify-between items-center px-6 lg:px-10 py-16">
-            <div className="section-1 max-w-full lg:max-w-xl pb-12 lg:pb-0">
-              <div className="px-3 max-w-full lg:max-w-lg">
-                <Image src="/logo.svg" width={270} height={70} alt="Logo" />
-                <div className="pt-5 pb-10">
-                  <p className="font-sans font-normal text-base text-fiord">
-                    Discover and Nurture the ability
-                  </p>
-                </div>
-                <div className="flex gap-4 pb-12 ">
-                  <a
-                    className="border p-2"
-                    href="https://facebook.com"
-                    aria-label="Facebook"
+          {/* Quick Links */}
+          <div>
+            <h2 className="font-quicksand font-bold text-2xl text-fiord mb-6">
+              Quick Links
+            </h2>
+            <ul className="space-y-4">
+              {links.map((link, index) => (
+                <li key={index}>
+                  <Link
+                    href={link.href}
+                    className="flex items-center text-gray-600 hover:text-gray-800 transition"
                   >
-                    <FaFacebookF size={30} className=" w-4 h-4 text-fiord" />
-                  </a>
-                  <a
-                    className="border p-2"
-                    href="https://youtube.com"
-                    aria-label="YouTube"
-                  >
-                    <FaYoutube size={30} className=" w-4 h-4 text-fiord" />
-                  </a>
-                  <a
-                    className="border p-2"
-                    href="https://linkedin.com"
-                    aria-label="LinkedIn"
-                  >
-                    <FaLinkedin size={30} className=" w-4 h-4 text-fiord" />
-                  </a>
-                  <a
-                    className="border p-2"
-                    href="https://instagram.com"
-                    aria-label="Instagram"
-                  >
-                    <FaInstagram size={30} className=" w-4 h-4 text-fiord" />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="section-2 w-full lg:w-auto pb-12 lg:pb-0">
-              <div className="px-5 pt-8 pb-14">
-                <h1 className="font-quicksand font-bold text-2xl pb-8 lg:pb-12 text-fiord">
-                  Quick Links
-                </h1>
-                <ul className="font-sans font-normal text-base !text-fiord space-y-4">
-                  {links.map((link, index) => (
-                    <li key={index} className="flex items-center">
-                      <IoIosArrowForward className="mr-2" />
-                      <Link href={link.href}>{link.text}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="newsletter max-w-full lg:max-w-md">
-              <div className="px-5 lg:px-8">
-                <h1 className="pb-8 lg:pb-12 font-quicksand font-bold text-2xl text-fiord">
-                  Newsletter
-                </h1>
-                <div className="pb-6">
-                  <Input placeholder="Enter your name" />
-                </div>
-                <div>
-                  <Button>Submit</Button>
-                </div>
-              </div>
-            </div>
-            <FloatingButton />
+                    <IoIosArrowForward className="mr-2" />
+                    {link.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
 
-        {/* Right Zebra */}
-        <div
-          className="absolute right-0 bottom-20 z-10 hidden md:block"
-          data-aos="fade-left"
-        >
-          <Image
-            src="/cartoons/zebra.svg"
-            width={180}
-            height={180}
-            alt="Zebra Right"
-            className="w-180 h-auto"
-          />
+          {/* Newsletter */}
+          <div className="newsletter max-w-full lg:max-w-md">
+            <div className="px-5 lg:px-8">
+              <h1 className="pb-8 lg:pb-12 font-quicksand font-bold text-2xl text-fiord">
+                Newsletter
+              </h1>
+              <div className="pb-6">
+                <Input placeholder="Enter your name" />
+              </div>
+              <div>
+                <Button>Submit</Button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="reverse-curved flex flex-col md:flex-row md:flex items-center pl-4 gap-1 text-fiord text-xs">
@@ -154,7 +159,10 @@ const Footer = () => {
           </Link>
         </div>
       </div>
-    </div>
+
+      {/* Floating Button */}
+      <FloatingButton />
+    </footer>
   );
 };
 
