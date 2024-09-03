@@ -21,14 +21,14 @@ const ProgramsandEventsSection = () => {
   const [isEventsLoading, setIsEventsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate data fetching
+    // Simulate data fetching for program cards
     setTimeout(() => {
       setLoading(false);
-    }, 2000); // Set loading to false after 2 seconds (simulate data fetching)
+    }, 2000); // Simulate 2 seconds delay
   }, []);
 
   const fetchEvents = async () => {
-    setIsEventsLoading(true);
+    setIsEventsLoading(true); // Set loading to true when starting to fetch
     try {
       const url = endpoints.fetchEvents;
       const response = await fetch(url);
@@ -43,9 +43,13 @@ const ProgramsandEventsSection = () => {
     } catch (error) {
       console.error("Error fetching events:", error);
     } finally {
-      setIsEventsLoading(false);
+      setIsEventsLoading(false); // Set loading to false once fetching is complete
     }
   };
+
+  useEffect(() => {
+    fetchEvents();
+  }, []);
 
   const handleOpenModal = (eventData) => {
     console.log("Opening Modal with data:", eventData);
@@ -72,10 +76,6 @@ const ProgramsandEventsSection = () => {
       document.documentElement.style.overflow = "auto";
     };
   }, [isModalOpen]);
-
-  useEffect(() => {
-    fetchEvents();
-  }, []);
 
   return (
     <section>
@@ -109,40 +109,44 @@ const ProgramsandEventsSection = () => {
           </h2>
 
           <div className="sm:grid pt-0 pb-16 md:pb-24 lg:grid-cols-3 md:flex-row gap-8 md:gap-10 lg:gap-12 md:px-4">
-            {events.map((event) => {
-              const latestImage =
-                event.pictures && event.pictures.length > 0
-                  ? event.pictures[event.pictures.length - 1].secure_url
-                  : null;
+            {isEventsLoading
+              ? Array.from({ length: 3 }).map((_, index) => (
+                  <EventsCards key={index} isLoading={isEventsLoading} />
+                ))
+              : events.map((event) => {
+                  const latestImage =
+                    event.pictures && event.pictures.length > 0
+                      ? event.pictures[event.pictures.length - 1].secure_url
+                      : null;
 
-              return (
-                <EventsCards
-                  isLoading={isEventsLoading}
-                  key={event.event_id}
-                  title={event.event_name}
-                  description={event.event_description}
-                  src={latestImage}
-                  location={event.event_location}
-                  date={new Date(event.date).toLocaleDateString("en-US", {
-                    month: "long",
-                    day: "numeric",
-                    year: "numeric",
-                  })}
-                  onClick={() =>
-                    handleOpenModal({
-                      imageSrc: latestImage,
-                      location: event.event_location,
-                      date: new Date(event.date).toLocaleDateString("en-US", {
+                  return (
+                    <EventsCards
+                      isLoading={isEventsLoading}
+                      key={event.event_id}
+                      title={event.event_name}
+                      description={event.event_description}
+                      src={latestImage}
+                      location={event.event_location}
+                      date={new Date(event.date).toLocaleDateString("en-US", {
                         month: "long",
                         day: "numeric",
                         year: "numeric",
-                      }),
-                      description: event.event_description,
-                    })
-                  }
-                />
-              );
-            })}
+                      })}
+                      onClick={() =>
+                        handleOpenModal({
+                          imageSrc: latestImage,
+                          location: event.event_location,
+                          date: new Date(event.date).toLocaleDateString("en-US", {
+                            month: "long",
+                            day: "numeric",
+                            year: "numeric",
+                          }),
+                          description: event.event_description,
+                        })
+                      }
+                    />
+                  );
+                })}
           </div>
         </div>
       </div>
