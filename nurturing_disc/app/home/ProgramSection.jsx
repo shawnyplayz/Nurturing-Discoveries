@@ -1,12 +1,22 @@
+"use client";
+
+import React, { useState, useEffect } from "react";
 import Button from "@/components/buttons/Button";
-import ProgramCard from "@/components/cards/ProgramCard";
-import React from "react";
+import ProgramsCardHome from "@/components/cards/ProgramsCardHome";
 import { programSectionCardData, programSectionData } from "../constants";
 import Image from "next/image";
 import Link from "next/link";
-import ProgramsCardHome from "@/components/cards/ProgramsCardHome";
 
 const ProgramSection = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate data fetching
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Set loading to false after 2 seconds (simulate data fetching)
+  }, []);
+
   return (
     <div className="flex flex-col items-center container mx-auto px-4 md:px-6 lg:px-8 relative pt-20 md:pt-28">
       <div className="hidden md:flex">
@@ -51,8 +61,8 @@ const ProgramSection = () => {
           {programSectionData.subHeading}
         </div>
       </div>
-      {/* //Card Section */}
-      <div className="grid pt-10 md:pt-16 pb-16 md:pb-24 lg:grid-cols-3 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 md:px-4 ">
+      {/* // Card Section */}
+      <div className="grid pt-10 md:pt-16 pb-16 md:pb-24 lg:grid-cols-3 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 md:px-4">
         {programSectionCardData.map((program, index) => (
           <ProgramsCardHome
             key={index}
@@ -60,6 +70,7 @@ const ProgramSection = () => {
             description={program.description}
             backgroundColor={program.backgroundColor}
             src={program.src}
+            loading={loading}
           />
         ))}
       </div>

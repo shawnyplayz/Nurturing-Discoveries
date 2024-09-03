@@ -1,6 +1,6 @@
-// components/BlogCard.js
 import Image from "next/image";
 import BlogFormator from "./BlogFormator";
+import BlogCardSkeleton from "../skeleton/BlogCardSkeleton";
 
 const formatDate = (dateStr) => {
   const dateObj = new Date(dateStr);
@@ -8,7 +8,11 @@ const formatDate = (dateStr) => {
   return new Intl.DateTimeFormat("en-US", options).format(dateObj);
 };
 
-const BlogCard = ({ title, content, lastImage, date, isOnlyBlog }) => {
+const BlogCard = ({ title, content, lastImage, date, isOnlyBlog, loading }) => {
+  if (loading) {
+    return <BlogCardSkeleton />;
+  }
+
   return (
     <div
       className={`grid lg:flex md:flex-row md:gap-[4.5rem] gap-7 ${

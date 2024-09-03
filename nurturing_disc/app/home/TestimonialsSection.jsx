@@ -8,9 +8,11 @@ import { showToastError } from "@/config/toast";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Skeleton from "@mui/material/Skeleton"; // Import Skeleton
 
 const TestimonialsSection = () => {
   const [testimonials, setTestimonial] = useState([]);
+  const [loading, setLoading] = useState(true); // Add loading state
 
   const fetchTestimonials = async () => {
     try {
@@ -26,6 +28,8 @@ const TestimonialsSection = () => {
       }
     } catch (error) {
       showToastError("Error fetching testimonials:", error);
+    } finally {
+      setLoading(false); // Set loading to false after data is fetched
     }
   };
 
@@ -60,9 +64,18 @@ const TestimonialsSection = () => {
     ],
   };
 
-  if (testimonials.length === 0) {
-    return null;
-  }
+  const renderSkeletons = () => (
+    <div className="grid md:grid-cols-3 gap-8">
+      {Array.from({ length: 3 }).map((_, index) => (
+        <TestimonialCard
+          key={index}
+          loading={true} // Pass loading prop
+          backgroundColor="#f0f0f0"
+          imageVariant={index % 3}
+        />
+      ))}
+    </div>
+  );
 
   return (
     <div className="overflow-hidden flex items-center justify-center text-center relative">
@@ -83,7 +96,9 @@ const TestimonialsSection = () => {
             testimonials.length === 2 ? "flex justify-center" : ""
           }`}
         >
-          {testimonials.length > 3 ? (
+          {loading ? (
+            renderSkeletons() // Render skeletons while loading
+          ) : testimonials.length > 3 ? (
             <Slider {...settings}>
               {testimonials.map((testimonial, index) => {
                 const { reviewer_name, review, pictures } = testimonial;
@@ -101,11 +116,6 @@ const TestimonialsSection = () => {
               })}
             </Slider>
           ) : (
-            // <div
-            //   className={`grid ${
-            //     testimonials.length === 1 ? "justify-center" : "md:grid-cols-3"
-            //   } gap-8`}
-            // >
             <div
               className={`grid ${(() => {
                 switch (testimonials.length) {

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import BlogCard from "./BlogCard";
+import BlogCardSkeleton from "../skeleton/BlogCardSkeleton";
 import endpoints from "@/config/endpoints";
 import { showToastError } from "@/config/toast";
 import LoadMoreButton from "../buttons/LoadMoreButton";
@@ -10,6 +11,7 @@ const BlogPreview = () => {
   const [blogs, setBlogs] = useState([]);
   const [visibleBlogs, setVisibleBlogs] = useState(4); // Initial blogs to show
   const [isExpanded, setIsExpanded] = useState(false); // Track if the blogs are expanded
+  const [loading, setLoading] = useState(true); // Track loading state
 
   const fetchBlogs = async () => {
     try {
@@ -25,6 +27,8 @@ const BlogPreview = () => {
       }
     } catch (error) {
       showToastError("Error fetching blogs:", error);
+    } finally {
+      setLoading(false); // Set loading to false once data is fetched
     }
   };
 
@@ -41,8 +45,18 @@ const BlogPreview = () => {
     setIsExpanded(!isExpanded); // Toggle the state
   };
 
-  if (blogs.length === 0) {
-    return <div>Loading...</div>; // Show a loading state while data is being fetched
+  // Display skeletons if loading
+  if (loading) {
+    return (
+      <div className="flex flex-col items-center lg:pt-28 lg:px-40 pt-6 px-8 gap-0 py-9">
+        <div>
+          <BlogCardSkeleton />
+          <BlogCardSkeleton />
+          <BlogCardSkeleton />
+          <BlogCardSkeleton />
+        </div>
+      </div>
+    );
   }
 
   return (

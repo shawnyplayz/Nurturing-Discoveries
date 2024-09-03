@@ -11,6 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const InstructionsSection = () => {
   const [staffs, setStaff] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const settings = {
     dots: false,
@@ -52,6 +53,8 @@ const InstructionsSection = () => {
       }
     } catch (error) {
       console.error("Error fetching staff:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -59,9 +62,13 @@ const InstructionsSection = () => {
     fetchStaffs();
   }, []);
 
-  if (staffs.length === 0) {
-    return null;
-  }
+  const renderSkeletons = (count) => {
+    return Array.from({ length: count }).map((_, index) => (
+      <div key={index} className="px-4 flex-1">
+        <TeamCard loading={true} />
+      </div>
+    ));
+  };
 
   return (
     <div className="bg-ivory relative md:py-32">
@@ -89,7 +96,12 @@ const InstructionsSection = () => {
               : ""
           }`}
         >
-          {staffs.filter((staff) => staff.staff_featured).length > 4 ? (
+          {loading ? (
+            // Display skeletons while loading
+            <div className="flex gap-8 py-7 pb-28 justify-center">
+              {renderSkeletons(2)} {/* Display exactly two skeletons */}
+            </div>
+          ) : staffs.filter((staff) => staff.staff_featured).length > 4 ? (
             // Use slider if there are more than 4 featured staff members
             <Slider {...settings}>
               {staffs
@@ -112,7 +124,7 @@ const InstructionsSection = () => {
           ) : (
             // Center the items if there are 4 or fewer featured staff members
             <div
-              className={`grid gap-8 py-7 pb-28 ${
+              className={`grid gap-8 py-7 pb-28 justify-center ${
                 staffs.filter((staff) => staff.staff_featured).length === 1
                   ? "grid-cols-1"
                   : ""
@@ -128,7 +140,7 @@ const InstructionsSection = () => {
                 staffs.filter((staff) => staff.staff_featured).length === 4
                   ? "md:grid-cols-4"
                   : ""
-              } justify-center`}
+              }`}
             >
               {staffs
                 .filter((staff) => staff.staff_featured)

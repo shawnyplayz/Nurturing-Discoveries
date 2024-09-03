@@ -14,7 +14,21 @@ const ProgramsandEventsSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalData, setModalData] = useState(null);
 
+  // Program Card Loading State
+  const [loading, setLoading] = useState(true);
+
+  // Events Card Loading State
+  const [isEventsLoading, setIsEventsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate data fetching
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Set loading to false after 2 seconds (simulate data fetching)
+  }, []);
+
   const fetchEvents = async () => {
+    setIsEventsLoading(true);
     try {
       const url = endpoints.fetchEvents;
       const response = await fetch(url);
@@ -28,6 +42,8 @@ const ProgramsandEventsSection = () => {
       }
     } catch (error) {
       console.error("Error fetching events:", error);
+    } finally {
+      setIsEventsLoading(false);
     }
   };
 
@@ -81,6 +97,7 @@ const ProgramsandEventsSection = () => {
                 description={program.description}
                 backgroundColor={program.backgroundColor}
                 src={program.src}
+                loading={loading}
               />
             ))}
           </div>
@@ -100,6 +117,7 @@ const ProgramsandEventsSection = () => {
 
               return (
                 <EventsCards
+                  isLoading={isEventsLoading}
                   key={event.event_id}
                   title={event.event_name}
                   description={event.event_description}
