@@ -14,8 +14,6 @@ const ContactForm = () => {
     mobile_number: "",
     message: "",
   });
-  const [error, setError] = useState(null);
-  const [success, setSuccess] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -54,9 +52,9 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-4 lg:max-w-lg mx-auto container"
+      className="flex flex-col gap-4 w-full lg:max-w-lg mx-auto"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="grid gap-1">
           <label className="mb-2 font-quicksand text-left font-medium text-fiord">
             Your Name
@@ -101,15 +99,13 @@ const ContactForm = () => {
           value={formData.message}
           onChange={handleChange}
           placeholder="Write Message"
-        ></TextArea>
+        />
       </div>
       <div>
         <Button type="submit" disabled={loading}>
           {loading ? "Sending..." : "Send message"}
         </Button>
       </div>
-      {error && <p className="text-red-500 mt-2">{error}</p>}
-      {success && <p className="text-green-500 mt-2">{success}</p>}
     </form>
   );
 };
