@@ -52,7 +52,7 @@ export const LandingAboutUs = {
     title: "About Us",
     heading: "Top Choice For Children",
     description:
-      "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse gravida vitae nisi in tincidunt.",
+      "At Nurturing Discoveries, we foster independence, curiosity, and growth through a personalized Montessori approach, supporting holistic development.",
     contactInfo: "Call Us Now",
     contactNumber: "918369596061",
   },
@@ -91,33 +91,33 @@ export const ActivitiesSectionData = {
   title: "Our Best Activities",
   subHeading: "Let Us Know About Our Reading And Cultural",
   description:
-    "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse gravida vitae nisi in tincidunt.",
+    "At Nurturing Discoveries, we offer a variety of activities designed to support your child's growth, creativity, and well-being.",
   activities: [
     {
       id: 1,
       title: "Early Learning",
-      description: "Elit Aenean scelerisque vitae consequat.",
+      description: "Builds foundational skills.",
       backgroundColor: "#FEF5DE",
       src: "/home/activitiesAssets/EarlyLearning.svg",
     },
     {
       id: 2,
       title: "Art and Craft",
-      description: "Elit Aenean scelerisque vitae consequat.",
+      description: "Projects to boost creativity.",
       backgroundColor: "#E2F6FE",
       src: "/home/activitiesAssets/ArtAndCraft.svg",
     },
     {
       id: 3,
       title: "Brain Train",
-      description: "Elit Aenean scelerisque vitae consequat.",
+      description: "Puzzles for cognitive development.",
       backgroundColor: "#E6E8FC",
       src: "/home/activitiesAssets/BrainAndTrain.svg",
     },
     {
       id: 4,
       title: "Music Area",
-      description: "Elit Aenean scelerisque vitae consequat.",
+      description: "Introduces rhythm and instruments.",
       backgroundColor: "#FEDFEF",
       src: "/home/activitiesAssets/MusicArea.svg",
     },
@@ -221,5 +221,5 @@ export const OurValueCardData = [
 export const contactUsPage = {
   title: "Ready To Get Started?",
   description:
-    "Nullam varius, erat quis iaculis dictum, eros urna varius eros, ut blandit felis odio in turpis. Quisque rhoncus, eros in auctor ultrices",
+    "Start your child's journey with us! Contact us to explore our programs and see how we can support their growth.",
 };
