@@ -2,32 +2,144 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+body,
+html {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.curved {
+  --size: 20px;
+  --R: calc(var(--size) * 1.28);
+  --position: bottom;
+
+  -webkit-mask: radial-gradient(
+        var(--R) at left 50% var(--position) calc(1.8 * var(--size)),
+        #000 99%,
+        #0000 101%
+      )
+      left calc(50% - 2 * var(--size)) var(--position) 0 / calc(4 * var(--size))
+      100%,
+    radial-gradient(
+        var(--R) at left 50% var(--position) calc(-0.8 * var(--size)),
+        #0000 99%,
+        #000 101%
+      )
+      left 50% var(--position) var(--size) / calc(4 * var(--size)) 100% repeat-x;
+
+  background: #c9dde2;
+  height: calc(var(--size) + 75px);
+}
+
+
+@media screen and (max-width: 960px) {
+  .curved{
+    height: calc(var(--size) + 120px) !important;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+.section-curved {
+  --size: 20px;
+  --R: calc(var(--size) * 1.28);
+  --position: bottom;
+
+  -webkit-mask: radial-gradient(
+        var(--R) at left 50% var(--position) calc(1.8 * var(--size)),
+        #000 99%,
+        #0000 101%
+      )
+      left calc(50% - 2 * var(--size)) var(--position) 0 / calc(4 * var(--size))
+      100%,
+    radial-gradient(
+        var(--R) at left 50% var(--position) calc(-0.8 * var(--size)),
+        #0000 99%,
+        #000 101%
+      )
+      left 50% var(--position) var(--size) / calc(4 * var(--size)) 100% repeat-x;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.reverse-curved {
+  --size: 20px;
+  --R: calc(var(--size) * 1.28);
+  --position: top;
+
+  -webkit-mask: radial-gradient(
+        var(--R) at left 50% var(--position) calc(1.8 * var(--size)),
+        #000 99%,
+        #0000 101%
+      )
+      left calc(50% - 2 * var(--size)) var(--position) 0 / calc(4 * var(--size))
+      100%,
+    radial-gradient(
+        var(--R) at left 50% var(--position) calc(-0.8 * var(--size)),
+        #0000 99%,
+        #000 101%
+      )
+      left 50% var(--position) var(--size) / calc(4 * var(--size)) 100% repeat-x;
+
+  background: #c9dde2;
+  height: calc(var(--size) + 75px);
+}
+
+.grid-background {
+  background-image: linear-gradient(
+      to right,
+      rgba(204, 204, 204, 0.3) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(204, 204, 204, 0.3) 1px, transparent 1px);
+  background-size: 50px 50px; /* Increase the grid size */
+}
+
+.active {
+  color: #f39f5f;
+}
+
+.slick-dots {
+  bottom: 10px !important; 
+}
+
+.slick-dots li button:before {
+  font-size: 10px !important; 
+  color: #c4c4c4 !important;   }
+
+.slick-dots li.slick-active button:before {
+  color: #ff5733 !important; 
+}
+/* Add this to your global CSS or a CSS module */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;  /* Internet Explorer and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+@font-face {
+  font-family: "Quick-Sand-Bold";
+  src: url("../public/fonts/Quicksand/Quicksand-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Quick-Sand-Medium";
+  src: url("../public/fonts/Quicksand/Quicksand-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Quick-Sand-Regular";
+  src: url("../public/fonts/Quicksand/Quicksand-Regular.ttf");
 }
