@@ -65,7 +65,7 @@ const EnrollForm = () => {
 
   return (
     <form
-      className="space-y-6 p-4 sm:p-6 lg:p-8 bg-white rounded-lg  mx-auto max-w-full md:max-w-2xl"
+      className="space-y-6 p-4 sm:p-6 lg:p-8 bg-white rounded-lg mx-auto max-w-full md:max-w-2xl"
       onSubmit={handleSubmit}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
@@ -86,12 +86,20 @@ const EnrollForm = () => {
           <Input
             value={formData.enrollment_phNumber}
             onChange={handleChange}
+            onInput={(e) => {
+              e.target.value = e.target.value.replace(/[^0-9]/g, ""); // Allow only numbers
+            }}
             type="text"
             name="enrollment_phNumber"
-            placeholder="1401400 1231"
+            placeholder="1401400123"
+            maxLength={10} // Restrict input to 10 digits
+            pattern="\d{10}" // Enforce 10-digit numerical value
             className="w-full"
             required
           />
+          <small className="text-gray-500 text-xs">
+            Enter a 10-digit mobile number.
+          </small>
         </div>
         <div className="flex flex-col gap-2">
           <label className="text-gray-700 font-medium">

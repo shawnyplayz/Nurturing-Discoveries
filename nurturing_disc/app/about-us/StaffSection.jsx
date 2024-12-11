@@ -72,7 +72,7 @@ const StaffSection = () => {
           </div>
           {/* <div className="font-quicksand font-bold text-5xl overflow-hidden pb-7 text-center text-fiord">
             Our Staff
-          </div> */}  
+          </div> */}
         </div>
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {Array.from({ length: 4 }).map((_, index) => (
