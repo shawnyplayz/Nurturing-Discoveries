@@ -184,7 +184,7 @@ export const aboutUsPage = {
   title: "Who we are ?",
   subHeading: "Myself",
   description:
-    "Hello! I'm Dhruti Joshi, and I'm passionate about Montessori education. With extensive training and years of experience, I've seen how this method transforms young minds. My goal is to create a nurturing, hands-on learning environment where children thrive. I continuously strive to stay updated with the latest in Montessori education to provide the best for my students. Outside the classroom, I enjoy spending time with my family and exploring nature. I look forward to sharing the Montessori journey with you and your child!",
+    "Hello! I'm Dhruti Joshi, and proud owner of Nurturing Discoveries, a passionate practitioner of montessori education. With extensive training and years of experience, I've seen how this method transforms young minds. My goal is to create a nurturing, hands-on learning environment where children thrive. I continuously strive to stay updated with the latest in Montessori education to provide the best for my students. Outside the classroom, I enjoy spending time with my family and exploring nature. I look forward to sharing the Montessori journey with you and your child!",
 };
 
 export const OurValueCardData = [

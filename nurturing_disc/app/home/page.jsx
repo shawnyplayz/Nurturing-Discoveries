@@ -12,8 +12,10 @@ import RoadMapSection from "./RoadMapSection";
 const Home = () => {
   return (
     <>
+      <ChildrenGallery />
       <HomeCarousel />
       <AboutUsSection />
+      <TestimonialsSection />
       <ProgramSection />
       <RoadMapSection />
       <ActivitiesSection />
@@ -21,8 +23,6 @@ const Home = () => {
       {/*activies and about us issue */}
 
       <InstructionsSection />
-      <TestimonialsSection />
-      <ChildrenGallery />
       <Footer />
     </>
   );

@@ -95,7 +95,7 @@ const EnrollForm = () => {
         </div>
         <div className="flex flex-col gap-2">
           <label className="text-gray-700 font-medium">
-            Guardian Parent Name
+            Guardian / Parent Name
           </label>
           <Input
             value={formData.enrollment_guardian_name}
