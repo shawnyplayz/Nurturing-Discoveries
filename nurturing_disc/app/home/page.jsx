@@ -12,8 +12,8 @@ import RoadMapSection from "./RoadMapSection";
 const Home = () => {
   return (
     <>
-      <ChildrenGallery />
       <HomeCarousel />
+      <ChildrenGallery />
       <AboutUsSection />
       <TestimonialsSection />
       <ProgramSection />

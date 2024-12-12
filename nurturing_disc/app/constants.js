@@ -163,7 +163,7 @@ export const footerData = {
     },
     {
       iconSrc: "footerAssets/locationIcon.svg",
-      text: "I.C. Colony, Borivali west, Mumbai 400103",
+      text: "Joy Apartments, I C Colony, Borivali West, Mumbai, Maharashtra 400103",
       subtext: "Visit us",
       href: "https://www.google.com/maps/place/NURTURING+DISCOVERIES/@19.245522,72.8471635,15z/data=!4m6!3m5!1s0x3be7b1354f7d8a6d:0xd3b01233cf7633ee!8m2!3d19.245522!4d72.8471635!16s%2Fg%2F11s35m_zg4?entry=ttu&g_ep=EgoyMDI0MDgyOC4wIKXMDSoASAFQAw%3D%3D", // Link to open Google Maps
     },

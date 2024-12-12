@@ -7,9 +7,9 @@ const OurValuesSection = () => {
     <div className="values-section bg-[#EFF5F6]">
       <div className="container mx-auto">
         <div className="pt-14 pb-14 text-center">
-          <div className="font-normal text-xl font-sans text-peach pb-1">
+          {/* <div className="font-normal text-xl font-sans text-peach pb-1">
             Our Values
-          </div>
+          </div> */}
           <div className="font-semibold font-quicksand text-3xl lg:text-5xl text-fiord">
             Our Approach
           </div>

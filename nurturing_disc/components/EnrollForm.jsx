@@ -32,9 +32,19 @@ const EnrollForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Reset messages
     setLoading(true);
     setFormSuccessMessage(null);
     setFormErrorMessage(null);
+
+    // Validate mobile number
+    if (!/^\d{10}$/.test(formData.enrollment_phNumber)) {
+      setLoading(false);
+      showToastError("Mobile number must be exactly 10 digits.");
+      setFormErrorMessage("Please provide a valid 10-digit mobile number.");
+      return; // Stop submission
+    }
 
     try {
       const result = await fetchDataPost(endpoints.sendEnrollment, formData);
@@ -52,12 +62,27 @@ const EnrollForm = () => {
           "Your enrollment form has been submitted successfully!"
         );
       } else {
-        showToastError("Failed to send inquiry. Please try again.");
-        setFormErrorMessage("Form Submission Failed, Please try again");
+        throw new Error("Failed to send the form. Please try again.");
       }
     } catch (err) {
-      showToastError(err.message || "An unexpected error occurred.");
-      setFormErrorMessage("Form Submission Failed, Please try again");
+      let errorMessage = "An unexpected error occurred.";
+
+      // Check for API error messages and make them user-friendly
+      if (err.response && err.response.data && err.response.data.message) {
+        const backendMessage = err.response.data.message;
+
+        // Customize specific backend error messages
+        if (backendMessage.includes("enrollment_message")) {
+          errorMessage = "The message should be at least 5 characters long.";
+        } else {
+          errorMessage = "Please correct the highlighted fields and try again.";
+        }
+      } else if (err.message) {
+        errorMessage = err.message;
+      }
+
+      showToastError(errorMessage);
+      setFormErrorMessage(errorMessage);
     } finally {
       setLoading(false);
     }
