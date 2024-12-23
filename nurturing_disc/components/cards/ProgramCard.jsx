@@ -11,7 +11,7 @@ export default function ProgramCard({
 }) {
   return (
     <div
-      className={`flex flex-col mt-6 text-gray-700 shadow-md bg-clip-border rounded-3xl md:w-96 w-full ${
+      className={`flex flex-col mt-6 text-gray-700  border-2 bg-clip-border rounded-3xl md:w-96 w-full transition-transform transform hover:scale-105 cursor-pointer ${
         loading && "animate-pulse"
       }`}
       style={{ backgroundColor }}
