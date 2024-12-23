@@ -39,7 +39,7 @@ export default function ProgramCard({
               height={30}
               style={{ marginBottom: "16px" }}
             />
-            <Skeleton width="80%" height={20} />
+            <Skeleton width={100} height={20} />
           </>
         ) : (
           <>
