@@ -159,7 +159,7 @@ const HomeCarousel = () => {
       <VideoModal
         isOpen={isVideoModalOpen}
         onClose={() => setIsVideoModalOpen(false)}
-        videoUrl="/home/heroSectionAssets/video1.mp4"
+        videoUrl="https://res.cloudinary.com/dpauqvsd6/video/upload/f_auto:video,q_auto/v1/nurturing/Hero_Video/nm4es1d8c4nobqvurs6q"
       />
 
       <EnrollFormModel

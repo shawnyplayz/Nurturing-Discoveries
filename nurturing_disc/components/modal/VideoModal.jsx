@@ -21,7 +21,7 @@ export default function VideoModal({ isOpen, onClose, videoUrl }) {
                   <Iframe
                     url={videoUrl}
                     width="100%"
-                    height="350px"
+                    height="700px"
                     id=""
                     className=""
                     display="block"
