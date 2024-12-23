@@ -97,7 +97,7 @@ const ProgramsandEventsSection = () => {
               ? Array.from({ length: 3 }).map((_, index) => (
                   <ProgramCard key={index} isLoading={isProgramsLoading} />
                 ))
-              : programs.map((program) => {
+              : programs?.map((program, index) => {
                   const latestImage =
                     program.pictures && program.pictures.length > 0
                       ? program.pictures[program.pictures.length - 1].secure_url
@@ -105,9 +105,18 @@ const ProgramsandEventsSection = () => {
 
                   return (
                     <ProgramCard
-                      key={program.program_id}
-                      title={program.program_name}
-                      description={program.program_description}
+                      key={program?.program_id}
+                      title={program?.program_name}
+                      description={program?.program_description}
+                      backgroundColor={
+                        [
+                          "rgb(112 166 177)",
+                          "rgb(243 159 95)",
+                          "rgb(88 102 235)",
+                        ][index % 3]
+                      }
+                      min_age={program?.min_age}
+                      max_age={program?.max_age}
                       src={latestImage || program.thumbnail_url}
                       onClick={() =>
                         handleOpenModal({
