@@ -5,7 +5,7 @@ import { aboutUsPage } from "../constants";
 const WhoWeAreSection = () => {
   return (
     <div className="who-are-we-section lg:flex lg:flex-row lg:justify-center lg:items-center lg:py-28 pb-24">
-      <div className="flex items-center justify-center pt-16 pb-8 px-16 lg:px-6 lg:w-fit">
+      <div className="flex items-center justify-center px-16 lg:px-6 lg:w-fit">
         <Image
           src="/about/aboutImage.webp"
           width={500}
@@ -14,7 +14,7 @@ const WhoWeAreSection = () => {
         />
       </div>
       <div>
-        <div className="lg:flex lg:flex-col lg:py-36 lg:max-w-2xl px-8">
+        <div className="lg:flex lg:flex-col lg:max-w-2xl px-8">
           <div className="font-sans font-normal text-base sm:text-sm text-center lg:text-start text-peach lg:text-xl">
             {aboutUsPage.title}
           </div>

@@ -54,9 +54,9 @@ const AboutUsSection = () => {
             className="hidden md:block absolute top-56 right-4 md:top-80 md:right-7 flex-shrink-0"
             data-aos="fade-left"
           />
-          <div className="font-sans font-semibold text-xl text-[#F39F5F] pb-3 text-center md:text-start">
+          {/* <div className="font-sans font-semibold text-xl text-[#F39F5F] pb-3 text-center md:text-start">
             {LandingAboutUs.AboutUsSection.title}
-          </div>
+          </div> */}
           <div className="font-quicksand font-bold text-3xl md:text-5xl text-fiord pb-7">
             {LandingAboutUs.AboutUsSection.heading}
           </div>
@@ -72,7 +72,7 @@ const AboutUsSection = () => {
           </div>
           <div className="flex flex-col md:flex-row items-center pt-10">
             <div className="flex flex-row items-center gap-6">
-              <Link href={"/about-us"}>
+              <Link href={"/programs_events"}>
                 <Button>Explore More</Button>
               </Link>
             </div>

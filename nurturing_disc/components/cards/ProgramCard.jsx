@@ -43,10 +43,10 @@ export default function ProgramCard({
           </>
         ) : (
           <>
-            <h5 className="text-xl antialiased font-bold font-quicksand leading-snug tracking-normal text-blue-gray-900 text-center text-white mb-4">
+            <h5 className="text-xl antialiased font-bold font-quicksand leading-snug tracking-normal text-blue-gray-900 text-center text-[#000] mb-4">
               {title}
             </h5>
-            <p className="text-base antialiased leading-relaxed text-inherit text-center font-light text-white mb-8">
+            <p className="text-base antialiased leading-relaxed text-inherit text-center font-light text-[#000] mb-8">
               {description}
             </p>
           </>

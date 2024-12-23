@@ -52,7 +52,7 @@ export const LandingAboutUs = {
     title: "About Us",
     heading: "Top Choice For Children",
     description:
-      "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse gravida vitae nisi in tincidunt.",
+      "At Nurturing Discoveries, we foster independence, curiosity, and growth through a personalized Montessori approach, supporting holistic development.",
     contactInfo: "Call Us Now",
     contactNumber: "918369596061",
   },
@@ -91,33 +91,33 @@ export const ActivitiesSectionData = {
   title: "Our Best Activities",
   subHeading: "Let Us Know About Our Reading And Cultural",
   description:
-    "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse gravida vitae nisi in tincidunt.",
+    "At Nurturing Discoveries, we offer a variety of activities designed to support your child's growth, creativity, and well-being.",
   activities: [
     {
       id: 1,
       title: "Early Learning",
-      description: "Elit Aenean scelerisque vitae consequat.",
+      description: "Builds foundational skills.",
       backgroundColor: "#FEF5DE",
       src: "/home/activitiesAssets/EarlyLearning.svg",
     },
     {
       id: 2,
       title: "Art and Craft",
-      description: "Elit Aenean scelerisque vitae consequat.",
+      description: "Projects to boost creativity.",
       backgroundColor: "#E2F6FE",
       src: "/home/activitiesAssets/ArtAndCraft.svg",
     },
     {
       id: 3,
       title: "Brain Train",
-      description: "Elit Aenean scelerisque vitae consequat.",
+      description: "Puzzles for cognitive development.",
       backgroundColor: "#E6E8FC",
       src: "/home/activitiesAssets/BrainAndTrain.svg",
     },
     {
       id: 4,
       title: "Music Area",
-      description: "Elit Aenean scelerisque vitae consequat.",
+      description: "Introduces rhythm and instruments.",
       backgroundColor: "#FEDFEF",
       src: "/home/activitiesAssets/MusicArea.svg",
     },
@@ -163,7 +163,7 @@ export const footerData = {
     },
     {
       iconSrc: "footerAssets/locationIcon.svg",
-      text: "I.C. Colony, Borivali west, Mumbai 400103",
+      text: "Joy Apartments, I C Colony, Borivali West, Mumbai, Maharashtra 400103",
       subtext: "Visit us",
       href: "https://www.google.com/maps/place/NURTURING+DISCOVERIES/@19.245522,72.8471635,15z/data=!4m6!3m5!1s0x3be7b1354f7d8a6d:0xd3b01233cf7633ee!8m2!3d19.245522!4d72.8471635!16s%2Fg%2F11s35m_zg4?entry=ttu&g_ep=EgoyMDI0MDgyOC4wIKXMDSoASAFQAw%3D%3D", // Link to open Google Maps
     },
@@ -184,7 +184,7 @@ export const aboutUsPage = {
   title: "Who we are ?",
   subHeading: "Myself",
   description:
-    "Hello! I'm Juber Abbas, and I'm passionate about Montessori education. With extensive training and years of experience, I've seen how this method transforms young minds. My goal is to create a nurturing, hands-on learning environment where children thrive. I continuously strive to stay updated with the latest in Montessori education to provide the best for my students. Outside the classroom, I enjoy spending time with my family and exploring nature. I look forward to sharing the Montessori journey with you and your child!",
+    "Hello! I'm Dhruti Joshi, and proud owner of Nurturing Discoveries, a passionate practitioner of montessori education. With extensive training and years of experience, I've seen how this method transforms young minds. My goal is to create a nurturing, hands-on learning environment where children thrive. I continuously strive to stay updated with the latest in Montessori education to provide the best for my students. Outside the classroom, I enjoy spending time with my family and exploring nature. I look forward to sharing the Montessori journey with you and your child!",
 };
 
 export const OurValueCardData = [
@@ -221,5 +221,5 @@ export const OurValueCardData = [
 export const contactUsPage = {
   title: "Ready To Get Started?",
   description:
-    "Nullam varius, erat quis iaculis dictum, eros urna varius eros, ut blandit felis odio in turpis. Quisque rhoncus, eros in auctor ultrices",
+    "Start your child's journey with us! Contact us to explore our programs and see how we can support their growth.",
 };

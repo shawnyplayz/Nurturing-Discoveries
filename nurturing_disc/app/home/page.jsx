@@ -13,7 +13,9 @@ const Home = () => {
   return (
     <>
       <HomeCarousel />
+      <ChildrenGallery />
       <AboutUsSection />
+      <TestimonialsSection />
       <ProgramSection />
       <RoadMapSection />
       <ActivitiesSection />
@@ -21,8 +23,6 @@ const Home = () => {
       {/*activies and about us issue */}
 
       <InstructionsSection />
-      <TestimonialsSection />
-      <ChildrenGallery />
       <Footer />
     </>
   );

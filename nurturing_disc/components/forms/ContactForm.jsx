@@ -16,6 +16,10 @@ const ContactForm = () => {
   });
   const [loading, setLoading] = useState(false);
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -27,6 +31,9 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setIsSubmitting(true)
+    setSuccessMessage("")
+    setErrorMessage("")
 
     try {
       const result = await fetchDataPost(endpoints.sendInquiry, formData);
