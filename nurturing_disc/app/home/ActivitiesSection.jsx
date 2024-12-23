@@ -1,11 +1,16 @@
+"use client";
+
 import ActivityCard from "@/components/cards/ActivityCard";
 import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { ActivitiesSectionData } from "../constants";
+import EnrollFormModel from "@/components/modal/EnrollFormModel";
+import EnrollForm from "@/components/EnrollForm";
 
 const ActivitiesSection = () => {
+  const [isEnrollModalOpen, setIsEnrollModalOpen] = useState(false);
+
   return (
     <>
       <div className="relative">
@@ -56,15 +61,15 @@ const ActivitiesSection = () => {
             ))}
           </div>
           <div>
-            <Link
-              href="/home"
+            <button
+              onClick={() => setIsEnrollModalOpen(true)}
               className="pt-6 lg:pt-10 items-center flex flex-row gap-3 pb-16 lg:pb-32 justify-center lg:justify-start"
             >
               <div className="font-sans text-sm lg:text-base font-bold text-peach">
                 Enroll Now
               </div>
               <FaArrowRightLong color="#f39f5f" />
-            </Link>
+            </button>
           </div>
         </div>
       </div>
@@ -80,6 +85,14 @@ const ActivitiesSection = () => {
           />
         </div>
       </div>
+
+      {/* Enroll Modal */}
+      <EnrollFormModel
+        isOpen={isEnrollModalOpen}
+        onClose={() => setIsEnrollModalOpen(false)}
+      >
+        <EnrollForm />
+      </EnrollFormModel>
     </>
   );
 };

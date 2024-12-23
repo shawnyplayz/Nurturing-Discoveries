@@ -15,6 +15,7 @@ const endpoints = {
   sendInquiry: `${baseUrl}/sendInquiry`,
   fetchEvents: `${baseUrl}/fetchEvents`,
   sendEnrollment: `${baseUrl}/sendEnrollment`,
+  fetchPrograms: `${baseUrl}/fetchPrograms`,
 };
 
 export default endpoints;

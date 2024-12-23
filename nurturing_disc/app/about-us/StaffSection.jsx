@@ -65,16 +65,16 @@ const StaffSection = () => {
 
   if (loading) {
     return (
-      <div className="staff-section relative md:pb-40">
-        <div className="flex justify-center items-center flex-col mt-16 mb-10">
-          <div className="pb-3 font-normal text-xl font-sans text-peach text-center">
+      <div className="staff-section relative">
+        <div className="flex justify-center items-center flex-col">
+          {/* <div className="font-normal text-xl font-sans text-peach text-center">
+            Our Experts
+          </div> */}
+          <div className="font-quicksand font-bold text-5xl overflow-hidden pb-7 text-center text-fiord">
             Our Experts
           </div>
-          <div className="font-quicksand font-bold text-5xl overflow-hidden pb-7 text-center text-fiord">
-            Our Staff
-          </div>
         </div>
-        <div className="w-full my-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {Array.from({ length: 4 }).map((_, index) => (
             <div key={index} className="p-4">
               <Skeleton variant="rectangular" width={300} height={300} />
@@ -101,7 +101,7 @@ const StaffSection = () => {
   }
 
   return (
-    <div className="staff-section relative md:pb-40">
+    <div className="staff-section relative ">
       <div
         className="hidden lg:block absolute bottom-1 left-5 w-52"
         data-aos="fade-right"
@@ -129,12 +129,12 @@ const StaffSection = () => {
           className="hidden lg:block "
         />
       </div>
-      <div className="flex items-center justify-center flex-col mt-16 mb-10">
-        <div className="pb-3 font-normal text-xl font-sans text-peach text-center">
+      <div className="flex items-center justify-center flex-col mt-16">
+        {/* <div className="pb-3 font-normal text-xl font-sans text-peach text-center">
           Our Experts
-        </div>
-        <div className="font-quicksand font-bold text-5xl overflow-hidden pb-7 text-center text-fiord">
-          Our Staff
+        </div> */}
+        <div className="font-quicksand font-bold text-5xl overflow-hidden text-center text-fiord">
+          Our Experts
         </div>
       </div>
       <div

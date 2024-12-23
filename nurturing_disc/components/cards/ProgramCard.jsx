@@ -6,12 +6,14 @@ export default function ProgramCard({
   title,
   description,
   backgroundColor,
+  min_age,
+  max_age,
   src,
   loading = false,
 }) {
   return (
     <div
-      className={`flex flex-col mt-6 text-gray-700 shadow-md bg-clip-border rounded-3xl md:w-96 w-full ${
+      className={`flex flex-col mt-6 text-gray-700  border-2 bg-clip-border rounded-3xl md:w-96 w-full transition-transform transform hover:scale-105 cursor-pointer ${
         loading && "animate-pulse"
       }`}
       style={{ backgroundColor }}
@@ -21,14 +23,16 @@ export default function ProgramCard({
         {loading ? (
           <Skeleton variant="rectangular" width={500} height={300} />
         ) : (
-          <Image
-            alt="card-image"
-            src={src}
-            layout="responsive"
-            width={500}
-            height={300}
-            className="w-full h-full object-cover"
-          />
+          <div className="">
+            <Image
+              alt="card-image"
+              src={src}
+              layout="responsive"
+              width={1000}
+              height={1000}
+              // className=""
+            />
+          </div>
         )}
       </div>
       <div className="p-4 sm:p-6">
@@ -39,14 +43,14 @@ export default function ProgramCard({
               height={30}
               style={{ marginBottom: "16px" }}
             />
-            <Skeleton width="80%" height={20} />
+            <Skeleton width={100} height={20} />
           </>
         ) : (
           <>
-            <h5 className="text-xl antialiased font-bold font-quicksand leading-snug tracking-normal text-blue-gray-900 text-center text-white mb-4">
-              {title}
+            <h5 className="line-clamp-5 max-w-80 text-xl text-white antialiased font-bold font-quicksand leading-snug tracking-normal text-blue-gray-900 text-center mb-4">
+              {`${title} (${min_age} - ${max_age})`}
             </h5>
-            <p className="text-base antialiased leading-relaxed text-inherit text-center font-light text-white mb-8">
+            <p className="line-clamp-5 max-w-80 text-base text-white antialiased leading-relaxed text-inherit text-center font-light mb-8">
               {description}
             </p>
           </>
