@@ -8,6 +8,7 @@ import TestimonialsSection from "./TestimonialsSection";
 import ChildrenGallery from "./ChildrenGallery";
 import Footer from "@/components/Footer";
 import RoadMapSection from "./RoadMapSection";
+import Testimonials2 from "./Testimonials2";
 
 const Home = () => {
   return (
@@ -15,9 +16,10 @@ const Home = () => {
       <HomeCarousel />
       <ChildrenGallery />
       <AboutUsSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <ProgramSection />
       <RoadMapSection />
+      <Testimonials2 />
       <ActivitiesSection />
 
       {/*activies and about us issue */}

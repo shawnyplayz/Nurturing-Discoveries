@@ -111,12 +111,20 @@ html {
   bottom: 10px !important; 
 }
 
+
+
+
+
 .slick-dots li button:before {
   font-size: 10px !important; 
   color: #c4c4c4 !important;   }
 
 .slick-dots li.slick-active button:before {
   color: #ff5733 !important; 
+}
+
+.slick-list {
+  padding: 0 15px; /* Add padding around the slider */
 }
 /* Add this to your global CSS or a CSS module */
 .scrollbar-hidden::-webkit-scrollbar {
