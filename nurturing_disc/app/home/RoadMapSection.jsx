@@ -36,10 +36,12 @@ const RoadMapSection = () => {
             }}
           >
             <h1 className="text-center text-fiord font-quicksand font-bold text-xl">
-              Choose a service
+              Choose a program
             </h1>
             <p className="max-w-96 text-center font-normal font-sans text-base text-fiord">
-              In a free hour, when our power of choice is untrammeled
+              Explore a variety of programs tailored to meet the unique needs of
+              your child, ensuring a well-rounded and engaging learning
+              experience.
             </p>
           </div>
         </div>
@@ -70,7 +72,8 @@ const RoadMapSection = () => {
               Expert Teachers
             </h1>
             <p className="max-w-96 text-center font-normal font-sans text-base text-fiord">
-              In a free hour, when our power of choice is untrammeled
+              Learn from experienced educators dedicated to nurturing curiosity
+              and fostering growth in every child.
             </p>
           </div>
         </div>
@@ -101,7 +104,8 @@ const RoadMapSection = () => {
               E-Learning Media
             </h1>
             <p className="max-w-96 text-center font-normal font-sans text-base text-fiord">
-              In a free hour, when our power of choice is untrammeled
+              Leverage modern digital tools and resources to enhance learning,
+              making education more interactive and fun.
             </p>
           </div>
         </div>
@@ -132,7 +136,8 @@ const RoadMapSection = () => {
               Full Day Programs
             </h1>
             <p className="max-w-96 text-center font-normal font-sans text-base text-fiord">
-              In a free hour, when our power of choice is untrammeled
+              Comprehensive full-day schedules designed to balance learning,
+              play, and rest for holistic development. Let me know if you'
             </p>
           </div>
         </div>
