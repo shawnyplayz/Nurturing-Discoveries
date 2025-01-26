@@ -137,7 +137,7 @@ const RoadMapSection = () => {
             </h1>
             <p className="max-w-96 text-center font-normal font-sans text-base text-fiord">
               Comprehensive full-day schedules designed to balance learning,
-              play, and rest for holistic development. Let me know if you'
+              play, and rest for holistic development.
             </p>
           </div>
         </div>

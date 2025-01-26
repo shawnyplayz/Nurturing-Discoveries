@@ -126,7 +126,7 @@ export default function Testimonials() {
           Testimonials
         </h3>
         <h2 className="text-2xl sm:text-4xl font-semibold font-quicksand text-fiord md:text-4xl max-w-2xl mx-auto mb-8">
-          Parents' words are the key to happy kids
+          Parents&apos; words are the key to happy kids
         </h2>
 
         {loading ? (
@@ -150,7 +150,7 @@ export default function Testimonials() {
                     isActive
                       ? "scale-110 opacity-100 z-20"
                       : isNearActive
-                      ? "scale-95 opacity-40 z-10"
+                      ? "scale-95 opacity-100 z-10"
                       : "scale-85 opacity-50 z-0"
                   }`}
                 >
@@ -199,7 +199,7 @@ export default function Testimonials() {
                         isActive ? "text-white" : "text-gray-900"
                       }`}
                     >
-                      - {testimonial.reviewer_name}
+                      ~ {testimonial.reviewer_name}
                     </p>
                   </div>
                 </div>
