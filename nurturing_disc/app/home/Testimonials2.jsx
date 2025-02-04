@@ -150,8 +150,8 @@ export default function Testimonials() {
                     isActive
                       ? "scale-110 opacity-100 z-20"
                       : isNearActive
-                      ? "scale-95 opacity-100 z-10"
-                      : "scale-85 opacity-50 z-0"
+                        ? "scale-95 opacity-100 z-10"
+                        : "scale-85 opacity-50 z-0"
                   }`}
                 >
                   <div
@@ -171,6 +171,7 @@ export default function Testimonials() {
                             muted={!isActive}
                             playsInline
                             preload="metadata"
+                            crossOrigin="anonymous"
                             onPlay={() => {
                               if (isActive) {
                                 setPlayingVideoId(testimonial.testimonial_id);
