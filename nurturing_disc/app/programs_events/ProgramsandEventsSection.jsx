@@ -80,6 +80,15 @@ const ProgramsandEventsSection = () => {
     };
   }, [isModalOpen]);
 
+  if (
+    !isEventsLoading &&
+    !isProgramsLoading &&
+    programs.length === 0 &&
+    events.length === 0
+  ) {
+    return null;
+  }
+
   return (
     <section>
       <SectionSeparator

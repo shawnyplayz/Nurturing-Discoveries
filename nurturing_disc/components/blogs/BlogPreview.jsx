@@ -45,6 +45,10 @@ const BlogPreview = () => {
     setIsExpanded(!isExpanded); // Toggle the state
   };
 
+  if (!setLoading && !setLoading && blogs.length === 0) {
+    return null;
+  }
+
   // Display skeletons if loading
   if (loading) {
     return (
