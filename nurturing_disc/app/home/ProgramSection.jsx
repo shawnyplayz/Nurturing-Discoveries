@@ -6,16 +6,41 @@ import ProgramsCardHome from "@/components/cards/ProgramsCardHome";
 import { programSectionCardData, programSectionData } from "../constants";
 import Image from "next/image";
 import Link from "next/link";
+import endpoints from "@/config/endpoints";
 
 const ProgramSection = () => {
   const [loading, setLoading] = useState(true);
+  const [programs, setPrograms] = useState([]);
+  const fetchPrograms = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch(endpoints.fetchPrograms);
+      if (!response.ok) {
+        console.error("Failed to fetch programs");
+        return;
+      }
+      const data = await response.json();
+      setPrograms(data);
+    } catch (error) {
+      console.error("Error fetching programs:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
+    fetchPrograms();
+  }, []);
   useEffect(() => {
     // Simulate data fetching
     setTimeout(() => {
       setLoading(false);
     }, 2000); // Set loading to false after 2 seconds (simulate data fetching)
   }, []);
+
+  if (programs.length === 0) {
+    return null;
+  }
 
   return (
     <div className="flex flex-col items-center container mx-auto px-4 md:px-6 lg:px-8 relative pt-20 md:pt-28">
@@ -63,16 +88,27 @@ const ProgramSection = () => {
       </div>
       {/* // Card Section */}
       <div className="grid pt-10 md:pt-16 pb-16 md:pb-24 lg:grid-cols-3 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 md:px-4">
-        {programSectionCardData.map((program, index) => (
-          <ProgramsCardHome
-            key={index}
-            title={program.title}
-            description={program.description}
-            backgroundColor={program.backgroundColor}
-            src={program.src}
-            loading={loading}
-          />
-        ))}
+        {programs.map((program, index) => {
+          const latestImage =
+            program.pictures && program.pictures.length > 0
+              ? program.pictures[program.pictures.length - 1].secure_url
+              : "";
+
+          return (
+            <ProgramsCardHome
+              key={index}
+              title={program.program_name}
+              description={program.program_description}
+              backgroundColor={
+                ["rgb(112 166 177)", "rgb(243 159 95)", "rgb(88 102 235)"][
+                  index % 3
+                ]
+              }
+              src={latestImage || program.thumbnail_url}
+              loading={loading}
+            />
+          );
+        })}
       </div>
       <div className="py-8 md:py-12">
         <Link href={"/programs_events"}>

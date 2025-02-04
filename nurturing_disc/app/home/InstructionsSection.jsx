@@ -62,6 +62,10 @@ const InstructionsSection = () => {
     fetchStaffs();
   }, []);
 
+  if (staffs.length === 0) {
+    return null;
+  }
+
   const renderSkeletons = (count) => {
     return Array.from({ length: count }).map((_, index) => (
       <div key={index} className="px-4 flex-1">
